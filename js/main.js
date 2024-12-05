@@ -25,6 +25,31 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+/*********
+ THIS JAVASCRIPT IS FOR LOADING THE VIOLA DAVIS STORY CONTENT
+ UNDER THE CONDITION THAT THE USER HAS SCROLLED TO THROUGH THE PAGE
+*********/
+
+document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // When element is in view, add the 'in-view' class to trigger the animation
+                entry.target.classList.add('in-view');
+                observer.unobserve(entry.target); // Stop observing once the animation has been triggered
+            }
+        });
+    }, {
+        threshold: 0.5 // Trigger animation when 50% of the element is in view
+    });
+
+    // Observe each .info-box element
+    const infoBoxes = document.querySelectorAll('.timeline-entry');
+    infoBoxes.forEach(box => {
+        observer.observe(box);
+    });
+});
+
 
 
 document.addEventListener("DOMContentLoaded", () => {

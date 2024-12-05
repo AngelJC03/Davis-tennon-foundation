@@ -27,6 +27,7 @@
             box-sizing: border-box; /* Ensure consistent box model */
             font-family: Arial, sans-serif; /* Default font */
             line-height: 1.6; /* Line height for better readability */
+            background-color: rgb(245, 245, 245);
         }
 
         /********
@@ -34,8 +35,9 @@
         BANNER CSS 
         
         *********/
+
         .banner {
-            background-color: rgb(255, 255, 255); /* Dark gray background */
+            background-color: rgb(245,245,245); /* Dark gray background */
             margin: 0px;
             padding: 0px;
             width: 100%; /* Full-width banner */
@@ -67,12 +69,14 @@
             top: 70px;
             right: 230px;
             font-size: 18px; /* Adjust font size */
-            color: white; /* Adjust color */
+            color: black; /* Adjust color */
             text-decoration: underline; /* Remove underline */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Add shadow effect */
         }
         .contact-link:hover {
             text-decoration: underline; /* Add underline on hover */
             color: #ddd; /* Slightly lighter color */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow effect */
         }
 
         /********
@@ -294,11 +298,10 @@
         *********/
 
         /* Info Section */
-        .content {
+        .home-content {
             display: flex;
             flex-direction: column;
             padding: 40px;
-            background-color: rgb(207,169,124);
         }
 
         .info-box {
@@ -311,9 +314,15 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
         }
 
-        /* For the second box, reverse the order of content */
-        .reverse-order {
-            flex-direction: row; /* Use normal row direction */
+        .info-box-second {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            background-color: #ddd; /* Light gray background */
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            background-color: black;
         }
 
         /* The container for text */
@@ -348,7 +357,7 @@
         }
 
         /* Initially hide elements off-screen */
-        .content .info-box {
+        .home-content .info-box {
             opacity: 0;
             transform: translateY(30px); /* Initial position off-screen */
             transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Smooth transition */
@@ -412,3 +421,103 @@
         }
 
         
+        /*********
+        VIOLAS-STORY-heading
+        ********/
+
+        #violas-story-title {
+            font-size: 24px; /* Adjust font size */
+            color: rgb(0, 0, 0); /* Adjust color */
+            text-align: center; /* Center the text */
+            margin: 20px 0; /* Add margin around the title */
+        }
+
+        #violas-story-content {
+            display: flex; /* Use flexbox for layout */
+            align-items: center; /* Align items vertically */
+            gap: 20px; /* Add space between the image and paragraph */
+            margin-bottom: 50px;
+        }
+        
+        #violas-story-content img {
+            max-height: 300px; /* Adjust the height of the image */
+            width: auto; /* Maintain aspect ratio */
+            border-radius: 10px; /* Optional: Add rounded corners to the image */
+            margin-left: 250px;
+        }
+        
+        #violas-story-content p {
+            font-size: 16px; /* Adjust font size */
+            line-height: 1.6; /* Improve readability */
+            max-width: 600px; /* Optional: Limit the width of the paragraph */
+            margin-left: 50px; /* Remove default margin */
+        }
+
+        /********
+        VIOLA-DAVIS-STORY-BODY-CONTENT
+        ********/
+
+        #viola-davis-history-title {
+            font-size: 24px; /* Adjust font size */
+            color: rgb(0, 0, 0); /* Adjust color */
+            text-align: center; /* Center the text */
+            margin: 20px 0; /* Add margin around the title */
+            background-color: rgb(255,186,95);
+        }
+        
+        #viola-davis-history {
+            display: flex; /* Use flexbox for layout */
+            align-items: center; /* Align items vertically */
+            gap: 20px; /* Add space between the image and paragraph */
+            margin: 20px; /* Optional: Add some margin around the container */
+        }
+
+        /* Timeline Section */
+        #viola-davis-history {
+            display: flex; /* Use flexbox for layout */
+            flex-direction: column; /* Stack items vertically */
+            padding: 40px;
+        }
+
+        .timeline-entry-top {
+            padding: 40px; /* Optional: Add padding to match other sections */
+        }
+
+        /* Timeline Entry */
+        .timeline-entry {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            background-color: #ddd; /* Light gray background */
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .timeline-entry.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Text Container */
+        .timeline-text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            color: rgb(52, 47, 47);
+            padding: 20px;
+            font-size: 18px;
+        }
+
+        /* Image Styling */
+        .timeline-image {
+            width: 50%;
+            height: auto;
+            object-fit: cover; /* Maintain image aspect ratio */
+            display: block;
+        }
