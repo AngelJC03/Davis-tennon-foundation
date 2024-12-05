@@ -1,0 +1,414 @@
+        @font-face {
+            font-family: 'Custom-dotted-font'; /* Choose a name for your font */
+            src: url('../assets/jardotty-font/Jardotty-R946.ttf') format('truetype'); /* Path to your font */
+            font-weight: normal; /* Optional: specify font weight */
+            font-style: normal;  /* Optional: specify font style */
+        }
+
+        /********
+
+        GENERAL STYLES
+
+        *********/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Ensures padding and borders do not affect element's total width/height */
+        }
+
+        /********
+        
+        remove default margin and padding 
+        
+        *********/
+        html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Ensure consistent box model */
+            font-family: Arial, sans-serif; /* Default font */
+            line-height: 1.6; /* Line height for better readability */
+        }
+
+        /********
+        
+        BANNER CSS 
+        
+        *********/
+        .banner {
+            background-color: rgb(255, 255, 255); /* Dark gray background */
+            margin: 0px;
+            padding: 0px;
+            width: 100%; /* Full-width banner */
+            height: 20vh; /* Full height */
+        }
+        .banner-container .btn {
+            font-style: open-sans; /* Optional: customize font */
+            /* button position to the right */
+            position: absolute;
+            right: 40px;
+            top: 60px;
+            display: inline-block; /* Ensures the button fits content */
+            font-size: 18px; /* Adjust font size as needed */
+            color: white; /* White text color */
+            background-color: rgb(195,41,58); /* Button background color */
+            text-decoration: none; /* Remove underline */
+            padding: 10px 20px; /* Add space inside the button */
+            border-radius: 5px; /* Optional: Rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow for emphasis */
+            transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth effects */
+        }
+        .banner-container .btn:hover {
+            transform: translateY(-2px); /* Slight lift on hover */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
+        }
+        /* Style for the Contact Us link */
+        .contact-link {
+            position: absolute;
+            top: 70px;
+            right: 230px;
+            font-size: 18px; /* Adjust font size */
+            color: white; /* Adjust color */
+            text-decoration: underline; /* Remove underline */
+        }
+        .contact-link:hover {
+            text-decoration: underline; /* Add underline on hover */
+            color: #ddd; /* Slightly lighter color */
+        }
+
+        /********
+        
+        NAV BAR CSS
+        
+        *********/
+       /* Base styles for the navbar */
+       nav {
+        display: flex; /* Arrange items horizontally */
+        justify-content: space-between; /* Distribute items across full width */
+        background-color: rgb(255,186,95);  /* Dark background color */
+        width: 100%; /* Full-width navbar */
+        box-sizing: border-box; /* Include padding in width calculation */
+        margin: 0 auto; /* Center the navbar */
+        }
+
+        nav a {
+            font-size: 24px;
+            color: white; /* Text color */
+            text-decoration: none; /* Remove underline */
+            padding: 10px 20px; /* Padding inside each box */
+            background-color: rgb(255,186,95);/* Box background color (dark gray) */
+            margin: 3px; /* Space between links */
+            transition: background-color 0.3s ease; /* Smooth color transition */
+            white-space: nowrap; /* Prevent text wrapping */
+            flex-grow: 1; /* Make each link take equal space */
+            text-align: center; /* Center the text within each box */
+        }
+
+        nav a:hover {
+            background-color: rgb(169, 138, 100); /* Lighter gray on hover */
+        }
+
+        /********
+
+        HERO SECTION CSS
+
+        *********/
+        .hero {
+            position: relative; /* Allow absolute positioning of the h1 inside this div */
+        }
+        
+        .hero img {
+            width: 100%; /* Make sure the image spans the full width */
+            height: 500px; /* Set a fixed height for the image */
+            object-fit: cover; /* Ensure the image covers the area without distortion */
+            display: block; /* Prevent space below image */
+        }
+        
+        .hero h1 {
+            position: absolute; /* Position the text over the image */
+            top: 50%; /* Center vertically */
+            left: 300px;
+            transform: translate(-50%, -50%); /* Adjust positioning to ensure it's centered exactly */
+            font-size: 36px; /* Adjust font size */
+            color: white; /* Text color */
+            background-color: rgba(169, 169, 169, 0.5); /* Light gray transparent background */
+            padding: 20px; /* Add padding around the text */
+            border-radius: 10px; /* Optional: round the corners of the background */
+            text-align: center; /* Center text inside the box */
+            font-family: Arial, sans-serif; /* Optional: customize font */
+        }
+
+        /********
+
+        eye-catcher CSS
+
+        *********/
+
+        .decorative-banner {
+            position: relative; /* Allows absolute positioning of elements inside */
+            height: 200px;
+        }
+        
+        .decorative-banner img {
+            width: 100%; /* Make the image cover the container */
+            height: 200px;
+            filter: grayscale(60%); /* Slightly grey out the image to reduce emphasis */
+            object-fit: cover; /* Ensure the image covers the area without distortion */
+            transition: filter 0.3s ease; /* Smooth transition for the greyscale effect */
+            margin: 0;
+        }
+        .decorative-banner h1 {
+            position: absolute; /* Position the heading over the image */
+            top: 50px; /* Center vertically */
+            left: 300px; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Adjust positioning to exactly center */
+            font-size: 36px; /* Adjust font size */
+            color: white; /* Text color */
+            text-align: center; /* Center the text inside the container */
+            font-family: Arial, sans-serif; /* Optional: customize font */
+            z-index: 1; /* Ensure it is above the image */
+            margin: 0;
+        }
+        .donate-btn {
+            position: absolute; /* Position the button over the image */
+            bottom: 50px; /* Place the button near the bottom */
+            left: 300px; /* Center the button horizontally */
+            transform: translateX(-50%); /* Adjust positioning to center exactly */
+            background-color: rgb(195,41,58); /* Button color */
+            color: white; /* Text color */
+            padding: 15px 30px; /* Button size */
+            font-size: 18px; /* Font size */
+            text-decoration: none; /* Remove underline */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
+            z-index: 2; /* Ensure the button is above the image */
+            margin: 0;
+        }
+        
+        .donate-btn:hover {
+            background-color: rgb(195,41,58); /* Slightly darker color on hover */
+            transform: translateX(-50%) scale(1.1); /* Slightly enlarge the button on hover */
+            margin: 0;
+        }
+
+        /********
+
+        CTA BANNER CSS
+
+        *********/
+
+        .cta-banner {
+            background-color: rgb(255,186,95); /* Dark background for the CTA section */
+            padding: 20px 0; /* Padding around the CTA buttons */
+        }
+        /* CTA banner container */
+        .cta-container {
+            display: flex;
+            justify-content: space-around; /* Spread buttons evenly across the container */
+            align-items: center;
+            padding: 20px 0;
+            height: 10px;
+        }
+
+        /* Style for individual CTA buttons */
+        .fundingCTA {
+            display: inline-block;
+            padding: 15px 25px;
+            background-color: rgb(105,169,68);
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            text-decoration: none;
+            margin: 10px;
+            border-radius: 5px; /* Rounded corners */
+            transition: all 0.3s ease; /* Smooth transition for hover effects */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow underneath the button */
+        }
+
+        .principlesCTA {
+            display: inline-block;
+            padding: 15px 25px;
+            background-color: rgb(207,169,124);
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            text-decoration: none;
+            margin: 10px;
+            border-radius: 5px; /* Rounded corners */
+            transition: all 0.3s ease; /* Smooth transition for hover effects */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow underneath the button */
+        }
+
+        .apply-donateCTA {
+            display: inline-block;
+            padding: 15px 25px;
+            background-color: rgb(195,41,58);
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            text-decoration: none;
+            margin: 10px;
+            border-radius: 5px; /* Rounded corners */
+            transition: all 0.3s ease; /* Smooth transition for hover effects */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow underneath the button */
+        }
+
+        .apply-donateCTA:hover {
+            background-color: rgb(156, 33, 48); /* Darker shade on hover */
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow on hover */
+        }
+
+        .principlesCTA:hover {
+            background-color: rgb(255, 166, 81); /* Darker shade on hover */
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow on hover */
+        }
+
+        .fundingCTA:hover {
+            background-color: rgb(85, 137, 55); /* Darker shade on hover */
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow on hover */
+        }
+
+        /* Keyframes for fade-in */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px); /* Optional "pop up" effect */
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animation class */
+        .fade-in {
+            opacity: 0; /* Invisible at the start */
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: var(--delay, 0s); /* Default delay, customizable */
+        }
+
+
+        /********
+
+        content CSS
+
+        *********/
+
+        /* Info Section */
+        .content {
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            background-color: rgb(207,169,124);
+        }
+
+        .info-box {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            background-color: #ddd; /* Light gray background */
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        }
+
+        /* For the second box, reverse the order of content */
+        .reverse-order {
+            flex-direction: row; /* Use normal row direction */
+        }
+
+        /* The container for text */
+        .text-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+        }
+        
+        .text-overlay {
+            color: rgb(52, 47, 47);
+            padding: 20px;
+            font-size: 18px;
+        }
+        
+        .info-image {
+            width: 50%; /* Image takes up half the width */
+            height: auto;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Initially hide elements off-screen */
+        .content .info-box {
+            opacity: 0;
+            transform: translateY(30px); /* Initial position off-screen */
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Smooth transition */
+        }
+
+        /* Apply animation when in view */
+        .in-view {
+            opacity: 1;
+            transform: translateY(0);
+            animation: fadeIn 0.6s forwards; /* Apply the fade-in effect */
+        }
+
+        footer {
+            background-color: #333; /* Dark background for footer */
+            color: white;
+            text-align: center;
+            padding: 20px;
+
+        }
+
+        .footer-container p {
+            margin: 0;
+        }
+
+        /*******
+
+        MEDIA QUERY RESPONSIVENESS
+
+        *******/
+
+        /* Tablet and smaller devices (max-width: 768px) */
+        @media (max-width: 768px) {
+            /******* ADD RESPONSIVENESS HERE *******/
+        }
+
+        /* Laptop (max-width: 1024px) */
+        @media (max-width: 1024px) {
+            nav {
+                flex-direction: row; /* Keep items in a row */
+                justify-content: space-evenly; /* Space items evenly */
+                width: 100%; /* Full width */
+            }
+
+            nav a {
+                font-size: 18px; /* Slightly adjust font size for laptops */
+                padding: 10px 100px; /* Adjust padding to suit the screen */
+            }
+        }
+
+        /* Large Laptop (max-width: 1440px) */
+        @media (max-width: 1440px) {
+            nav {
+                flex-direction: row; /* Keep items in a row */
+                justify-content: space-evenly; /* Space items evenly */
+            }
+
+            nav a {
+                font-size: 24px; /* Keep original font size for larger laptops */
+                padding: 10px 20px; /* Keep padding same as original */
+            }
+        }
+
+        
