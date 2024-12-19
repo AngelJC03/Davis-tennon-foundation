@@ -50,14 +50,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+/*********
+ * JAVASCRIPT FOR DONATION FORM
+ * PROMPTING USER TO ENTER VALUE IN
+ * AMOUNT FIELD
+    *********/
 
-
-document.addEventListener("DOMContentLoaded", () => {
-    const fadeElements = document.querySelectorAll('.fade-in');
-    
-    fadeElements.forEach((element, index) => {
-        const delay = element.style.getPropertyValue('--delay') || '0s';
-        element.style.animationDelay = delay; // Set delay dynamically
-        element.classList.add('active'); // Trigger the animation
-    });
-});
+function focusAmountInput() {
+    document.getElementById('amount').value = ''; // Clears the amount input field
+    document.getElementById('amount').focus(); // Focus on the "amount" input field
+}
