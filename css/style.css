@@ -592,3 +592,284 @@
             text-align: center; /* Center the button horizontally */
             margin-top: 20px; /* Add space above the button */
         }
+
+
+        /********
+        FOOTER STYLES
+        ********/
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex; /* Enables flexbox for the footer */
+            justify-content: center; /* Centers content horizontally */
+            align-items: center; /* Centers content vertically */
+            text-align: center; /* Ensures text alignment is centered */
+            flex-wrap: wrap; /* Wraps content on smaller screens */
+        }
+        
+        .footer-container {
+            display: flex;
+            justify-content: center; /* Centers content horizontally */
+            align-items: center; /* Centers content vertically */
+            flex-wrap: wrap;
+            width: 100%; /* Ensures container spans the footer width */
+        }
+        
+        .footer-section {
+            flex: 1;
+            margin: 10px;
+            text-align: center;
+        }
+        
+        .contact-info {
+            text-align: left;
+        }
+        
+        .logo-nav .footer-logo {
+            max-width: 500px;
+            margin-bottom: 10px;
+        }
+        .logo-nav img {
+            max-width: 150px; /* Set the desired image size */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 10px;
+        }
+        
+        .nav-links,
+        .donate-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center; /* Center links horizontally */
+            gap: 20px; /* Add spacing between links */
+            flex-wrap: nowrap;
+        }
+        
+        .nav-links li a,
+        .donate-links li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .nav-links li a:hover,
+        .donate-links li a:hover {
+            background-color: #444;
+        }
+        
+        .socials-donate {
+            text-align: center;
+        }
+        
+        @media (max-width: 982px) {
+            
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+            }
+            .nav-links,
+            .donate-links {
+                gap: 10px; /* Reduce spacing for smaller screens */
+            }
+
+            .nav-links li a,
+            .donate-links li a {
+                font-size: 14px; /* Slightly smaller font size */
+            }
+        
+            .footer-section {
+                text-align: center;
+                margin: 15px 0;
+            }
+            .socials-donate {
+                margin-top: 20px;
+                text-align: center;
+            }
+        }
+    
+        @media (max-width: 600px) {
+            .footer-section.logo-nav img {
+                max-width: 400px;
+            }
+        }
+        @media (max-width: 450px) {
+            .footer-section.logo-nav img {
+                max-width: 300px;
+            }
+        }
+         
+        /*******
+        PARTNERS PAGE STYLES
+        ********/
+
+        #page-container {
+            display: flex;
+            flex-direction: column; /* Stack the divs on top of each other */
+        }
+        
+        .partner {
+            position: relative; /* Allows background image to cover the entire div */
+            background: url('path-to-background-image.jpg') no-repeat center center;
+            background-size: cover; /* Ensures the background image covers the div */
+            padding: 20px;
+            color: white; /* Sets text color to white for better contrast */
+        }
+        
+        .partner1 {
+            /* Add specific styles for Partner 1 */
+            background-color: #1a1a1a; /* Example background color for Partner 1 */
+        }
+        
+        .partner2 {
+            /* Add specific styles for Partner 2 */
+            background-color: #2a2a2a; /* Example background color for Partner 2 */
+        }
+        
+        .partner-title1,
+        .partner-title2 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .partner-content1,
+        .partner-content2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center the image and text */
+        }
+        
+        .partner-image1,
+        .partner-image2 {
+            max-width: 100%; /* Ensures the image takes up the available space without distortion */
+            height: auto;
+            margin-bottom: 15px; /* Adds space between the image and the description */
+        }
+        
+        .partner-description1,
+        .partner-description2 {
+            font-size: 16px;
+            text-align: center; /* Centers the description text */
+            max-width: 600px; /* Optional: limits the width of the description */
+            margin: 0 auto; /* Centers the description horizontally */
+        }
+
+        a {
+            color: #0f819e; /* Red color */
+            text-decoration: none; /* Optional: removes underline */
+        }
+
+        .partner {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .partner.in-view {
+            opacity: 1;
+        }
+        
+        /********
+        PRINCIPLES PAGE STYLES
+        ********/
+
+        /* Centering the title and text */
+        .center-title {
+            text-align: center;
+            position: relative; /* This is needed to position the line relative to the title */
+            padding-bottom: 10px; /* Adds some space between the title and the line */
+        }
+
+        /* Creating the thin gray line under the title */
+        .center-title::after {
+            content: ''; /* Creates a pseudo-element */
+            position: absolute;
+            bottom: 0;
+            left: 5%; /* 5% margin on the left to make the line centered */
+            width: 90%; /* 90% width of the title div */
+            height: 2px; /* Thickness of the line */
+            background-color: gray; /* Line color */
+        }
+
+        /* Centering the paragraph text */
+        .centered-text {
+            text-align: center;
+            margin-bottom: 20px; /* Adds spacing between paragraph and the list */
+        }
+
+        /* Styling the list of principles */
+        .principles-list {
+            list-style-type: disc; /* Bullets for the list */
+            padding-left: 0; /* Remove default padding */
+            display: flex; /* Use flexbox for centering */
+            flex-direction: column; /* Stack list items vertically */
+            align-items: center; /* Center the bullets and text horizontally */
+            margin-bottom: 20px; /* Adds spacing between the list and other content */
+        }
+
+        .principles-list li {
+            font-size: 18px;
+            margin: 10px 0;
+            text-align: center; /* Ensures the text is also centered */
+        }
+
+        /* Styling the list in the right section */
+        .right-section ul {
+            list-style-type: disc; /* Bullets for the list */
+            padding-left: 0; /* Remove default padding */
+            display: flex; /* Use flexbox for centering */
+            flex-direction: column; /* Stack list items vertically */
+            align-items: center; /* Center the bullets and text horizontally */
+        }
+
+        .right-section ul li {
+            font-size: 18px;
+            margin: 5px 0;
+            text-align: center; /* Ensures the text is also centered */
+        }
+
+        /* Styling for the split sections */
+        .split-sections {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .left-section, .right-section {
+            width: 48%;
+        }
+
+        .left-section h2, .right-section h2 {
+            text-align: center;
+            position: relative; /* Needed for the line */
+            padding-bottom: 10px; /* Space between the title and the line */
+        }
+
+        /* Line under the title in the sections */
+        .left-section h2::after, .right-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 5%; /* 5% margin on the left to center the line */
+            width: 90%; /* 90% width of the div */
+            height: 2px; /* Thickness of the line */
+            background-color: gray; /* Line color */
+        }
+
+        .left-section p, .right-section p {
+            text-align: center;
+        }
+
+        /* Adding some padding for clarity */
+        .left-section, .right-section {
+            padding: 20px;
+        }
