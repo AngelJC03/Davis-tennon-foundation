@@ -85,3 +85,35 @@ function focusAmountInput() {
     document.getElementById('amount').value = ''; // Clears the amount input field
     document.getElementById('amount').focus(); // Focus on the "amount" input field
 }
+
+/*******
+ * JAVASCRIPT FOR BURGER MENU
+********/
+
+// Select the burger menu
+const burgerMenu = document.querySelector('.burger-menu');
+
+// Select the button or element to show the menu
+const toggleButton = document.querySelector('.btn'); // Adjust selector as needed
+
+// Add an event listener to toggle the menu
+function menutoggle() {
+    var menu = document.getElementById("burger-menu-content");
+    // Toggle the display of the dropdown
+    if (menu.style.display === "block") {
+        menu.style.display = "none"; // Hide dropdown
+    } else {
+        menu.style.display = "block"; // Show dropdown
+    }
+}
+
+// Hide the dropdown when clicking outside of it
+document.addEventListener("click", function(event) {
+    var menu = document.getElementById("burger-menu-content");
+    var burger = document.querySelector(".burger"); // Burger icon (menu button)
+
+    // Check if the click was outside the menu or burger icon
+    if (!burger.contains(event.target) && !menu.contains(event.target)) {
+        menu.style.display = "none"; // Hide dropdown if clicked outside
+    }
+});
