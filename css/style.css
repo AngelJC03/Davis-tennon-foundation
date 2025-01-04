@@ -4,6 +4,12 @@
             font-weight: normal; /* Optional: specify font weight */
             font-style: normal;  /* Optional: specify font style */
         }
+        @font-face {
+            font-family: "gill-sans-bold";
+            src: url('../assets/gill-sans-2/Gill-Sans-Bold.otf') format('opentype'); /* Path to your font */
+            font-weight: normal; /* Optional: specify font weight */
+            font-style: normal;  /* Optional: specify font style */
+        }
 
         /********
 
@@ -25,7 +31,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box; /* Ensure consistent box model */
-            font-family: Arial, sans-serif; /* Default font */
+            font-family: "gill-sans-bold";
             line-height: 1.6; /* Line height for better readability */
             background-color: rgb(245, 245, 245);
             min-height: 100vh; /* Ensure full height on smaller screens */
@@ -58,7 +64,6 @@
         
         /* Donate Now button styling */
         .banner-container .btn {
-            font-family: 'Open Sans', sans-serif; /* Optional: customize font */
             position: absolute;
             right: 80px; /* Adjust the position of the button */
             top: 50%; /* Center vertically */
@@ -128,7 +133,7 @@
             display: flex; /* Arrange items horizontally */
             justify-content: space-between; /* Distribute items across full width */
             background-color: rgb(255,186,95);  /* Dark background color */
-            width: 100%; /* Full-width navbar */
+            max-width: 100%;
             box-sizing: border-box; /* Include padding in width calculation */
             margin: 0 auto; /* Center the navbar */
         }
@@ -211,6 +216,7 @@
             .cta-banner .fundingCTA {
                 width: 100%; /* Make button full width */
             }
+
         }
         
         @media (max-width: 600px) {
@@ -250,10 +256,13 @@
         .hero {
             position: relative; /* Allow absolute positioning of the h1 inside this div */
             z-index: 1;
+            background-color: rgb(207, 169, 124);
+            text-align: center;
         }
         
         .hero img {
-            width: 100%; /* Make sure the image spans the full width */
+            width: 50%; /* Make sure the image spans the full width */
+            margin-left: 50%; /* Center the image */
             height: 500px; /* Set a fixed height for the image */
             object-fit: cover; /* Ensure the image covers the area without distortion */
             display: block; /* Prevent space below image */
@@ -262,30 +271,66 @@
         .hero h1 {
             position: absolute; /* Position the text over the image */
             top: 50%; /* Center vertically */
-            left: 30%;
+            left: 25%;
+            width: 50%; /* Make sure the text spans the full width */
+            height: 200px;
             transform: translate(-50%, -50%); /* Adjust positioning to ensure it's centered exactly */
-            font-size: 36px; /* Adjust font size */
+            font-size: 20px; /* Adjust font size */
             color: white; /* Text color */
             background-color: rgba(169, 169, 169, 0.5); /* Light gray transparent background */
             padding: 20px; /* Add padding around the text */
-            border-radius: 10px; /* Optional: round the corners of the background */
-            text-align: center; /* Center text inside the box */
-            font-family: Arial, sans-serif; /* Optional: customize font */
+            border-radius: 10px;
         }
 
+        @media (max-width: 950px) {
+            .hero {
+                height: 500px; /* Adjust height for smaller screens */
+            }
+            .hero img {
+                width: 100%;
+                margin-left: 0; /* Center the image */
+                height: 300px;
+            }
+            .hero h1 {
+                height: 150px;
+                width: 100%;
+                top: 80%;
+                left: 50%;
+                font-size: 16px;
+            }
+
+        }
+
+        @media (max-width: 350px) {
+            .hero h1 {
+                height: 200px;
+                width: 100%;
+                top: 80%;
+                left: 50%;
+                font-size: 16px;
+            }
+        }
         /********
 
         eye-catcher CSS
 
         *********/
-
         .decorative-banner {
-            position: relative; /* Needed for absolute positioning inside it */
+            position: relative; /* Needed for positioning its children */
             height: 200px;
             width: 100%; /* Ensure the container is full width */
+            display: flex; /* Use flexbox to align items */
+            flex-direction: column; /* Stack the elements vertically */
+            justify-content: space-between; /* Space between the image and button */
         }
         
-        .decorative-banner img {
+        .image-container {
+            position: relative; /* Needed to control positioning of the image */
+            width: 100%;
+            height: 80%;
+        }
+        
+        .image-container img {
             width: 100%; /* Make the image cover the container */
             height: 100%; /* Ensure image takes full height of the container */
             filter: grayscale(60%); /* Slightly grey out the image to reduce emphasis */
@@ -294,39 +339,102 @@
             margin: 0;
         }
         
-        .decorative-banner h1 {
-            position: absolute; /* Position the heading over the image */
-            top: 30%; /* Center vertically */
-            left: 50%; /* Center horizontally */
-            transform: translate(-50%, -50%); /* Adjust positioning to exactly center */
-            font-size: 30px; /* Adjust font size */
-            color: white; /* Text color */
-            text-align: center; /* Center the text inside the container */
-            font-family: Arial, sans-serif; /* Optional: customize font */
-            z-index: 1; /* Ensure it is above the image */
-            margin: 0;
+        .button-container {
+            position: absolute; /* Position the button container */
+            top: 30%;
+            width: 100%; /* Ensure the button container spans full width */
+            display: flex;
+            color: #ffffff;
+            justify-content: center; /* Center the button horizontally */
+            z-index: 2; /* Ensure it appears above the image */
+            text-align: center;
+        }
+        .button-container h1 {
+            margin-right:10%;
+            -webkit-text-stroke: 1px #FFBA5F;
         }
         
         .donate-btn {
-            position: absolute; /* Position the button over the image */
-            bottom: 20px; /* Place the button near the bottom */
-            left: 50%; /* Center the button horizontally */
-            transform: translateX(-50%); /* Adjust positioning to center exactly */
             background-color: rgb(195,41,58); /* Button color */
             color: white; /* Text color */
             padding: 15px 30px; /* Button size */
-            font-size: 18px; /* Font size */
+            font-size: 16px; /* Font size */
             text-decoration: none; /* Remove underline */
             border-radius: 5px; /* Rounded corners */
             transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
-            z-index: 2; /* Ensure the button is above the image */
-            margin: 0;
+            z-index: 3; /* Ensure the button is above the container */
         }
         
         .donate-btn:hover {
             background-color: rgb(195,41,58); /* Slightly darker color on hover */
-            transform: translateX(-50%) scale(1.1); /* Slightly enlarge the button on hover */
+            transform: scale(1.1); /* Slightly enlarge the button on hover */
         }
+        
+        /* For smaller screens, adjust the button position to the left */
+        @media (max-width: 1100px) {
+            .button-container {
+                top: 30%;
+                justify-content: flex-start; /* Position the button on the left side */
+                right: 10%;
+            }
+            .button-container h1{
+                margin-bottom: 10px;
+                font-size: 20px;
+                margin-left: 30%;
+            }
+            .donate-btn {
+                padding: 10px 10px; /* Adjust button size */
+                max-height: 50px;
+                font-size: 14px; /* Adjust font size for smaller screens */
+            }
+        }
+
+        @media (max-width: 900px) {
+            .button-container h1 {
+                font-size: 20px;
+                margin-left: 30%;
+                margin-right: 10px;
+            }
+            .donate-btn {
+                padding: 10px 20px; /* Adjust button size */
+                font-size: 14px; /* Adjust font size for smaller screens */
+                max-height: 50px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .button-container {
+                top: 20%;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .button-container {
+                top: 18%;
+            }
+            .donate-btn {
+                padding: 10px 10px; /* Adjust button size */
+                width: 100px;
+                height: 60px;
+                font-size: 14px; /* Adjust font size for smaller screens */
+            }
+        }
+
+        @media (max-width: 350px) {
+            .button-container {
+                top: 30%;
+            }
+            .button-container h1 {
+                font-size: 18px;
+            }
+            .donate-btn {
+                padding: 5px 5px; /* Adjust button size */
+                width: 100px;
+                height: 50px;
+                font-size: 14px; /* Adjust font size for smaller screens */
+            }
+        }
+        
         /********
 
         CTA BANNER CSS
@@ -521,25 +629,6 @@
 
         *******/
 
-        /* Tablet and smaller devices (max-width: 768px) */
-        @media (max-width: 768px) {
-            /******* ADD RESPONSIVENESS HERE *******/
-        }
-
-        /* Laptop (max-width: 1024px) */
-        @media (max-width: 1024px) {
-            nav {
-                flex-direction: row; /* Keep items in a row */
-                justify-content: space-evenly; /* Space items evenly */
-                width: 100%; /* Full width */
-            }
-
-            nav a {
-                font-size: 18px; /* Slightly adjust font size for laptops */
-                padding: 10px 100px; /* Adjust padding to suit the screen */
-            }
-        }
-
         /* Large Laptop (max-width: 1440px) */
         @media (max-width: 1440px) {
             nav {
@@ -553,6 +642,13 @@
             }
         }
 
+        /* Tablet and smaller devices (max-width: 768px) */
+        @media (max-width: 1200px) {
+            nav a{
+                font-size: 18px; /* Slightly adjust font size for tablets */
+            }
+
+        }
         
         /*********
         VIOLAS-STORY-heading
@@ -564,26 +660,19 @@
             text-align: center; /* Center the text */
             margin: 20px 0; /* Add margin around the title */
         }
-
         #violas-story-content {
             display: flex; /* Use flexbox for layout */
             justify-content: center; /* Center items horizontally */
             align-items: center; /* Align items vertically */
+            text-align: center; /* Center the text */
             gap: 20px; /* Add space between the image and paragraph */
             margin-bottom: 50px;
         }
 
         #violas-story-caption {
-            max-width: 100%;
-            margin-left: 1%;
-        }
-        
-        #violas-story-content img {
-            max-height: 300px; /* Adjust the height of the image */
-            width: auto; /* Maintain aspect ratio */
-            max-width: 100%;
-            border-radius: 10px; /* Optional: Add rounded corners to the image */
-
+            max-width: 80%;
+            margin-left: 10%;
+            text-align: center;
         }
         
         #violas-story-content p {
@@ -603,6 +692,12 @@
             text-align: center; /* Center the text */
             margin: 20px 0; /* Add margin around the title */
             background-color: rgb(255,186,95);
+        }
+
+        @media (max-width: 768px) {
+            #viola-davis-history-title {
+                font-size: 16px; /* Adjust font size */
+            }
         }
         
         #viola-davis-history {
@@ -752,7 +847,6 @@
         footer {
             background-color: #333;
             color: #fff;
-            font-family: Arial, sans-serif;
             display: flex; /* Enables flexbox for the footer */
             justify-content: center; /* Centers content horizontally */
             align-items: center; /* Centers content vertically */
@@ -861,6 +955,11 @@
             .footer-container img {
                 margin-left: -5px;
             }
+            .nav-links li a,
+            .donate-links li a {
+                margin-left: -3px;
+            }
+
         }
          
         /*******
