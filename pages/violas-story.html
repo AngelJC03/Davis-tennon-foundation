@@ -227,6 +227,99 @@
         </section>
     </div>
 
+    <section class="book-section fade-in">
+        <div class="book-container">
+            <!-- Left Text Section -->
+            <div class="book-text">
+                <h2>Finding Me: A Memoir</h2>
+                <p> Discover Viola Davis' latest project—an 
+                    autobiography that chronicles her journey 
+                    from a challenging childhood to becoming 
+                    the successful and renowned actor she is today.
+                </p>
+            </div>
+            <!-- Right Image Section -->
+            <div class="book-image">
+                <a href="https://www.amazon.com/Finding-Me-Memoir-Viola-Davis/dp/0063037327">
+                    <img src="../images/viola's-story-photos/viola-davis-book.jpg" alt="Book Image">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <style>
+    /* Book Section */
+    .book-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* Vertically center the text and image */
+        padding: 20px;
+        margin-right: 20%; /* You can adjust this value if you want more space on the right */
+        margin-left: 10%; /* Move the text section more to the left by reducing the margin */
+    }
+
+    /* Book Container */
+    .book-container {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Text Section */
+    .book-text {
+        flex: 1;
+        padding-right: 0%; /* Reduce the padding to move text more to the left */
+        font-size: 28px;
+        line-height: 1.4;
+        text-align: left;
+        width: 100%;
+    }
+
+    /* Image Section */
+    .book-image {
+        flex: 1;
+        text-align: right;
+    }
+
+    .book-image img {
+        max-width: 100%;
+        margin-left: 60px; /* Add some space between the text and image */
+        height: auto;
+    }
+
+    /* Responsive Font Size */
+    @media (max-width: 1100px) {
+        .book-text {
+            font-size: 24px;
+        }
+    }
+
+    @media (max-width: 790px) {
+        .book-text {
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .book-container {
+            flex-direction: column;
+            align-items: center;
+            margin-left: 20%;
+        }
+
+        .book-text {
+            padding-right: 0;
+            text-align: center;
+            letter-spacing: -1px; /* Reduces space between letters */
+        }
+
+        .book-image img {
+            margin-left: 0;
+        }
+    }
+</style>
     <footer>
         <div class="footer-container">
             <!-- Left Section: Contact Information -->

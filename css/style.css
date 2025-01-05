@@ -270,14 +270,13 @@
         
         .hero h1 {
             position: absolute; /* Position the text over the image */
-            top: 50%; /* Center vertically */
+            top: 25%; /* Center vertically */
             left: 25%;
             width: 50%; /* Make sure the text spans the full width */
             height: 200px;
             transform: translate(-50%, -50%); /* Adjust positioning to ensure it's centered exactly */
-            font-size: 20px; /* Adjust font size */
+            font-size: 36px; /* Adjust font size */
             color: white; /* Text color */
-            background-color: rgba(169, 169, 169, 0.5); /* Light gray transparent background */
             padding: 20px; /* Add padding around the text */
             border-radius: 10px;
         }
@@ -296,9 +295,15 @@
                 width: 100%;
                 top: 80%;
                 left: 50%;
-                font-size: 16px;
+                font-size: 24px;
             }
 
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 16px;
+            }
         }
 
         @media (max-width: 350px) {
@@ -307,7 +312,6 @@
                 width: 100%;
                 top: 80%;
                 left: 50%;
-                font-size: 16px;
             }
         }
         /********
