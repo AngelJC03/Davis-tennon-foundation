@@ -167,7 +167,7 @@
         }
         
 
-        @media (max-width: 990px) {
+        @media (max-width: 1000px) {
             .hero h1 {
                 font-size: 24px; /* Adjust font size */
                 left: 10%;
@@ -277,6 +277,7 @@
             transform: translate(-50%, -50%); /* Adjust positioning to ensure it's centered exactly */
             font-size: 36px; /* Adjust font size */
             color: white; /* Text color */
+            -webkit-text-stroke: 0.8px #000000;
             padding: 20px; /* Add padding around the text */
             border-radius: 10px;
         }
@@ -647,7 +648,7 @@
         }
 
         /* Tablet and smaller devices (max-width: 768px) */
-        @media (max-width: 1200px) {
+        @media (max-width: 1250px) {
             nav a{
                 font-size: 18px; /* Slightly adjust font size for tablets */
             }
@@ -888,6 +889,7 @@
         
         .nav-links,
         .donate-links {
+            text-decoration: underline;
             list-style: none;
             padding: 0;
             margin: 0;
@@ -965,6 +967,27 @@
             }
 
         }
+
+        @media (max-width: 375px) {
+            .nav-links {
+                display: flex;
+                flex-direction: column; /* Stack links vertically */
+                align-items: center; /* Center the links horizontally */
+                gap: 10px; /* Optional: adds spacing between links */
+            }
+        
+            .nav-links li {
+                list-style: none; /* Remove bullet points */
+                width: auto; /* No need for full width since they are centered */
+            }
+        
+            .nav-links li a {
+                display: block; /* Ensure links occupy a block */
+                text-align: center; /* Align text to the center */
+                padding: 5px 0; /* Add spacing for better readability */
+            }
+        }
+        
          
         /*******
         PARTNERS PAGE STYLES

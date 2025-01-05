@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Template</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <section class="banner" id="home">
+        <div class="banner-container">
+            <div class="burger">
+                <img src="../images/menu.png" alt="Menu" class="menu-icon" onclick="menutoggle()">
+                <div class="burger-menu-content" id="burger-menu-content">
+                    <a href="../index.html">Home</a>
+                    <a href="violas-story.html">Viola's Story</a>
+                    <a href="foundation-staff.html" >Foundation Staff</a>
+                    <a href="what-we-fund.html">What We Fund</a>
+                    <a href="board-members.html">Board Members</a>
+                    <a href="partners.html">Partners/Resources</a>
+                  </div>
+            </div>
+            <a href="../index.html">
+                <img src="../images/logo-photos/clear-background-dtf-logo.png" alt="Image" width="500" height="155">
+            </a>
+            <a href="apply-donate.html" class="btn">Donate Now</a>
+        </div>
+    </section>
+    
+    <header>
+        <div class="orangebar">
+            <div class="orange-container">
+            </div>
+        </div>
+        <div class="navbar-container"> 
+            <nav>
+                <a href="../index.html" class="btn">Home</a>
+                <a href="violas-story.html" class="btn">Viola's Story</a>
+                <a href="foundation-staff.html" class="btn">Foundation Staff</a>
+                <a href="what-we-fund.html" class="btn">What We Fund</a>
+                <a href="board-members.html" class="btn">Board Members</a>
+                <a href="partners.html" class="btn">Partners/Resources</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="staff-container">
+        <div class="staff-member">
+            <img src="../images/staff-photos/Angelo-Garcia.webp" alt="Angelo Garcia" class="staff-photo">
+            <div class="staff-caption">
+                <h3>Angelo Garcia</h3>
+                <p>Chair of the Davis/Tennon Foundation</p>
+                <div class="toggle-bar" onclick="toggleText()">Click to View More</div>
+                <h1 class="text-content">Angelo Garcia is the Founder and Executive
+                    Director of the Segue Institute for Learning, a 
+                    public charter school in Central Falls, Rhode Island,
+                     focused on providing high-quality education to underserved
+                      communities. He also serves as Chair of the Davis/Tennon Foundation,
+                       which empowers local communities in Rhode Island. Garcia's commitment 
+                       to education is demonstrated through initiatives like the planned opening
+                        of Legacy High School to train future educators.
+                    </h1>
+            </div>
+        </div>
+        <div class="staff-member">
+            <img src="staff2.jpg" alt="Jenny Sousa" class="staff-photo">
+            <div class="staff-caption">
+                <h3>Jenny Sousa</h3>
+                <p>Administrative Support Specialist</p>
+                <div class="toggle-bar" onclick="toggleText()">Click to View More</div>
+                <h1 class="text-content">
+
+                </h1>
+            </div>
+        </div>
+        <div class="staff-member">
+            <img src="../images/staff-photos/jennifer-tc.JPEG" alt="Jennifer Toone Corrigan" class="staff-photo">
+            <div class="staff-caption">
+                <h3>Jennifer Toone Corrigan</h3>
+                <p>Public Relations Specialist</p>
+                <div class="toggle-bar" onclick="toggleText()">Click to View More</div>
+                <h1 class="text-content">
+                    Jennifer Toone Corrigan is the founder and principal 
+                    of In Toone Communication, a public relations and marketing 
+                    firm based in Providence, Rhode Island. Additionally, 
+                      Jennifer has been involved with the Segue Institute for Learning, 
+                      contributing to their press efforts and supporting community-driven
+                       initiatives in Rhode Island.
+                </h1>
+            </div>
+        </div>
+        <div class="staff-member">
+            <img src="../images/staff-photos/angel-castano-photo.png" alt="Angel Castano" class="staff-photo">
+            <div class="staff-caption">
+                <h3>Angel Castano</h3>
+                <p>Web-Developer</p>
+                <div class="toggle-bar" onclick="toggleText()">Click to View More</div>
+                <h1 class="text-content">
+                    Angel Castano is a Software Engineer based in 
+                    Central Falls, Rhode Island, and a Hack Diversity
+                    Fellow. As a fellow, he is dedicated to advocating 
+                    for underserved communities, including Central Falls,
+                    with a focus on fostering representation and opportunities 
+                    in the tech industry.
+                </h1>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Default Layout: Photos on the left, captions on the right */
+        .staff-container {
+            display: flex;
+            flex-wrap: wrap; /* Allows staff members to wrap in smaller screens */
+        }
+
+        .staff-member {
+            display: flex;
+            align-items: center; /* Align photo and caption vertically */
+            width: 45%; /* Full width for each member */
+            margin: 10px auto; /* Center align each member block horizontally */
+            border: 1px solid #ddd; /* Optional: Add a border for visibility */
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+            font-size: 16px;
+            flex-direction: column; /* Ensures the content is arranged vertically */
+        }
+
+        .staff-member p {
+            text-align: center;
+        }
+
+        .staff-member h3 {
+            text-align: center;
+        }
+
+        .text-content {
+            font-size: 18px; /* Smaller font size for captions */
+            text-align: center;
+        }
+
+        .staff-photo {
+            width: 300px; /* Set a fixed width for photos */
+            height: 300px; /* Set a fixed height for photos */
+            object-fit: cover; /* Maintain aspect ratio and crop if needed */
+            margin-right: 20px; /* Space between photo and caption */
+        }
+
+        .staff-caption {
+            flex: 1; /* Allow caption to take remaining space */
+        }
+
+        .toggle-bar {
+            display: none;
+            cursor: pointer;
+            background-color: #ddd;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            border: 1px solid #aaa;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .text-content {
+                display: block; /* Ensure text is hidden on screens smaller than 768px */
+            }
+            .staff-member {
+                width: 100%; /* Full width for each member */
+            }
+
+            .staff-photo {
+                height: auto; /* Auto height for photos */
+                margin-right: 0; /* Remove space between photo and caption */
+            }
+        }
+
+
+        @media (max-width: 475px) {
+            .toggle-bar {
+                display: block; /* Ensure toggle bar is displayed on screens smaller than 475px */
+            }
+            .text-content {
+                display: none; /* Ensure text is hidden on screens smaller than 475px */
+            }
+        }
+
+    </style>
+    
+    <script>
+        function toggleText() {
+            var toggleBar = event.target;  // Get the clicked toggle bar
+            var staffMember = toggleBar.closest('.staff-member');  // Find the closest staff-member div
+            var text = staffMember.querySelector('.text-content');  // Find the h1 inside this staff member
+            
+            if (text.style.display === "none" || text.style.display === "") {
+                text.style.display = "block";  // Show the text
+                toggleBar.innerHTML = "Click to Hide";  // Change the bar text
+            } else {
+                text.style.display = "none";  // Hide the text
+                toggleBar.innerHTML = "Click to View More";  // Reset the bar text
+            }
+        }
+        
+        function handleResize() {
+            var textElements = document.querySelectorAll('.text-content');  // Get all the text elements
+        
+            // Loop through each text element to handle its visibility
+            textElements.forEach(function(text) {
+                // Find the closest staff member div for the text element
+                var staffMember = text.closest('.staff-member');  
+        
+                if (!staffMember) {
+                    console.log("No staff member found for this text element");
+                    return; // Skip this iteration if no staff member is found
+                }
+        
+                // Find the corresponding toggle bar within this staff member
+                var toggleBar = staffMember.querySelector('.toggle-bar');  
+        
+                if (!toggleBar) {
+                    console.log("No toggle bar found for this staff member");
+                    return; // Skip this iteration if toggle bar is not found
+                }
+        
+                // Check if the screen width is greater than 475px
+                if (window.innerWidth > 475) {
+                    // If the text is hidden, show it and update the toggle bar text
+                    if (text.style.display === "none" || text.style.display === "") {
+                        text.style.display = "block";  // Show the text content
+                        toggleBar.innerHTML = "Click to Hide";  // Update the toggle bar text
+                    }
+                }
+        
+                // If the screen width is less than or equal to 475px, hide the text and update the toggle bar
+                if (window.innerWidth <= 475) {
+                    // If the text is visible, hide it and update the toggle bar text
+                    if (text.style.display === "block") {
+                        text.style.display = "none";  // Hide the text content
+                        toggleBar.innerHTML = "Click to View More";  // Update the toggle bar text
+                    }
+                }
+            });
+        }
+        
+        // Add an event listener to trigger handleResize when the window is resized
+        window.addEventListener('resize', handleResize);
+        
+        // Optionally, you can call handleResize initially to apply the correct layout on page load
+        handleResize();
+        
+        
+    </script>
+
+    <footer>
+        <div class="footer-container">
+            <!-- Left Section: Contact Information -->
+            <div class="footer-section contact-info">
+                <h4>Contact Us</h4>
+                <p>Email: contact@davistennonfoundation.org</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Address: 123 Foundation Lane, City, State</p>
+            </div>
+            
+            <!-- Middle Section: Logo and Navigation -->
+            <div class="footer-section logo-nav">
+                <img src="../images/logo-photos/dtf-logo.png" alt="Davis Tennon Foundation Logo" class="footer-logo">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="foundation-staff.html">Foundation Staff</a></li>
+                    <li><a href="what-we-fund.html">What We Fund</a></li>
+                </ul>
+            </div>
+            
+            <!-- Right Section: Donate Button -->
+            <div class="footer-section socials-donate">
+                <ul class="donate-links">
+                    <li><a href="apply-donate.html" class="btn">Donate Today</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../js/main.js"></script>
+
+</body>
+</html>
