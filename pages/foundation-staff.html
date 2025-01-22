@@ -44,7 +44,7 @@
         </div>
     </header>
 
-    <div class="staff-container">
+    <div class="staff-container fade-in">
         <div class="staff-member">
             <img src="../images/staff-photos/Angelo-Garcia.webp" alt="Angelo Garcia" class="staff-photo">
             <div class="staff-caption">
@@ -63,13 +63,22 @@
             </div>
         </div>
         <div class="staff-member">
-            <img src="staff2.jpg" alt="Jenny Sousa" class="staff-photo">
+            <img src="../images/staff-photos/jenny-sousa.jpg" alt="Jenny Sousa" class="staff-photo">
             <div class="staff-caption">
-                <h3>Jenny Sousa</h3>
+                <h3>Jennie Sousa</h3>
                 <p>Administrative Support Specialist</p>
                 <div class="toggle-bar" onclick="toggleText()">Click to View More</div>
                 <h1 class="text-content">
-
+                    Jennie Sousa, born and raised in Central Falls, graduated from Central Falls
+                     High School in 2003 and pursued her passion for travel by training as a flight 
+                     attendant with Delta Airlines. Of Portuguese heritage, her parents are from São Miguel,
+                      Azores, where she spent memorable summers with her brother. She now shares
+                       those experiences with her husband, also from the Azores, and their two sons:
+                        Christian, a film student and Segue alum, and Julian, who completes their
+                         family. Jennie worked 19 years at The Children’s Workshop, progressing from
+                          Teen Aid to School Director, before joining Segue in 2023. As Admissions
+                           Coordinator/Administrative Assistant, she loves supporting families, staff,
+                            and students, continuing her lifelong commitment to the Central Falls community.
                 </h1>
             </div>
         </div>
@@ -93,7 +102,7 @@
             <img src="../images/staff-photos/angel-castano-photo.png" alt="Angel Castano" class="staff-photo">
             <div class="staff-caption">
                 <h3>Angel Castano</h3>
-                <p>Web-Developer</p>
+                <p>Technical Solutions Specialist</p>
                 <div class="toggle-bar" onclick="toggleText()">Click to View More</div>
                 <h1 class="text-content">
                     Angel Castano is a Software Engineer based in 
@@ -161,7 +170,7 @@
             width: 100%;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             .text-content {
                 display: block; /* Ensure text is hidden on screens smaller than 768px */
             }
@@ -176,7 +185,7 @@
         }
 
 
-        @media (max-width: 475px) {
+        @media (max-width: 768px) {
             .toggle-bar {
                 display: block; /* Ensure toggle bar is displayed on screens smaller than 475px */
             }
@@ -224,7 +233,7 @@
                 }
         
                 // Check if the screen width is greater than 475px
-                if (window.innerWidth > 475) {
+                if (window.innerWidth > 768) {
                     // If the text is hidden, show it and update the toggle bar text
                     if (text.style.display === "none" || text.style.display === "") {
                         text.style.display = "block";  // Show the text content
@@ -233,7 +242,7 @@
                 }
         
                 // If the screen width is less than or equal to 475px, hide the text and update the toggle bar
-                if (window.innerWidth <= 475) {
+                if (window.innerWidth <= 768) {
                     // If the text is visible, hide it and update the toggle bar text
                     if (text.style.display === "block") {
                         text.style.display = "none";  // Hide the text content

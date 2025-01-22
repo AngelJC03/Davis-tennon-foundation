@@ -50,6 +50,7 @@
             <h2 class="partner-title1">In Toone Communication</h2>
             <div class="partner-content1">
                 <img src="../images/partner-photos/toone-corrigan.JPEG" alt="Partner 1 Image" class="partner-image1" width=25%>
+                <div class="toggle-bar1" onclick="toggleText1()">Click to View More</div>
                 <p class="partner-description1">Jennifer Toone Corrigan founded <a href="https://intoone.com/">In Toone Communication</a> in 2004, a certified 100% woman-owned firm dedicated to delivering measurable 
                     results and sustainable success for its clients. Guided by principles of effective communication, diplomacy, a blend of creativity and strategy, and an unwavering
                      commitment to achieving client goals, In Toone Communication has become a trusted partner for businesses and organizations seeking meaningful, lasting impact. <br><br> 
@@ -66,12 +67,75 @@
         <div class="partner partner2">
             <h2 class="partner-title2">Jenny Sousa/Segue Institute for Learning?</h2>
             <div class="partner-content2">
-                <img src="path-to-image.jpg" alt="Partner 2 Image" class="partner-image2">
-                <p class="partner-description2">This is a description of Partner 2. They bring valuable expertise to our cause.</p>
+                <img src="../images/home-page-photos/placeHolder.png" alt="Partner 2 Image" class="partner-image2" width=25%>
+                <div class="toggle-bar2" onclick="toggleText2()">Click to View More</div>
+                <p class="partner-description2">this is where the other partner description will go</p>
             </div>
         </div>
     </div>
     
+
+    <script>
+        // Function to toggle visibility of Partner 1 description
+function toggleText1() {
+    var description = document.querySelector('.partner-description1');
+    var toggleBar = document.querySelector('.toggle-bar1');
+    
+    // Check if the description is visible
+    if (description.style.display === "none" || description.style.display === "") {
+        description.style.display = "block";  // Show description
+        toggleBar.innerHTML = "Click to Hide";  // Change toggle bar text
+    } else {
+        description.style.display = "none";  // Hide description
+        toggleBar.innerHTML = "Click to View More";  // Reset toggle bar text
+    }
+}
+
+// Function to toggle visibility of Partner 2 description
+function toggleText2() {
+    var description = document.querySelector('.partner-description2');
+    var toggleBar = document.querySelector('.toggle-bar2');
+    
+    // Check if the description is visible
+    if (description.style.display === "none" || description.style.display === "") {
+        description.style.display = "block";  // Show description
+        toggleBar.innerHTML = "Click to Hide";  // Change toggle bar text
+    } else {
+        description.style.display = "none";  // Hide description
+        toggleBar.innerHTML = "Click to View More";  // Reset toggle bar text
+    }
+}
+
+// Resize function to handle screen width and toggle visibility
+function handleResize() {
+    var partner1Description = document.querySelector('.partner-description1');
+    var partner2Description = document.querySelector('.partner-description2');
+    var toggleBar1 = document.querySelector('.partner1 .toggle-bar1');
+    var toggleBar2 = document.querySelector('.partner2 .toggle-bar2');
+    
+    // Handle visibility based on screen size
+    if (window.innerWidth > 768) {
+        // Show descriptions on larger screens
+        partner1Description.style.display = "block";
+        partner2Description.style.display = "block";
+        toggleBar1.innerHTML = "Click to Hide";
+        toggleBar2.innerHTML = "Click to Hide";
+    } else {
+        // Hide descriptions on smaller screens
+        partner1Description.style.display = "none";
+        partner2Description.style.display = "none";
+        toggleBar1.innerHTML = "Click to View More";
+        toggleBar2.innerHTML = "Click to View More";
+    }
+}
+
+// Add event listener for window resize
+window.addEventListener('resize', handleResize);
+
+// Call handleResize initially to set the correct layout on page load
+handleResize();
+
+    </script>
 
     <footer>
         <div class="footer-container">
