@@ -140,7 +140,7 @@
 
         nav a {
             font-size: 24px;
-            color: white; /* Text color */
+            color: rgb(0, 0, 0); /* Text color */
             text-decoration: none; /* Remove underline */
             padding: 10px 20px; /* Padding inside each box */
             background-color: rgb(255,186,95);/* Box background color (dark gray) */
@@ -258,25 +258,26 @@
             z-index: 1;
             background-color: rgb(207, 169, 124);
             text-align: center;
+            height: 700px;
         }
         
         .hero img {
-            width: 50%; /* Make sure the image spans the full width */
-            margin-left: 50%; /* Center the image */
+            width: 100%; /* Make sure the image spans the full width */
+            margin-left: 0; /* Center the image */
             height: 500px; /* Set a fixed height for the image */
-            object-fit: cover; /* Ensure the image covers the area without distortion */
+            object-fit: cover;
             display: block; /* Prevent space below image */
         }
         
         .hero h1 {
             position: absolute; /* Position the text over the image */
-            top: 25%; /* Center vertically */
-            left: 25%;
-            width: 50%; /* Make sure the text spans the full width */
-            height: 200px;
+            top: 85%; /* Center vertically */
+            left: 50%;
+            width: 100%; /* Make sure the text spans the full width */
+            height: 150px;
             transform: translate(-50%, -50%); /* Adjust positioning to ensure it's centered exactly */
-            font-size: 36px; /* Adjust font size */
-            color: white; /* Text color */
+            font-size: 20px; /* Adjust font size */
+            color: rgb(0, 0, 0); /* Text color */
             padding: 20px; /* Add padding around the text */
             border-radius: 10px;
         }
@@ -286,16 +287,10 @@
                 height: 500px; /* Adjust height for smaller screens */
             }
             .hero img {
-                width: 100%;
-                margin-left: 0; /* Center the image */
-                height: 300px;
+                height: 300px; /* Adjust height for smaller screens */
             }
             .hero h1 {
-                height: 150px;
-                width: 100%;
-                top: 80%;
-                left: 50%;
-                font-size: 24px;
+                top: 80%; /* Adjust vertical position */
             }
 
         }
@@ -310,8 +305,9 @@
             .hero h1 {
                 height: 200px;
                 width: 100%;
-                top: 80%;
+                top: 85%;
                 left: 50%;
+                font-size: 13px;
             }
         }
         /********
