@@ -12,8 +12,8 @@
             <div class="burger">
                 <img src="../images/menu.png" alt="Menu" class="menu-icon" onclick="menutoggle()">
                 <div class="burger-menu-content" id="burger-menu-content">
-                    <a href="../index.html">Home</a>
-                    <a href="violas-story.html">Viola's Story</a>
+                    <a href="violas-story.html">About Viola and Julius</a>
+                    <a href="in-the-news.html">In The News</a>
                     <a href="foundation-staff.html" >Foundation Staff</a>
                     <a href="what-we-fund.html">What We Fund</a>
                     <a href="board-members.html">Board Members</a>
@@ -34,8 +34,8 @@
         </div>
         <div class="navbar-container"> 
             <nav>
-                <a href="../index.html" class="btn">Home</a>
-                <a href="violas-story.html" class="btn">Viola's Story</a>
+                <a href="violas-story.html" class="btn">About Viola and Julius</a>
+                <a href="in-the-news.html" class="btn">In The News</a>
                 <a href="foundation-staff.html" class="btn">Foundation Staff</a>
                 <a href="what-we-fund.html" class="btn">What We Fund</a>
                 <a href="board-members.html" class="btn">Board Members</a>
@@ -43,6 +43,17 @@
             </nav>
         </div>
     </header>
+
+    <div class="title-of-page fade-in"> Foundation Staff </div>
+
+    <style> 
+        .title-of-page {
+            font-size: 32px; /* Adjust font size */
+            color: rgb(0, 0, 0); /* Adjust color */
+            text-align: center; /* Center the text */
+            margin: 20px 0; /* Add margin around the title */
+        }
+    </style>
 
     <div class="staff-container fade-in">
         <div class="staff-member">
@@ -89,12 +100,11 @@
                 <p>Public Relations Specialist</p>
                 <div class="toggle-bar" onclick="toggleText()">Click to View More</div>
                 <h1 class="text-content">
-                    Jennifer Toone Corrigan is the founder and principal 
-                    of In Toone Communication, a public relations and marketing 
-                    firm based in Providence, Rhode Island. Additionally, 
-                      Jennifer has been involved with the Segue Institute for Learning, 
-                      contributing to their press efforts and supporting community-driven
-                       initiatives in Rhode Island.
+                    Jennifer Toone Corrigan is the founder and principal of In Toone Communication, 
+                    a 100% women-owned public relations and marketing firm based in Providence, Rhode 
+                    Island and established in 2004. Jennifer has been a long-time supporter of the Segue
+                     Institute for Learning, contributing to its press efforts and helping showcase community-driven 
+                     initiatives in Rhode Island.
                 </h1>
             </div>
         </div>
@@ -144,7 +154,7 @@
         }
 
         .text-content {
-            font-size: 18px; /* Smaller font size for captions */
+            font-size: 15px; /* Smaller font size for captions */
             text-align: center;
         }
 
@@ -165,7 +175,6 @@
             background-color: #ddd;
             padding: 10px;
             text-align: center;
-            font-weight: bold;
             border: 1px solid #aaa;
             width: 100%;
         }
@@ -273,9 +282,11 @@
             
             <!-- Middle Section: Logo and Navigation -->
             <div class="footer-section logo-nav">
-                <img src="../images/logo-photos/dtf-logo.png" alt="Davis Tennon Foundation Logo" class="footer-logo">
+                <a href="../index.html">
+                    <img src="../images/logo-photos/dtf-logo.png" alt="Image" class="footer-logo">
+                </a>
                 <ul class="nav-links">
-                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="in-the-news.html">In The News</a></li>
                     <li><a href="foundation-staff.html">Foundation Staff</a></li>
                     <li><a href="what-we-fund.html">What We Fund</a></li>
                 </ul>
@@ -294,3 +305,4 @@
 
 </body>
 </html>
+

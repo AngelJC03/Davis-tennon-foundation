@@ -12,8 +12,8 @@
             <div class="burger">
                 <img src="images/menu.png" alt="Menu" class="menu-icon" onclick="menutoggle()">
                 <div class="burger-menu-content" id="burger-menu-content">
-                    <a href="index.html">Home</a>
-                    <a href="pages/violas-story.html">Viola's Story</a>
+                    <a href="pages/violas-story.html">About Viola and Julius</a>
+                    <a href="pages/in-the-news.html">In The News</a>
                     <a href="pages/foundation-staff.html" >Foundation Staff</a>
                     <a href="pages/what-we-fund.html">What We Fund</a>
                     <a href="pages/board-members.html">Board Members</a>
@@ -34,8 +34,8 @@
         </div>
         <div class="navbar-container">
             <nav>
-                <a href="index.html" class="btn">Home</a>
-                <a href="pages/violas-story.html" class="btn">Viola's Story</a>
+                <a href="pages/violas-story.html" class="btn">About Viola and Julius</a>
+                <a href="pages/in-the-news.html">In The News</a>
                 <a href="pages/foundation-staff.html" class="btn">Foundation Staff</a>
                 <a href="pages/what-we-fund.html" class="btn">What We Fund</a>
                 <a href="pages/board-members.html" class="btn">Board Members</a>
@@ -45,7 +45,7 @@
     </header>
     
     <div class="hero fade-in" style="--delay: .1s;">
-        <img src="images/home-page-photos/angelo-garcia-davistenon-foundation.webp" alt="Image">
+        <img src="images/home-page-photos/hero_photo2.jpg" alt="Image">
         <h1>
             “The birth of the Davis/Tennon Foundation 
             <br> started with the realization that the 
@@ -62,7 +62,6 @@
         </div>
     </section>
     
-
     <div class="decorative-banner fade-in">
         <div class="image-container">
             <img src="images/logo-photos/repeated-logo.jpg" alt="Image">
@@ -73,73 +72,108 @@
         </div>
     </div>
     
+    <style>
+        h2 {
+            font-size: 24px;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        .divider {
+            border-bottom: 2px solid grey;
+            width: 50%; /* Ajusta el ancho según necesites */
+            margin: 10px auto; /* Centra horizontalmente */
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+        }
+        .row {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid grey;
+        }
+        .image img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .name {
+            flex: 1;
+            padding: 0 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .name h4 {
+            font-size: 16px;
+        }
+        
+        .lastname {
+            display: block; /* Ensure it behaves like a block element */
+            margin-top: 5px; /* Space between first and last name */
+        }
+        a {
+            text-decoration: none; /* Removes the underline */
+            color: inherit; /* Inherit the text color from its parent (no blue) */
+        }
+        
+        a:hover {
+            text-decoration: none; /* Prevent underline on hover */
+        }
+    </style>
+</head>
+<body>
 
-    <!-- Section with shaded boxes and text + image placeholders -->
-    <section class="home-content">
-        <div class="info-box">
-            <div class="text-container">
-                <div class="text-overlay">
-                    <p>Lorem ipsum....</p>
-                </div>
-            </div>
-            <img src="images/home-page-photos/placeHolder.png" alt="Image" class="info-image">
-        </div>
-        <div class="info-box">
-            <img src="images/home-page-photos/placeHolder.png" alt="Image" class="info-image">
-            <div class="text-container">
-                <div class="text-overlay">
-                    <p>Lorem ipsum....</p>
-                </div>
-            </div>
-        </div>
-        <div class="info-box">
-            <div class="text-container">
-                <div class="text-overlay">
-                    <p>Lorem ipsum....</p>
-                </div>
-            </div>
-            <img src="images/home-page-photos/placeHolder.png" alt="Image" class="info-image">
-        </div>
-    </section>
-
-    <h2>People Data</h2>
-    <div id="data-container"></div>
+    <h2>Recent Articles</h2>
+    <div class="divider"></div>
+    <a href="pages/in-the-news.html">
+        <div class="container" id="data-container"></div>
+    </a>
 
     <script>
         async function fetchData() {
             const url = "https://script.google.com/macros/s/AKfycbz__jHa1zKYb7d6_sewmCKt-NwOwdPfvleIhTovtsJ2l7uc-ynw1O_Ofc6vgy8CsMJRyQ/exec";
-
+    
             try {
                 const response = await fetch(url);
                 const data = await response.json();
-
                 const container = document.getElementById("data-container");
                 container.innerHTML = ""; // Clear previous content
-
-                data.forEach(row => {
+    
+                // Grab only the first 3 rows from the data
+                const firstThreeRows = data.slice(0, 3);
+    
+                firstThreeRows.forEach(row => {
                     const firstName = row[0];
                     const lastName = row[1];
-                    const imageUrl = row[2]?.valueType === "IMAGE" ? "https://via.placeholder.com/100" : row[2]; // Placeholder if no URL
-
-                    const profileDiv = document.createElement("div");
-                    profileDiv.classList.add("profile");
-                    
-                    profileDiv.innerHTML = `
-                        <p><strong>Name:</strong> ${firstName} ${lastName}</p>
-                        <img src="${imageUrl}" alt="Profile Image">
+                    const imageUrl = row[2]?.valueType === "IMAGE" ? "https://via.placeholder.com/100" : row[2];
+    
+                    const rowDiv = document.createElement("div");
+                    rowDiv.classList.add("row");
+    
+                    rowDiv.innerHTML = `
+                        <div class="image">
+                            <img src="${imageUrl}" alt="Profile Image">
+                        </div>
+                        <div class="name">
+                            <h3>${firstName}</h3> <!-- First name as title -->
+                            <h4 class="lastname">${lastName}</h4> <!-- Last name as subheading -->
+                        </div>
                     `;
-
-                    container.appendChild(profileDiv);
+    
+                    container.appendChild(rowDiv);
                 });
             } catch (error) {
                 console.error("Error fetching data:", error);
                 document.getElementById("data-container").innerHTML = "<p>Error loading data.</p>";
             }
         }
-
-        // Fetch data when the page loads
-        window.onload = fetchData;
+    
+        fetchData();
     </script>
+    
 
     <!-- Footer Placeholder -->
     <footer>
@@ -158,7 +192,7 @@
                     <img src="images/logo-photos/dtf-logo.png" alt="Image" class="footer-logo">
                 </a>
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pages/in-the-news.html">In The News</a></li>
                     <li><a href="pages/foundation-staff.html">Foundation Staff</a></li>
                     <li><a href="pages/what-we-fund.html">What We Fund</a></li>
                 </ul>
@@ -177,3 +211,31 @@
 
 </body>
 </html>
+
+
+  <!-- <section class="home-content">
+        <div class="info-box">
+            <div class="text-container">
+                <div class="text-overlay">
+                    <p>Lorem ipsum....</p>
+                </div>
+            </div>
+            <img src="images/home-page-photos/placeHolder.png" alt="Image" class="info-image">
+        </div>
+        <div class="info-box">
+            <img src="images/home-page-photos/placeHolder.png" alt="Image" class="info-image">
+            <div class="text-container">
+                <div class="text-overlay">
+                    <p>Lorem ipsum....</p>
+                </div>
+            </div>
+        </div>
+        <div class="info-box">
+            <div class="text-container">
+                <div class="text-overlay">
+                    <p>Lorem ipsum....</p>
+                </div>
+            </div>
+            <img src="images/home-page-photos/placeHolder.png" alt="Image" class="info-image">
+        </div>
+    </section> -->

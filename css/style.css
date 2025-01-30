@@ -136,10 +136,10 @@
             max-width: 100%;
             box-sizing: border-box; /* Include padding in width calculation */
             margin: 0 auto; /* Center the navbar */
+            font-size: 20px; /* Font size for links */
         }
 
         nav a {
-            font-size: 24px;
             color: rgb(0, 0, 0); /* Text color */
             text-decoration: none; /* Remove underline */
             padding: 10px 20px; /* Padding inside each box */
@@ -263,10 +263,10 @@
         
         .hero img {
             width: 100%; /* Make sure the image spans the full width */
-            margin-left: 0; /* Center the image */
             height: 500px; /* Set a fixed height for the image */
             object-fit: cover;
             display: block; /* Prevent space below image */
+            object-position: center 30%;
         }
         
         .hero h1 {
@@ -637,7 +637,7 @@
             }
 
             nav a {
-                font-size: 24px; /* Keep original font size for larger laptops */
+                font-size: 20px; /* Keep original font size for larger laptops */
                 padding: 10px 20px; /* Keep padding same as original */
             }
         }
@@ -645,7 +645,7 @@
         /* Tablet and smaller devices (max-width: 768px) */
         @media (max-width: 1250px) {
             nav a{
-                font-size: 18px; /* Slightly adjust font size for tablets */
+                font-size: 14px; /* Slightly adjust font size for tablets */
             }
 
         }
@@ -655,7 +655,6 @@
         ********/
 
         #violas-story-title {
-            font-size: 24px; /* Adjust font size */
             color: rgb(0, 0, 0); /* Adjust color */
             text-align: center; /* Center the text */
             margin: 20px 0; /* Add margin around the title */
@@ -700,75 +699,6 @@
             }
         }
         
-        #viola-davis-history {
-            display: flex; /* Use flexbox for layout */
-            align-items: center; /* Align items vertically */
-            gap: 20px; /* Add space between the image and paragraph */
-            margin: 20px; /* Optional: Add some margin around the container */
-        }
-
-        /* Timeline Section */
-        #viola-davis-history {
-            width: 100%; /* Full width of the screen */
-            margin: 0;   /* No margin */
-            padding: 2%;   /* No padding */
-        }
-
-        .timeline-entry-top {
-            padding: 40px; /* Optional: Add padding to match other sections */
-        }
-
-        .timeline {
-            width: 100%; /* Full width of the parent container */
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column; /* Stack the timeline entries vertically */
-            align-items: center; /* Optional: Center all entries horizontally */
-        }
-        
-        /* Timeline Entry */
-        .timeline-entry {
-            align-items: center;
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 30px;
-            background-color: #ddd; /* Light gray background */
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-            width: 100%; /* 80% of the container */
-            
-        }
-
-        .timeline-entry.in-view {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Text Container */
-        .timeline-text {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 50%;
-            color: rgb(52, 47, 47);
-            padding: 20px;
-            font-size: 16px;
-        }
-
-        /* Image Styling */
-        .timeline-image {
-            width: 50%;
-            height: auto;
-            object-fit: cover; /* Maintain image aspect ratio */
-            display: block;
-        }
-
-
         /********
         DONATE-NOW-PAGE
         ********/

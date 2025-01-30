@@ -12,8 +12,8 @@
             <div class="burger">
                 <img src="../images/menu.png" alt="Menu" class="menu-icon" onclick="menutoggle()">
                 <div class="burger-menu-content" id="burger-menu-content">
-                    <a href="../index.html">Home</a>
-                    <a href="violas-story.html">Viola's Story</a>
+                    <a href="violas-story.html">About Viola and Julius</a>
+                    <a href="in-the-news.html">In The News</a>
                     <a href="foundation-staff.html" >Foundation Staff</a>
                     <a href="what-we-fund.html">What We Fund</a>
                     <a href="board-members.html">Board Members</a>
@@ -34,8 +34,8 @@
         </div>
         <div class="navbar-container"> 
             <nav>
-                <a href="../index.html" class="btn">Home</a>
-                <a href="violas-story.html" class="btn">Viola's Story</a>
+                <a href="violas-story.html" class="btn">About Viola and Julius</a>
+                <a href="in-the-news.html" class="btn">In The News</a>
                 <a href="foundation-staff.html" class="btn">Foundation Staff</a>
                 <a href="what-we-fund.html" class="btn">What We Fund</a>
                 <a href="board-members.html" class="btn">Board Members</a>
@@ -197,35 +197,97 @@
     </div>
 
     <div id="viola-davis-history-title" class="fade-in">
-        <h1>A Brief Timeline of Viola Davis</h1>
+        <h1>About Julius and Davis</h1>
     </div>
 
-    <div id="viola-davis-history">
-        <section class="timeline">
-            <!-- Example Timeline Entry -->
-            <div class="timeline-entry">
-                <img src="../images/home-page-photos/placeHolder.png" alt="Image" class="timeline-image">
-                <div class="timeline-text">
-                    <p>Viola Davis was born and raised in South Carolina, experiencing significant challenges that shaped her resilience and determination.</p>
-                </div>
-            </div>
-            
-            <div class="timeline-entry">
-                <div class="timeline-text">
-                    <p>She began her acting career on stage, earning critical acclaim for her performances in Broadway productions.</p>
-                </div>
-                <img src="../images/home-page-photos/placeHolder.png" alt="Image" class="timeline-image">
-            </div>
-            
-            <div class="timeline-entry">
-                <img src="../images/home-page-photos/placeHolder.png" alt="Image" class="timeline-image">
-                <div class="timeline-text">
-                    <p>Davis gained widespread recognition for her role in *Doubt*, earning her first Academy Award nomination.</p>
-                </div>
+    <div id="viola-page-container">
+        <img src="../images/viola's-story-photos/viola_and_family.jpg" 
+             alt="Viola Davis and Family" class="fade-in">
+        <div class="text-content">
+            <p>Viola Davis and Julius Tennon are not only renowned actors and producers but also passionate advocates for community empowerment and social justice. Together, they have dedicated their lives to uplifting underserved communities and driving meaningful change through their philanthropy and storytelling.</p>
+            <div id="extra-content">
+                <p>Viola Davis, a Central Falls, Rhode Island native, is an Academy Award, Emmy, and Tony-winning actress celebrated for her unparalleled talent and commitment to representing diverse voices in the arts. Her journey from humble beginnings to global success has inspired millions, and her deep connection to her roots fuels her drive to give back.</p>
+
+                <p>Julius Tennon, an accomplished actor, producer, and philanthropist, shares Viola’s vision for creating opportunities and fostering equity. With decades of experience both on-screen and behind the scenes, Julius has a proven ability to connect with communities and champion causes that matter.</p>
+                
+                <p>Together, Viola and Julius founded the Davis/Tennon Foundation to empower women, prevent domestic violence, support students, and address housing challenges. Their shared vision is to eliminate obstacles, build connections, and ensure a brighter future for families in Rhode Island and beyond.</p>
             </div>
     
-        </section>
+            <div class="toggle-bar" onclick="toggleText()">Click to View More</div>
+        </div>
     </div>
+    
+    <style>
+        #viola-page-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px; /* Space between image and text */
+            max-width: 900px; /* Keeps content from stretching too wide */
+            margin: 0 auto;
+            padding: 20px;
+        }
+    
+        #viola-page-container img {
+            margin-top: 50px;
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            display: block;
+            float: left; /* Makes text almost wrap around the image */
+            margin-right: 20px; /* Adds space between the image and text */
+        }
+    
+        .text-content {
+            width: 100%;
+        }
+        .toggle-bar {
+            display: none; /* Hidden initially */
+            cursor: pointer;
+            background-color: #ddd;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            border: 1px solid #aaa;
+            margin-top: 10px;
+        }
+
+         /* Tablet: Stack image on top */
+        @media (max-width: 768px) {
+            #viola-page-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            #viola-page-container img {
+                float: none; /* Removes floating on smaller screens */
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .text-content {
+                text-align: center;
+            }
+        }
+
+        /* Mobile: Center everything */
+        @media (max-width: 600px) {
+            #extra-content {
+                display: none;
+            }
+            #viola-page-container {
+                padding: 10px;
+            }
+
+            #viola-page-container img {
+                max-width: 100%;
+            }
+            .toggle-bar {
+                display: block; /* Show the button */
+            }
+        }
+    </style>
+    
 
     <section class="book-section fade-in">
         <div class="book-container">
@@ -247,13 +309,50 @@
         </div>
     </section>
 
+    <script>
+        function toggleText() {
+            var extraContent = document.getElementById("extra-content");
+            var toggleBar = document.querySelector(".toggle-bar");
+    
+            if (extraContent.style.display === "none" || extraContent.style.display === "") {
+                extraContent.style.display = "block";
+                toggleBar.innerHTML = "Click to Hide";
+            } else {
+                extraContent.style.display = "none";
+                toggleBar.innerHTML = "Click to View More";
+            }
+        }
+    
+        function handleResize() {
+            var extraContent = document.getElementById("extra-content");
+            var toggleBar = document.querySelector(".toggle-bar");
+    
+            if (window.innerWidth > 600) {
+                // Show all text on larger screens
+                extraContent.style.display = "block";
+                toggleBar.style.display = "none";
+            } else {
+                // Hide extra text and enable toggle for small screens
+                extraContent.style.display = "none";
+                toggleBar.style.display = "block";
+                toggleBar.innerHTML = "Click to View More";
+            }
+        }
+    
+        // Run once on page load
+        window.onload = handleResize;
+    
+        // Run on window resize
+        window.onresize = handleResize;
+    </script>
+
     <style>
     /* Book Section */
     .book-section {
         display: flex;
         justify-content: space-between;
         align-items: center; /* Vertically center the text and image */
-        padding: 20px;
+        padding: 24px;
         margin-right: 20%; /* You can adjust this value if you want more space on the right */
         margin-left: 10%; /* Move the text section more to the left by reducing the margin */
     }
@@ -271,7 +370,7 @@
     .book-text {
         flex: 1;
         padding-right: 0%; /* Reduce the padding to move text more to the left */
-        font-size: 28px;
+        font-size: 24px;
         line-height: 1.4;
         text-align: left;
         width: 100%;
@@ -320,36 +419,38 @@
         }
     }
     </style>
-        <footer>
-            <div class="footer-container">
-                <!-- Left Section: Contact Information -->
-                <div class="footer-section contact-info">
-                    <h4>Contact Us</h4>
-                    <p>Email: contact@davistennonfoundation.org</p>
-                    <p>Phone: (123) 456-7890</p>
-                    <p>Address: 123 Foundation Lane, City, State</p>
-                </div>
-                
-                <!-- Middle Section: Logo and Navigation -->
-                <div class="footer-section logo-nav">
-                    <img src="../images/logo-photos/dtf-logo.png" alt="Davis Tennon Foundation Logo" class="footer-logo">
-                    <ul class="nav-links">
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="foundation-staff.html">Foundation Staff</a></li>
-                        <li><a href="what-we-fund.html">What We Fund</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Right Section: Donate Button -->
-                <div class="footer-section socials-donate">
-                    <ul class="donate-links">
-                        <li><a href="apply-donate.html" class="btn">Donate Today</a></li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
     
-
+    <footer>
+        <div class="footer-container">
+            <!-- Left Section: Contact Information -->
+            <div class="footer-section contact-info">
+                <h4>Contact Us</h4>
+                <p>Email: contact@davistennonfoundation.org</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Address: 123 Foundation Lane, City, State</p>
+            </div>
+            
+            <!-- Middle Section: Logo and Navigation -->
+            <div class="footer-section logo-nav">
+                <a href="../index.html">
+                    <img src="../images/logo-photos/dtf-logo.png" alt="Image" class="footer-logo">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="in-the-news.html">In The News</a></li>
+                    <li><a href="foundation-staff.html">Foundation Staff</a></li>
+                    <li><a href="what-we-fund.html">What We Fund</a></li>
+                </ul>
+            </div>
+            
+            <!-- Right Section: Donate Button -->
+            <div class="footer-section socials-donate">
+                <ul class="donate-links">
+                    <li><a href="apply-donate.html" class="btn">Donate Today</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
     <script src="../js/main.js"></script>
 
 </body>

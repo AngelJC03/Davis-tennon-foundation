@@ -12,8 +12,8 @@
             <div class="burger">
                 <img src="../images/menu.png" alt="Menu" class="menu-icon" onclick="menutoggle()">
                 <div class="burger-menu-content" id="burger-menu-content">
-                    <a href="../index.html">Home</a>
-                    <a href="violas-story.html">Viola's Story</a>
+                    <a href="violas-story.html">About Viola and Julius</a>
+                    <a href="in-the-news.html">In The News</a>
                     <a href="foundation-staff.html" >Foundation Staff</a>
                     <a href="what-we-fund.html">What We Fund</a>
                     <a href="board-members.html">Board Members</a>
@@ -34,8 +34,8 @@
         </div>
         <div class="navbar-container"> 
             <nav>
-                <a href="../index.html" class="btn">Home</a>
-                <a href="violas-story.html" class="btn">Viola's Story</a>
+                <a href="violas-story.html" class="btn">About Viola and Julius</a>
+                <a href="in-the-news.html" class="btn">In The News</a>
                 <a href="foundation-staff.html" class="btn">Foundation Staff</a>
                 <a href="what-we-fund.html" class="btn">What We Fund</a>
                 <a href="board-members.html" class="btn">Board Members</a>
@@ -44,98 +44,105 @@
         </div>
     </header>
 
-    <div id="page-container">
-        <!-- Partner 1 Section -->
-        <div class="partner partner1 fade-in">
-            <h2 class="partner-title1">In Toone Communication</h2>
-            <div class="partner-content1">
-                <img src="../images/partner-photos/toone-corrigan.JPEG" alt="Partner 1 Image" class="partner-image1" width=25%>
-                <div class="toggle-bar1" onclick="toggleText1()">Click to View More</div>
-                <p class="partner-description1">Jennifer Toone Corrigan founded <a href="https://intoone.com/">In Toone Communication</a> in 2004, a certified 100% woman-owned firm dedicated to delivering measurable 
-                    results and sustainable success for its clients. Guided by principles of effective communication, diplomacy, a blend of creativity and strategy, and an unwavering
-                     commitment to achieving client goals, In Toone Communication has become a trusted partner for businesses and organizations seeking meaningful, lasting impact. <br><br> 
-                    With a tailored approach, Jennifer and her team specialize in profit-driven marketing concepts, strategic public relations programs, website development, and 
-                    compelling graphic design support. Their expertise supports initiatives such as new product launches, revitalizing established brands, and increasing awareness 
-                    in critical markets. <br><br>
-                    In Toone Communication collaborates with a diverse array of clients, including luxury brands, travel and hospitality businesses, experiential dining and culinary establishments, 
-                    community and educational initiatives, and socially responsible organizations. Jennifer's commitment to creating positive change continues to shape her firm’s reputation for 
-                    excellence and innovation.</p>
-            </div>
-        </div>
-    
-        <!-- Partner 2 Section -->
-        <div class="partner partner2">
-            <h2 class="partner-title2">Jenny Sousa/Segue Institute for Learning?</h2>
-            <div class="partner-content2">
-                <img src="../images/home-page-photos/placeHolder.png" alt="Partner 2 Image" class="partner-image2" width=25%>
-                <div class="toggle-bar2" onclick="toggleText2()">Click to View More</div>
-                <p class="partner-description2">this is where the other partner description will go</p>
-            </div>
-        </div>
+    <div class="page-image fade-in">
+        <h1> Resources for Families and Community Partners </h1>
+        <img src="../images/what-we-fund-photos/Viola-Davis-Hunger-Is-Moms-Event-e1553904813882-1000x469-1.jpg" alt="Angelo Garcia" class="board-member-photo">
     </div>
+
+    <style> 
+        .page-image {
+            color: rgb(0, 0, 0); /* Adjust color */
+            text-align: center; /* Center the text */
+            margin: 20px 0; /* Add margin around the title */
+        }
+    </style>
     
-
-    <script>
-        // Function to toggle visibility of Partner 1 description
-function toggleText1() {
-    var description = document.querySelector('.partner-description1');
-    var toggleBar = document.querySelector('.toggle-bar1');
+    <style>
+        .page-image {
+            text-align: center;
+            margin-bottom: 20px; /* Add spacing below the image */
+        }
     
-    // Check if the description is visible
-    if (description.style.display === "none" || description.style.display === "") {
-        description.style.display = "block";  // Show description
-        toggleBar.innerHTML = "Click to Hide";  // Change toggle bar text
-    } else {
-        description.style.display = "none";  // Hide description
-        toggleBar.innerHTML = "Click to View More";  // Reset toggle bar text
-    }
-}
-
-// Function to toggle visibility of Partner 2 description
-function toggleText2() {
-    var description = document.querySelector('.partner-description2');
-    var toggleBar = document.querySelector('.toggle-bar2');
+        .page-image img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
     
-    // Check if the description is visible
-    if (description.style.display === "none" || description.style.display === "") {
-        description.style.display = "block";  // Show description
-        toggleBar.innerHTML = "Click to Hide";  // Change toggle bar text
-    } else {
-        description.style.display = "none";  // Hide description
-        toggleBar.innerHTML = "Click to View More";  // Reset toggle bar text
-    }
-}
-
-// Resize function to handle screen width and toggle visibility
-function handleResize() {
-    var partner1Description = document.querySelector('.partner-description1');
-    var partner2Description = document.querySelector('.partner-description2');
-    var toggleBar1 = document.querySelector('.partner1 .toggle-bar1');
-    var toggleBar2 = document.querySelector('.partner2 .toggle-bar2');
+        .content-container {
+            text-align: left;
+            max-width: 800px;
+            margin: 20px auto;
+            line-height: 1.6;
+        }
     
-    // Handle visibility based on screen size
-    if (window.innerWidth > 768) {
-        // Show descriptions on larger screens
-        partner1Description.style.display = "block";
-        partner2Description.style.display = "block";
-        toggleBar1.innerHTML = "Click to Hide";
-        toggleBar2.innerHTML = "Click to Hide";
-    } else {
-        // Hide descriptions on smaller screens
-        partner1Description.style.display = "none";
-        partner2Description.style.display = "none";
-        toggleBar1.innerHTML = "Click to View More";
-        toggleBar2.innerHTML = "Click to View More";
-    }
-}
-
-// Add event listener for window resize
-window.addEventListener('resize', handleResize);
-
-// Call handleResize initially to set the correct layout on page load
-handleResize();
-
-    </script>
+        .content-container h2 {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    
+        .content-container ul {
+            padding-left: 20px;
+        }
+    
+        .content-container ul li {
+            margin-bottom: 10px;
+        }
+    
+        .content-container a {
+            color: #0073e6;
+            text-decoration: none;
+        }
+    
+        .content-container a:hover {
+            text-decoration: underline;
+        }
+    
+        .contact-email {
+            font-weight: bold;
+            color: #0073e6;
+        }
+    </style>
+    
+    <div class="content-container fade-in">
+        <h2 style="text-align: center;">Resources for Families and Community Partners</h2>
+        <p>At the Davis/Tennon Foundation, we are dedicated to connecting families with the tools, organizations, and support systems they need to thrive. Below, you’ll find a curated list of resources and partner organizations that address critical needs in our community.</p>
+    
+        <h2>Empowering Women and Preventing Domestic Violence</h2>
+        <ul>
+            <li><a href="https://ricadv.org/" target="_blank">Rhode Island Coalition Against Domestic Violence:</a> Comprehensive support services for survivors, including shelter, advocacy, and prevention programs.</li>
+            <li><a href="https://sojournerri.org/" target="_blank">Sojourner House:</a> Offering housing, counseling, and education to individuals impacted by domestic violence.</li>
+        </ul>
+    
+        <h2>Housing Assistance</h2>
+        <ul>
+            <li><a href="https://rifoundation.org/" target="_blank">Rhode Island Foundation:</a> Initiatives and grants supporting housing stability and community development.</li>
+            <li><a href="https://pocfoundation.com/" target="_blank">Papitto Opportunity Connection:</a> Programs focused on providing housing resources and opportunities for underserved communities.</li>
+        </ul>
+    
+        <h2>Student Enrichment and Education</h2>
+        <ul>
+            <li><a href="https://www.ric.edu/" target="_blank">Rhode Island College:</a> Resources for students and families seeking higher education pathways and enrichment programs.</li>
+            <li><a href="https://www.nld.org/rhode-island-college-workforce-development-hub" target="_blank">Central Falls Workforce Hub:</a> Workforce training and career advancement opportunities for local students and families.</li>
+        </ul>
+    
+        <h2>Financial and Grant Support</h2>
+        <ul>
+            <li><a href="https://champlinfoundation.org/" target="_blank">The Champlin Foundation:</a> Funding opportunities for nonprofit organizations working to enhance community services.</li>
+            <li><a href="https://chartergrowthfund.org/" target="_blank">Trailblazers Initiative by the Charter School Growth Fund:</a> Support for innovative educational programs.</li>
+        </ul>
+    
+        <h2>Parent Advocacy and Leadership</h2>
+        <ul>
+            <li><a href="#">Parent Council Development:</a> Learn about the Davis/Tennon Foundation's initiative to train parents in advocacy and leadership to better identify and address community needs.</li>
+        </ul>
+    
+        <h2>Contact Us for Assistance</h2>
+        <p>If you’re unsure where to start or need help connecting with the right resource, our team is here to assist. Contact us at <a href="mailto:Angelo.Garcia@segueifl.org" class="contact-email">Angelo.Garcia@segueifl.org</a> for guidance and referrals.</p>
+    
+        <p><strong>Together, we can eliminate barriers, build connections, and create brighter futures for families across Rhode Island.</strong></p>
+    </div>
 
     <footer>
         <div class="footer-container">
@@ -149,9 +156,11 @@ handleResize();
             
             <!-- Middle Section: Logo and Navigation -->
             <div class="footer-section logo-nav">
-                <img src="../images/logo-photos/dtf-logo.png" alt="Davis Tennon Foundation Logo" class="footer-logo">
+                <a href="../index.html">
+                    <img src="../images/logo-photos/dtf-logo.png" alt="Image" class="footer-logo">
+                </a>
                 <ul class="nav-links">
-                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="in-the-news.html">In The News</a></li>
                     <li><a href="foundation-staff.html">Foundation Staff</a></li>
                     <li><a href="what-we-fund.html">What We Fund</a></li>
                 </ul>
@@ -170,3 +179,4 @@ handleResize();
 
 </body>
 </html>
+

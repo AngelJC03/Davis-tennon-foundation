@@ -44,67 +44,7 @@
         </div>
     </header>
 
-    <div id="donate-panel">
-        <div class="donate-panel-container">
-            <h1>Donate Now</h1>
-            <p>Thank you for considering a donation to the Davis Tennon Foundation. 
-                Your donation will help us continue to support our
-                 mission of providing resources to those in need.
-                  Please fill out the form below to make a donation.
-            </p>
-            <div id="choose-donation-title">
-                <p>Choose a Donation</p>
-            </div>
-            <div id="donation-amounts">
-                <button type="button" class="donate-page-btn" onclick="document.getElementById('amount').value = '10';">10</button>
-                <button type="button" class="donate-page-btn" onclick="document.getElementById('amount').value = '50';">50</button>
-                <button type="button" class="donate-page-btn" onclick="document.getElementById('amount').value = '100';">100</button>
-                <button type="button" class="donate-page-btn" onclick="document.getElementById('amount').value = '500';">500</button>
-                <button type="button" class="donate-page-btn" onclick="focusAmountInput();">other</button>
-            </div>
-            <form action="submit-donation.php" method="post">
-                <label for="amount">AMOUNT:</label>
-                <br>
-                <input type="number" id="amount" name="amount" required>
-                <br>
-                <label for="email">EMAIL ADDRESS:</label>
-                <br>
-                <input type="email" id="email" name="email" required>
-                <br>
-                <label for="first-name">FIRST NAME:</label>
-                <br>
-                <input type="text" id="name" name="name" required>
-                <br>
-                <label for="last-name">LAST NAME:</label>
-                <br>
-                <input type="text" id="name" name="name" required>
-                <br>
-                <label for="address">ADDRESS LINE:</label>
-                <br>
-                <input type="text" id="address" name="address" required>
-                <br>
-                <label for="city">CITY:</label>
-                <br>
-                <input type="text" id="city" name="city" required>
-                <br>
-                <label for="state-province">STATE/PROVINCE:</label>
-                <br>
-                <input type="text" id="state-province" name="state-province" required>
-                <br>
-                <label for="postal-code">ZIP/POSTAL CODE:</label>
-                <br>
-                <input type="number" id="postal-code" name="postal-code" required>
-                <br>
-                <label for="address">MOBILE PHONE NUMBER: (OPTIONAL)</label>
-                <br>
-                <input type="text" id="address" name="address">
-                <br>
-                <div class="submit-btn-container">
-                    <input type="submit" id="submit-donation" class="donate-page-btn" value="Donate">
-                </div>
-            </form>
-        </div>
-    </div>
+
 
     <footer>
         <div class="footer-container">
