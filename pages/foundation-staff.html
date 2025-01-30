@@ -129,14 +129,17 @@
     <style>
         /* Default Layout: Photos on the left, captions on the right */
         .staff-container {
+            /*center items*/
+            margin: auto;
             display: flex;
             flex-wrap: wrap; /* Allows staff members to wrap in smaller screens */
+            width: 70%;
         }
 
         .staff-member {
             display: flex;
             align-items: center; /* Align photo and caption vertically */
-            width: 45%; /* Full width for each member */
+            width: 100%; /* Full width for each member */
             margin: 10px auto; /* Center align each member block horizontally */
             border: 1px solid #ddd; /* Optional: Add a border for visibility */
             padding: 10px;
@@ -154,7 +157,8 @@
         }
 
         .text-content {
-            font-size: 15px; /* Smaller font size for captions */
+            font-size: 18px; /* Smaller font size for captions */
+            font-family: "gill-sans-light";
             text-align: center;
         }
 

@@ -10,6 +10,13 @@
             font-weight: normal; /* Optional: specify font weight */
             font-style: normal;  /* Optional: specify font style */
         }
+        @font-face {
+            font-family: "gill-sans-light";
+            src: url('../assets/gill-sans-2/Gill-Sans-Light.otf') format('opentype'); /* Path to your font */
+            font-weight: normal; /* Optional: specify font weight */
+            font-style: normal;  /* Optional: specify font style */
+        }
+
 
         /********
 
@@ -28,6 +35,7 @@
         
         *********/
         html, body {
+            max-height: 1200px; /* Set the maximum height for the body */
             margin: 0;
             padding: 0;
             box-sizing: border-box; /* Ensure consistent box model */
@@ -35,6 +43,11 @@
             line-height: 1.6; /* Line height for better readability */
             background-color: rgb(245, 245, 245);
             min-height: 100vh; /* Ensure full height on smaller screens */
+            background-image: url('../images/logo-photos/background-for-page.jpg');
+            background-size: cover; /* Ensures the image covers the entire page */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents tiling */
+            background-attachment: fixed; /* Keeps the background fixed while scrolling */
         }
 
         /********
@@ -259,6 +272,12 @@
             background-color: rgb(207, 169, 124);
             text-align: center;
             height: 700px;
+        }
+        @media (max-width: 1375px) {
+            .hero {
+                left: auto;  /* Resets left */
+                width: auto; /* Resets width */
+            }
         }
         
         .hero img {
