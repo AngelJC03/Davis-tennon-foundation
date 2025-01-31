@@ -128,7 +128,37 @@
             color: blue;
             cursor: pointer;
         }
+    
+        /* Apply changes at 500px screen width */
+        @media (max-width: 500px) {
+            .row {
+                display: flex;
+                flex-direction: column; /* Stack items vertically */
+                align-items: center; /* Center align items */
+                text-align: center; /* Center text */
+            }
+        
+            .image img {
+                width: 100%; /* Make the image responsive */
+                max-width: 300px; /* Limit maximum width */
+                height: auto; /* Maintain aspect ratio */
+            }
+        
+            .content {
+                width: 100%; /* Ensure text takes full width */
+                padding: 10px 0; /* Add some spacing */
+            }
+            .title {
+                font-size: 12px;
+            }
+            .description {
+                font-size: 10px;
+            }
+        }
+        
     </style>
+    
+
     <div class="news fade-in">
         <h2>Recent Articles</h2>
         <div class="divider"></div>

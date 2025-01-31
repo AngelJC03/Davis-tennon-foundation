@@ -159,6 +159,24 @@
             margin-top: 20px; /* Space between articles and loading */
         }
 
+        @media (max-width: 500px) {
+            .container {
+                padding: 10px;
+            }
+            .row {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 0;
+            }
+            .image {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            .image img {
+                width: 100%;
+                height: auto;
+            }
+        }
     </style>
     <div class="news fade-in">
         <h2>Recent Articles</h2>
