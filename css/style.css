@@ -136,6 +136,12 @@
             background-color: #3e8e41;
         }
 
+        @media (max-width: 768px) {
+            .burger-menu-content a {
+                font-size: 10px; /* Adjust font size for smaller screens */
+            }
+        }
+
         /********
         
         NAV BAR CSS
