@@ -276,6 +276,7 @@
             position: relative; /* Allow absolute positioning of the h1 inside this div */
             z-index: 1;
             background-color: rgb(207, 169, 124);
+            
             text-align: center;
             height: 700px;
         }
