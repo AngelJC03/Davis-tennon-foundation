@@ -4,6 +4,8 @@
     JAVASCRIPT EVENT LISTENER,
     CHECKS WHETHER INDEX.HTML CONTENT IS 
     WITHIN VIEW TO APPLY ANIMATION
+
+    THIS CODE MAY BE USELESS AND ERASABLE
 ********/
 document.addEventListener('DOMContentLoaded', function() {
     const observer = new IntersectionObserver((entries, observer) => {
@@ -28,6 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
 /*********
  THIS JAVASCRIPT IS FOR LOADING THE VIOLA DAVIS STORY CONTENT
  UNDER THE CONDITION THAT THE USER HAS SCROLLED TO THROUGH THE PAGE
+
+ THIS CODE MAY BE USELESS AND ERASABLE
 *********/
 
 document.addEventListener('DOMContentLoaded', function() {
