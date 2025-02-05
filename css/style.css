@@ -451,7 +451,7 @@
                 top: 30%;
             }
             .button-container h1 {
-                font-size: 18px;
+                font-size: 14px;
             }
             .donate-btn {
                 padding: 5px 5px; /* Adjust button size */
@@ -931,6 +931,9 @@
         
             .nav-links li a {
                 padding: 5px 0; /* Add spacing for better readability */
+            }
+            .footer-section.logo-nav img {
+                max-width: 250px;
             }
         }
         
