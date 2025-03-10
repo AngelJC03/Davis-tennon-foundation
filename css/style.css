@@ -879,10 +879,10 @@
         
         /* Newsletter Subscription Section */
         .newsletter-container {
-            background-color: white;
+            background-color: rgb(255, 204, 138);
             padding: 20px;
             margin: 20px auto 0;
-            width: 90%;
+            width: 70%;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
@@ -898,11 +898,11 @@
         
         /* Newsletter Input */
         .newsletter-input {
-            width: 100%;
+            width: 60%;
             padding: 10px;
             border: 1px solid #ccc;
-            background-color: rgb(202, 202, 202);
-            color: white;
+            background-color: rgb(255, 224, 183);
+            color: rgb(0, 0, 0);
             font-size: 16px;
             margin-bottom: 10px;
         }
