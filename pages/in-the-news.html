@@ -127,7 +127,7 @@
             width: 80%;
             max-width: 500px;
             background: white;
-            padding: 20px;
+            padding: 20px 10px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
             z-index: 1000;
@@ -151,6 +151,7 @@
             position: absolute;
             top: 10px;
             right: 15px;
+            
         }
         .loading {
             display: flex;
@@ -161,7 +162,6 @@
             color: #000000;
             margin-top: 20px; /* Space between articles and loading */
         }
-
         @media (max-width: 500px) {
             .container {
                 padding: 10px;
@@ -314,7 +314,7 @@
                 : '';
         
             document.getElementById("popup-content").innerHTML = `
-                <h3><a href="${link}" target="_blank" rel="noopener noreferrer" class="popup-link" style="color:blue;">${title}</a></h3>
+                <h3><a href="${link}" target="_blank" rel="noopener noreferrer" class="popup-link" style="color:blue; width:95%; display:block;">${title}</a></h3>
                 <p><strong>${date}</strong></p>
                 <img src="${imageUrl}" style="width:100%; border-radius:10px;">
                 <p>${description}</p>
