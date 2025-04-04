@@ -91,6 +91,22 @@
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             z-index: 1;
         }
+
+        .banner-container .btn2 {
+            position: absolute;
+            right: 270px; /* Adjust the position of the button */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Ensure proper centering */
+            font-size: 18px;
+            color: white;
+            background-color: rgb(105,169,68);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            z-index: 1;
+        }
         
         /* Burger menu styling */
         .burger {
@@ -136,9 +152,75 @@
             background-color: #3e8e41;
         }
 
+        @media (max-width: 1000px) {
+            .banner-container .btn {
+                right: 63px; /* Adjust the position of the button */
+                top: 35%; /* Center vertically */
+            }
+            .banner-container .btn2 {
+                right: 40px; /* Adjust the position of the button */
+                top: 70%; /* Center vertically */
+            }
+        }
+
         @media (max-width: 768px) {
             .burger-menu-content a {
-                font-size: 10px; /* Adjust font size for smaller screens */
+                font-size: 14px; /* Adjust font size for smaller screens */
+            }
+        }
+        @media (max-width: 600px) {
+            .burger-menu-content {
+                display: none;
+                position: flex;
+                top: 100%; /* Position below the burger */
+                left: 50%; /* Reset left if necessary */
+                z-index: 9999;
+            }
+            .banner-container {
+                flex-direction: column; /* Stack elements vertically */
+                align-items: center; /* Center the items horizontally */
+                text-align: center; /* Ensure text is centered */
+            }
+            .burger {
+                margin-top: 40px;
+                left: 15%; /* Center the burger menu */
+                z-index: 10000;
+
+            }
+            .banner-container .btn {
+                z-index: 0;
+                margin-top: 40px;
+                margin-left: 80px;
+                height: 40px;
+                right: 97px;
+            }
+            .banner-container .btn2 {
+                right: 75px; /* Adjust the position of the button */
+                top: 84%; /* Center vertically */
+                height: 40px;
+            }
+        }
+        @media (max-width: 440px) {
+            .banner-container .btn {
+                z-index: 0;
+                margin-top: 40px; /* Add space between the image and the button */
+                margin-left: 80px;
+                height: 40px;
+                right: 58px;
+            }
+            .banner-container .btn2 {
+                right: 35px; /* Adjust the position of the button */
+                top: 84%; /* Center vertically */
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 374px) {
+            .banner-container .btn {
+                right: 48px;
+            }
+            .banner-container .btn2 {
+                right: 25px; /* Adjust the position of the button */
             }
         }
 
@@ -236,35 +318,6 @@
                 width: 100%; /* Make button full width */
             }
 
-        }
-        
-        @media (max-width: 600px) {
-            .burger-menu-content {
-                display: none;
-                position: flex;
-                top: 100%; /* Position below the burger */
-                left: 50%; /* Reset left if necessary */
-                z-index: 9999;
-            }
-            .banner-container .btn {
-                z-index: 0;
-            }
-            .banner-container {
-                flex-direction: column; /* Stack elements vertically */
-                align-items: center; /* Center the items horizontally */
-                text-align: center; /* Ensure text is centered */
-            }
-            .burger {
-                margin-top: 40px;
-                left: 15%; /* Center the burger menu */
-                z-index: 10000;
-
-            }
-            .banner-container .btn {
-                margin-top: 40px; /* Add space between the image and the button */
-                margin-left: 80px;
-                right: 20%;
-            }
         }
 
         /********
