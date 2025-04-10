@@ -220,6 +220,20 @@
             }
         }
 
+        @media (max-width: 400px) {
+            img[src='images/logo-photos/clear-background-dtf-logo.png'],  
+            img[src='../images/logo-photos/clear-background-dtf-logo.png'] {
+                width: 300px; /* Adjust width of this specific image */
+                height: auto; /* Keep aspect ratio */
+                margin-top: -20px; /* Move the image up */
+                margin-left: -30px;
+            }
+            .burger {
+                margin-top: 50px;
+                left: 50%; /* Center the burger menu */
+            }
+        }
+
         /********
         
         NAV BAR CSS

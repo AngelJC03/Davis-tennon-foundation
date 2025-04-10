@@ -127,13 +127,13 @@ document.addEventListener("click", function(event) {
  * RESPNSIBLE FOR MODAL AND COOKIE STORAGE
  * *******/
 
-document.addEventListener("DOMContentLoaded", function () {
-    if (!sessionStorage.getItem("auctionModalShown")) {
-        document.getElementById("auction-popup-modal").style.display = "block";
-        document.getElementById("auction-modal-overlay").style.display = "block";
-        sessionStorage.setItem("auctionModalShown", "true");
-    }
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//     if (!sessionStorage.getItem("auctionModalShown")) {
+//         document.getElementById("auction-popup-modal").style.display = "block";
+//         document.getElementById("auction-modal-overlay").style.display = "block";
+//         sessionStorage.setItem("auctionModalShown", "true");
+//     }
+// });
 
 function closeModal() {
     document.getElementById("auction-popup-modal").style.display = "none";
