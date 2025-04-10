@@ -75,39 +75,6 @@
             z-index: 5; /* Ensure it's above the background image */
         }
         
-        /* Donate Now button styling */
-        .banner-container .btn {
-            position: absolute;
-            right: 80px; /* Adjust the position of the button */
-            top: 50%; /* Center vertically */
-            transform: translateY(-50%); /* Ensure proper centering */
-            font-size: 18px;
-            color: white;
-            background-color: rgb(195,41,58);
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            z-index: 1;
-        }
-
-        .banner-container .btn2 {
-            position: absolute;
-            right: 270px; /* Adjust the position of the button */
-            top: 50%; /* Center vertically */
-            transform: translateY(-50%); /* Ensure proper centering */
-            font-size: 18px;
-            color: white;
-            background-color: rgb(105,169,68);
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            z-index: 1;
-        }
-        
         /* Burger menu styling */
         .burger {
             position: absolute;
@@ -152,75 +119,104 @@
             background-color: #3e8e41;
         }
 
-        @media (max-width: 1000px) {
-            .banner-container .btn {
-                right: 63px; /* Adjust the position of the button */
-                top: 35%; /* Center vertically */
-            }
-            .banner-container .btn2 {
-                right: 40px; /* Adjust the position of the button */
-                top: 70%; /* Center vertically */
-            }
+        .burger-menu-content a[href="https://givebutter.com/0nhBTh"],
+        .burger-menu-content a[href="https://docs.google.com/forms/d/e/1FAIpQLSeyf2L9swDTLg0CM6kyN8VamFCxlJ4w-BgiWQihqsM--hBiWA/viewform"] {
+            display: none;
         }
 
-        @media (max-width: 768px) {
+        /* Donate Now button styling */
+        .banner-container .btn {
+            position: absolute;
+            right: 80px; /* Adjust the position of the button */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Ensure proper centering */
+            font-size: 18px;
+            color: white;
+            background-color: rgb(195,41,58);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            z-index: 1;
+        }
+
+        .banner-container .btn2 {
+            position: absolute;
+            right: 270px; /* Adjust the position of the button */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Ensure proper centering */
+            font-size: 18px;
+            color: white;
+            background-color: rgb(105,169,68);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            z-index: 1;
+        }
+        @media (max-width: 1000px) {
+            img[src='images/logo-photos/clear-background-dtf-logo.png'],  
+            img[src='../images/logo-photos/clear-background-dtf-logo.png'] {
+                width: 300px; /* Adjust width of this specific image */
+                height: auto; /* Keep aspect ratio */
+                margin-top: -20px; /* Move the image up */
+            }
+            .burger {
+                margin-top: -10px;
+                left: 85%; /* Center the burger menu */
+                z-index: 10000;
+
+            }
             .burger-menu-content a {
                 font-size: 14px; /* Adjust font size for smaller screens */
             }
-        }
-        @media (max-width: 600px) {
             .burger-menu-content {
                 display: none;
                 position: flex;
                 top: 100%; /* Position below the burger */
-                left: 50%; /* Reset left if necessary */
+                right: 50%; /* Reset left if necessary */
                 z-index: 9999;
             }
             .banner-container {
-                flex-direction: column; /* Stack elements vertically */
-                align-items: center; /* Center the items horizontally */
-                text-align: center; /* Ensure text is centered */
+                display: flex;
+                align-items: center;
+                justify-content: space-between; /* Adjust as needed */
+                padding: 0 40px; /* Optional, controls side spacing */
+            }
+            .banner-container .btn {
+                top: 140px;
+                height: 40px;
+                right: 20%;
+            }
+            .banner-container .btn2 {
+                top: 140px;
+                right: 50%;
+                height: 40px;
+            }
+        }
+        @media (max-width: 570px) {
+            img[src='images/logo-photos/clear-background-dtf-logo.png'],  
+            img[src='../images/logo-photos/clear-background-dtf-logo.png'] {
+                width: 300px; /* Adjust width of this specific image */
+                height: auto; /* Keep aspect ratio */
+                margin-top: 20px; /* Move the image up */
+                margin-left: -30px;
             }
             .burger {
-                margin-top: 40px;
-                left: 15%; /* Center the burger menu */
-                z-index: 10000;
-
+                margin-top: 13px;
+                left: 85%; /* Center the burger menu */
+            }
+            .burger-menu-content a[href="https://givebutter.com/0nhBTh"],
+            .burger-menu-content a[href="https://docs.google.com/forms/d/e/1FAIpQLSeyf2L9swDTLg0CM6kyN8VamFCxlJ4w-BgiWQihqsM--hBiWA/viewform"] {
+                display: block;
             }
             .banner-container .btn {
-                z-index: 0;
-                margin-top: 40px;
-                margin-left: 80px;
-                height: 40px;
-                right: 97px;
+                display: none;
             }
             .banner-container .btn2 {
-                right: 75px; /* Adjust the position of the button */
-                top: 84%; /* Center vertically */
-                height: 40px;
-            }
-        }
-        @media (max-width: 440px) {
-            .banner-container .btn {
-                z-index: 0;
-                margin-top: 40px; /* Add space between the image and the button */
-                margin-left: 80px;
-                height: 40px;
-                right: 58px;
-            }
-            .banner-container .btn2 {
-                right: 35px; /* Adjust the position of the button */
-                top: 84%; /* Center vertically */
-                height: 40px;
-            }
-        }
-
-        @media (max-width: 374px) {
-            .banner-container .btn {
-                right: 48px;
-            }
-            .banner-container .btn2 {
-                right: 25px; /* Adjust the position of the button */
+                display: none;
             }
         }
 
@@ -282,26 +278,9 @@
             .orangebar {
                 display: flex;
             }
-            img[src='images/logo-photos/clear-background-dtf-logo.png'] {
-                width: 400px;
-                height: auto; /* Keep aspect ratio */
-            }
-            
-            img[src='../images/logo-photos/clear-background-dtf-logo.png'] {
-                width: 400px;
-                height: auto; /* Keep aspect ratio */
-            }
         }
 
-        @media (max-width: 700px) {
-            img[src='images/logo-photos/clear-background-dtf-logo.png'] {
-                width: 300px; /* Adjust width of this specific image */
-                height: auto; /* Keep aspect ratio */
-            }
-            img[src='../images/logo-photos/clear-background-dtf-logo.png'] {
-                width: 300px; /* Adjust width of this specific image */
-                height: auto; /* Keep aspect ratio */
-            }
+        @media (max-width: 900px) {
             .cta-banner .apply-donateCTA,
             .cta-banner .principlesCTA,
             .cta-banner .fundingCTA {
