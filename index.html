@@ -176,7 +176,7 @@
                 const configRes = await fetch('pages/config.json'); // Correct relative path
                 if (!configRes.ok) throw new Error(`HTTP error! status: ${configRes.status}`);
                 const config = await configRes.json();
-                const url = capitalize(config.KEY); // The API URL from config.json
+                const url = capitalize(config.frameworklink); // The API URL from config.json
 
                 console.log(url);
 
