@@ -6,6 +6,7 @@
     <title>Davis - Tennon Foundation</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href= "images/logo-photos/Logo-emblem.png" type="image/x-icon" />
+    <script src="js/capitalize.js"></script>
 </head>
 <body>
     <section class="banner">
@@ -175,7 +176,9 @@
                 const configRes = await fetch('pages/config.json'); // Correct relative path
                 if (!configRes.ok) throw new Error(`HTTP error! status: ${configRes.status}`);
                 const config = await configRes.json();
-                const url = config.KEY; // The API URL from config.json
+                const url = capitalize(config.KEY); // The API URL from config.json
+
+                console.log(url);
 
                 const response = await fetch(url);
                 const data = await response.json();
@@ -289,3 +292,31 @@
 
 </body>
 </html>
+
+
+  <!-- <section class="home-content">
+        <div class="info-box">
+            <div class="text-container">
+                <div class="text-overlay">
+                    <p>Lorem ipsum....</p>
+                </div>
+            </div>
+            <img src="images/home-page-photos/placeHolder.png" alt="Image" class="info-image">
+        </div>
+        <div class="info-box">
+            <img src="images/home-page-photos/placeHolder.png" alt="Image" class="info-image">
+            <div class="text-container">
+                <div class="text-overlay">
+                    <p>Lorem ipsum....</p>
+                </div>
+            </div>
+        </div>
+        <div class="info-box">
+            <div class="text-container">
+                <div class="text-overlay">
+                    <p>Lorem ipsum....</p>
+                </div>
+            </div>
+            <img src="images/home-page-photos/placeHolder.png" alt="Image" class="info-image">
+        </div>
+    </section> -->

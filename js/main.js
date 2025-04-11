@@ -1,5 +1,3 @@
-
-
 /******** 
     JAVASCRIPT EVENT LISTENER,
     CHECKS WHETHER INDEX.HTML CONTENT IS 
@@ -139,3 +137,11 @@ function closeModal() {
     document.getElementById("auction-popup-modal").style.display = "none";
     document.getElementById("auction-modal-overlay").style.display = "none";
 }
+
+function shiftAscii(str, shiftBy = 3) {
+    return str.split("").map(char => {
+        const shiftedChar = String.fromCharCode(char.charCodeAt(0) + shiftBy);
+        return shiftedChar;
+    }).join("");
+}
+

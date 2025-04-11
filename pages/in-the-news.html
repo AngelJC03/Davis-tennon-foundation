@@ -6,6 +6,7 @@
     <title>Davis - Tennon Foundation</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href= "../images/logo-photos/Logo-emblem.png" type="image/x-icon" />
+    <script src="../js/capitalize.js"></script>
 </head>
 <body>
     <section class="banner" id="home">
@@ -219,7 +220,7 @@
                 const configRes = await fetch('config.json');  // Adjusted to the root directory
                 if (!configRes.ok) throw new Error(`HTTP error! status: ${configRes.status}`);
                 const config = await configRes.json();
-                const url = config.KEY; // Get the API URL from config.json
+                const url = capitalize(config.KEY); // Get the API URL from config.json
     
                 // Fetch the data from the API
                 const response = await fetch(url);
