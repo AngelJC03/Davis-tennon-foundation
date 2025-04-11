@@ -171,13 +171,16 @@
 
     <script>
         async function fetchData() {
-            const url = "https://script.google.com/macros/s/AKfycbz__jHa1zKYb7d6_sewmCKt-NwOwdPfvleIhTovtsJ2l7uc-ynw1O_Ofc6vgy8CsMJRyQ/exec";
-        
             try {
+                const configRes = await fetch('pages/config.json'); // Correct relative path
+                if (!configRes.ok) throw new Error(`HTTP error! status: ${configRes.status}`);
+                const config = await configRes.json();
+                const url = config.KEY; // The API URL from config.json
+
                 const response = await fetch(url);
                 const data = await response.json();
                 const container = document.getElementById("data-container");
-                container.innerHTML = ""; 
+                container.innerHTML = "";
         
                 const firstThreeRows = data.slice(1, 4); // Ignora la primera fila (encabezados)
         
@@ -286,31 +289,3 @@
 
 </body>
 </html>
-
-
-  <!-- <section class="home-content">
-        <div class="info-box">
-            <div class="text-container">
-                <div class="text-overlay">
-                    <p>Lorem ipsum....</p>
-                </div>
-            </div>
-            <img src="images/home-page-photos/placeHolder.png" alt="Image" class="info-image">
-        </div>
-        <div class="info-box">
-            <img src="images/home-page-photos/placeHolder.png" alt="Image" class="info-image">
-            <div class="text-container">
-                <div class="text-overlay">
-                    <p>Lorem ipsum....</p>
-                </div>
-            </div>
-        </div>
-        <div class="info-box">
-            <div class="text-container">
-                <div class="text-overlay">
-                    <p>Lorem ipsum....</p>
-                </div>
-            </div>
-            <img src="images/home-page-photos/placeHolder.png" alt="Image" class="info-image">
-        </div>
-    </section> -->

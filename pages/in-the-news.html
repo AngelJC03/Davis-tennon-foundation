@@ -209,24 +209,29 @@
         let displayedArticles = 0;
         const initialDisplayCount = 6;
         const incrementCount = 6;
-
+    
         async function fetchData() {
             const loadingDiv = document.getElementById("loading");
             loadingDiv.style.display = "flex"; // Show loading div
-
-            const url = "https://script.google.com/macros/s/AKfycbz__jHa1zKYb7d6_sewmCKt-NwOwdPfvleIhTovtsJ2l7uc-ynw1O_Ofc6vgy8CsMJRyQ/exec";
-            
+    
             try {
+                // Fetch the config.json to get the API URL
+                const configRes = await fetch('config.json');  // Adjusted to the root directory
+                if (!configRes.ok) throw new Error(`HTTP error! status: ${configRes.status}`);
+                const config = await configRes.json();
+                const url = config.KEY; // Get the API URL from config.json
+    
+                // Fetch the data from the API
                 const response = await fetch(url);
                 const data = await response.json();
                 articles = data.slice(1); // Remove header row
-
-                displayedArticles = initialDisplayCount; // ✅ Initialize correctly
+    
+                displayedArticles = initialDisplayCount; // Initialize correctly
                 renderArticles();
-
+    
                 // Hide the loading div once data is loaded
                 loadingDiv.style.display = "none";
-
+    
                 if (articles.length > displayedArticles) {
                     document.getElementById("show-more").style.display = "inline-block"; // Show button if more articles exist
                 }
@@ -236,22 +241,22 @@
                 loadingDiv.style.display = "none"; // Hide loading on error
             }
         }
-
+    
         function renderArticles() {
             const container = document.getElementById("data-container");
-
-            // ✅ Do not clear articles; instead, render only the new batch
+    
+            // Do not clear articles; instead, render only the new batch
             const toShow = articles.slice(displayedArticles - incrementCount, displayedArticles);
-
+    
             toShow.forEach((row) => {
-                let rawDate = row[0]; 
+                let rawDate = row[0];
                 const title = row[1];
                 const description = row[2];
                 const imageUrl = row[4] || "https://via.placeholder.com/100";
                 const link = row[3] || "";
-
+    
                 console.log("Link:", link); // Debugging
-
+    
                 // Format date
                 let formattedDate;
                 if (rawDate.includes("T")) {
@@ -264,11 +269,11 @@
                 } else {
                     formattedDate = rawDate;
                 }
-
+    
                 const truncatedDescription = description.length > 120
                     ? `${description.substring(0, 120)}... <span class="read-more">Read more</span>`
                     : description;
-
+    
                 const rowDiv = document.createElement("div");
                 rowDiv.classList.add("row");
                 rowDiv.innerHTML = `
@@ -281,32 +286,31 @@
                         <div class="description">${truncatedDescription}</div>
                     </div>
                 `;
-
-                // ✅ Pass the `link` value when calling `openPopup`
+    
+                // Pass the `link` value when calling `openPopup`
                 rowDiv.addEventListener("click", () => openPopup(title, formattedDate, description, imageUrl, link));
-
+    
                 container.appendChild(rowDiv);
             });
-
+    
             // Hide button if all articles are shown
             if (displayedArticles >= articles.length) {
                 document.getElementById("show-more").style.display = "none";
             }
         }
-
-        // ✅ Increase displayed count correctly
+    
+        // Increase displayed count correctly
         document.getElementById("show-more").addEventListener("click", () => {
             displayedArticles += incrementCount;
             renderArticles();
         });
-
     
         function openPopup(title, date, description, imageUrl, link) {
             document.getElementById("overlay").style.display = "block";
             document.getElementById("popup").style.display = "block";
-        
+    
             console.log("Opening popup with link:", link); // Debugging
-        
+    
             let linkHTML = link
                 ? `<p style="text-align:center; margin-top:15px;">
                      <a href="${link}" target="_blank" rel="noopener noreferrer" class="popup-link" style="color:blue;">
@@ -314,16 +318,15 @@
                      </a>
                    </p>`
                 : '';
-        
+    
             document.getElementById("popup-content").innerHTML = `
                 <h3><a href="${link}" target="_blank" rel="noopener noreferrer" class="popup-link" style="color:blue; width:95%; display:block;">${title}</a></h3>
                 <p><strong>${date}</strong></p>
                 <img src="${imageUrl}" style="width:100%; border-radius:10px;">
                 <p>${description}</p>
-                ${linkHTML} <!-- ✅ Displays only if the link is available -->
+                ${linkHTML} <!-- Displays only if the link is available -->
             `;
         }
-        
     
         function closePopup() {
             document.getElementById("overlay").style.display = "none";
@@ -331,7 +334,7 @@
         }
     
         fetchData();
-    </script>
+    </script>    
 
     <!-- <div class="overlay" id="auction-modal-overlay"></div>
     <div class="auction-popup" id="auction-popup-modal">
