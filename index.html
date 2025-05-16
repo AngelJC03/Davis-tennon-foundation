@@ -178,8 +178,6 @@
                 const config = await configRes.json();
                 const url = capitalize(config.frameworklink); // The API URL from config.json
 
-                console.log(url);
-
                 const response = await fetch(url);
                 const data = await response.json();
                 const container = document.getElementById("data-container");
@@ -285,7 +283,7 @@
             <!-- <input type="email" placeholder="Enter your email" class="newsletter-input"> -->
             <a href="http://eepurl.com/jeVNAE" target="_blank" rel="noopener noreferrer">
                 <button class="subscribe-btn">Subscribe Now</button>
-              </a>
+            </a>
             <h2>This email is only intended to send you news regarding the Davis-Tennon Foundation. You will have the option to opt-out at any time.</h2>
         </div>
     </footer>
