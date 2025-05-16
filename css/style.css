@@ -914,7 +914,7 @@
         }
         
         .donate-links .btn {
-            font-size: 2rem; /* Adjust the size as needed */
+            font-size: 1.4rem; /* Adjust the size as needed */
             font-weight: bold; /* Optional: Makes text bolder */
             text-decoration: none; /* Removes underline */
             padding: 15px 30px; /* Ensures button doesn't shrink */
