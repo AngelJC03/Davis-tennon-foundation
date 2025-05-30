@@ -99,7 +99,7 @@
                          family. Jennie worked 19 years at The Children’s Workshop, progressing from
                           Teen Aid to School Director, before joining Segue in 2023. As Admissions
                            Coordinator/Administrative Assistant, she loves supporting families, staff,
-                            and students, continuing her lifelong commitment to the Central Falls community. Mrs. Sousa can be reached at <a href="mailto:agarcia@davis-tennonfoundation.org">jsousa@davis-tennonfoundation.org</a>.
+                            and students, continuing her lifelong commitment to the Central Falls community. Mrs. Sousa can be reached at <a href="mailto:jsousa@davis-tennonfoundation.org">jsousa@davis-tennonfoundation.org</a>.
                 </h1>
             </div>
         </div>
@@ -130,7 +130,7 @@
                     advocating for the community members of Central Falls and 
                     beyond. As a member of the foundation, Angel is committed to 
                     addressing critical needs within Rhode Island and providing 
-                    support beyond the technical realm. Mr. Castano can be reached at <a href="mailto:agarcia@davis-tennonfoundation.org">agarcia@davis-tennonfoundation.org</a>.
+                    support beyond the technical realm. Mr. Castano can be reached at <a href="mailto:acastano@davis-tennonfoundation.org">acastano@davis-tennonfoundation.org</a>.
                 </h1>
             </div>
         </div>
@@ -235,46 +235,31 @@
             }
         }
         
+        let previousWidth = window.innerWidth;
+
         function handleResize() {
-            var textElements = document.querySelectorAll('.text-content');  // Get all the text elements
-        
-            // Loop through each text element to handle its visibility
-            textElements.forEach(function(text) {
-                // Find the closest staff member div for the text element
-                var staffMember = text.closest('.staff-member');  
-        
-                if (!staffMember) {
-                    console.log("No staff member found for this text element");
-                    return; // Skip this iteration if no staff member is found
-                }
-        
-                // Find the corresponding toggle bar within this staff member
-                var toggleBar = staffMember.querySelector('.toggle-bar');  
-        
-                if (!toggleBar) {
-                    console.log("No toggle bar found for this staff member");
-                    return; // Skip this iteration if toggle bar is not found
-                }
-        
-                // Check if the screen width is greater than 475px
-                if (window.innerWidth > 768) {
-                    // If the text is hidden, show it and update the toggle bar text
-                    if (text.style.display === "none" || text.style.display === "") {
-                        text.style.display = "block";  // Show the text content
-                        toggleBar.innerHTML = "Click to Hide";  // Update the toggle bar text
+            const currentWidth = window.innerWidth;
+
+            if ((previousWidth <= 768 && currentWidth > 768) ||
+                (previousWidth > 768 && currentWidth <= 768)) {
+                // Only trigger when crossing the breakpoint
+                document.querySelectorAll('.text-content').forEach(function(text) {
+                    const staffMember = text.closest('.staff-member');
+                    const toggleBar = staffMember.querySelector('.toggle-bar');
+
+                    if (currentWidth > 768) {
+                        text.style.display = "block";
+                        toggleBar.innerHTML = "Click to Hide";
+                    } else {
+                        text.style.display = "none";
+                        toggleBar.innerHTML = "Click to View More";
                     }
-                }
-        
-                // If the screen width is less than or equal to 475px, hide the text and update the toggle bar
-                if (window.innerWidth <= 768) {
-                    // If the text is visible, hide it and update the toggle bar text
-                    if (text.style.display === "block") {
-                        text.style.display = "none";  // Hide the text content
-                        toggleBar.innerHTML = "Click to View More";  // Update the toggle bar text
-                    }
-                }
-            });
+                });
+            }
+
+            previousWidth = currentWidth;
         }
+
         
         // Add an event listener to trigger handleResize when the window is resized
         window.addEventListener('resize', handleResize);
