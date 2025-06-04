@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5H2FW741S1"></script>
     <script>
@@ -68,16 +68,159 @@
             </nav>
         </div>
     </header>
+
+    <!-- <div class="campain-banner fade-in">
+        <div class="campaign-container">
+          <div class="campaign-text">
+            <h1>
+              Join us in our mission to empower communities through education, leadership, and opportunity.
+            </h1>
+            <div class="progress-bar-wrapper">
+              <div class="progress-bar">
+                <div class="progress-fill"></div>
+              </div>
+            </div>
+          </div>
+          <a href="https://givebutter.com/0nhBTh" class="campaign-btn">Donate Now</a>
+        </div>
+      </div> -->
+
+    <style>
+        
+        .campain-banner {
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            font-size: 10px;
+        }
+
+        .campaign-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            background-image: linear-gradient(rgba(200, 200, 200, 0.551), rgba(200, 200, 200, 0.551)), url("images/logo-photos/repeated-logo.jpg");
+        }
+
+        .campaign-container h1 {
+            text-align: center;
+            margin: 20px;
+            font-size: 1rem; /* Font size */
+            text-shadow: 0 2px 4px rgb(0, 0, 0); /* Text shadow for better readability */
+          }
+
+        .campaign-btn {
+            background-color: #00d084;
+            color: white; /* Text color */
+            padding: 10px 20px;
+            font-size: 1rem; /* Font size */
+            text-decoration: none; /* Remove underline */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
+            z-index: 3; /* Ensure the button is above the container */
+            white-space: nowrap; /* Prevents wrapping */
+            margin-right: 10%;
+            box-shadow: 0 4px 10px rgba(2, 57, 37, 0.489);
+            
+        }
+
+        @media (max-width: 800px) {
+            .campain-banner h1 {
+                font-size: 12px;
+            }
+            .campaign-btn {
+              font-size: 12px;
+              padding: 8px 12px;
+              text-align: center;
+              display: inline-block;
+            }
+          }
+
+          .progress-bar-wrapper {
+            width: 80%;
+            max-width: 500px;
+            height: 15px;
+            background-color: #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px auto; /* Center the progress bar */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.317); /* Soft shadow */
+          }
+          
+          .progress-bar {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            position: relative;
+          
+            /* Grey diagonal stripes */
+            background-image: repeating-linear-gradient(
+              45deg,
+              #c5c5c5 0,
+              #c5c5c5 10px,
+              #ddd 10px,
+              #ddd 20px
+            );
+          }
+
+          :root {
+            --goal-percent: 60; /* <- Just change this number for different goals */
+            --stripe-light: #eee;
+            --stripe-dark: #ddd;
+            --green-light: rgba(255, 255, 255, 0.3);
+            --green-dark: rgba(0, 0, 0, 0.1);
+            --green-bg: #00d084;
+          }
+
+          .progress-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0%;
+            border-radius: 10px;
+            background-color: rgba(0, 204, 20, 0.773); /* green with 60% opacity */
+            transition: width 2s ease-in-out;
+          }
+          
+          @keyframes stripes {
+            from {
+              background-position: 0 0;
+            }
+            to {
+              background-position: 40px 0;
+            }
+          }  
+
+    </style>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+          const progress = document.querySelector(".progress-fill");
+          const goal = 60; // <-- just change this number to adjust goal %
+          setTimeout(() => {
+            progress.style.width = goal + "%";
+          }, 300);
+        });
+      </script>
     
-    <div class="hero fade-in" style="--delay: .1s;">
+      <div class="hero fade-in" style="--delay: .1s;">
         <img src="images/home-page-photos/hero_photo2.jpg" alt="Image">
-        <h1>
-            “The birth of the Davis-Tennon Foundation 
+        
+        <div class="hero-text">
+            <h1>“The birth of the Davis-Tennon Foundation 
             <br> started with the realization that the 
             <br>gift of success is the ability to give back,”
-            <br> - Viola Davis
-        </h1>
+            <br> - Viola Davis</h1>
+        </div>
     </div>
+    
     
     <section class="cta-banner fade-in" style="--delay: .2s;">
         <div class="cta-container">
@@ -88,9 +231,6 @@
     </section>
     
     <div class="decorative-banner fade-in">
-        <div class="image-container">
-            <img src="images/logo-photos/repeated-logo.jpg" alt="Image">
-        </div>
         <div class="button-container">
             <h1>Contribute to the Davis-Tennon Foundation Today!</h1>
             <a href="https://givebutter.com/0nhBTh" class="donate-btn">Donate Now</a>
