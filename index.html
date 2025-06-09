@@ -28,7 +28,7 @@
     <link rel="icon" href="images/logo-photos/Logo-emblem.png" type="image/x-icon" />
     <script src="js/capitalize.js"></script>
 </head>
-<body>
+<body class ="home-page">
     <section class="banner">
         <div class="banner-container">
             <div class="burger">
@@ -40,15 +40,15 @@
                     <a href="pages/what-we-fund.html">What We Fund</a>
                     <a href="pages/board-members.html">Board Members</a>
                     <a href="pages/partners.html">Partners/Resources</a>
-                    <a href="https://givebutter.com/0nhBTh">Donate Now</a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeyf2L9swDTLg0CM6kyN8VamFCxlJ4w-BgiWQihqsM--hBiWA/viewform">Apply For Funding</a>
+                    <a href="https://givebutter.com/0nhBTh" target="_blank" rel="noopener noreferrer">Donate Now</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeyf2L9swDTLg0CM6kyN8VamFCxlJ4w-BgiWQihqsM--hBiWA/viewform" target="_blank" rel="noopener noreferrer">Apply For Funding</a>
                   </div>
             </div>
             <a href="index.html">
                 <img src="images/logo-photos/clear-background-dtf-logo.png" alt="Image" width="500" height="155">
             </a>
-            <a href="https://givebutter.com/0nhBTh" class="btn">Donate Now</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeyf2L9swDTLg0CM6kyN8VamFCxlJ4w-BgiWQihqsM--hBiWA/viewform" class="btn2">Apply For Funding</a>
+            <a href="https://givebutter.com/0nhBTh" target="_blank" rel="noopener noreferrer" class="btn">Donate Now</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeyf2L9swDTLg0CM6kyN8VamFCxlJ4w-BgiWQihqsM--hBiWA/viewform" target="_blank" rel="noopener noreferrer" class="btn2">Apply For Funding</a>
         </div>
     </section>
     
@@ -68,6 +68,8 @@
             </nav>
         </div>
     </header>
+
+    <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=iICpNmwnRgOMH7V8&p=other"></script>
 
     <!-- <div class="campain-banner fade-in">
         <div class="campaign-container">
@@ -210,34 +212,61 @@
         });
       </script>
      -->
-      <div class="hero fade-in" style="--delay: .1s;">
-        <img src="images/home-page-photos/hero_photo2.jpg" alt="Image">
-        
+
+     <div class="hero fade-in" style="--delay: .1s;">
+        <img src="images/home-page-photos/hero_photo2.jpg" alt="Image" />
+      
         <div class="hero-text">
-            <h1>“The birth of the Davis-Tennon Foundation 
-            <br> started with the realization that the 
-            <br>gift of success is the ability to give back,”
-            <br> - Viola Davis</h1>
+          <div class="hero-left">
+            <h1>
+              “The birth of the Davis-Tennon Foundation 
+              <br> started with the realization that the 
+              <br>gift of success is the ability to give back,”
+              <br> - Viola Davis
+            </h1>
+            <button class="hero-donate-btn">
+              <a href="https://givebutter.com/0nhBTh" target="_blank" rel="noopener noreferrer">Donate Now</a>
+            </button>
+          </div>
+      
+          <div class="hero-right">
+            <div class="widget-wrapper">
+              <givebutter-widget id="p5odxL"></givebutter-widget>
+            </div>
+          </div>
         </div>
-    </div>
-    
+      </div>
+      
     
     <section class="cta-banner fade-in" style="--delay: .2s;">
         <div class="cta-container">
             <a href="pages/what-we-fund.html" class="fundingCTA">What We Fund</a>
             <a href="pages/foundation-staff.html" class="principlesCTA">Foundation Staff</a>
-            <a href="https://givebutter.com/0nhBTh" class="apply-donateCTA">Donate Now</a>
+            <a href="https://givebutter.com/0nhBTh" target="_blank" rel="noopener noreferrer" class="apply-donateCTA">Donate Now</a>
         </div>
     </section>
     
-    <div class="decorative-banner fade-in">
+    <!-- <div class="decorative-banner fade-in">
         <div class="button-container">
             <h1>Contribute to the Davis-Tennon Foundation Today!</h1>
-            <a href="https://givebutter.com/0nhBTh" class="donate-btn">Donate Now</a>
+            <a href="https://givebutter.com/0nhBTh" target="_blank" rel="noopener noreferrer" class="donate-btn">Donate Now</a>
         </div>
-    </div>
-    
+    </div> -->
+
     <style>
+
+        .widget-wrapper {
+            width: 350px; /* Try 250px, 200px, etc. */
+            max-width: 100%;
+            display: flex;
+            justify-content: flex-end;
+          }
+          
+          givebutter-widget {
+            width: 100% !important;
+            max-width: 100% !important;
+          }          
+
         h2 {
             font-size: 24px;
             margin-bottom: 5px;
@@ -324,7 +353,7 @@
     </style>
     
 
-    <div class="news fade-in">
+    <div class="news fade-in" style="margin-top: 20px; --delay: .3s;">
         <h2>Recent Articles</h2>
         <div class="divider"></div>
         <div class="container" id="data-container"></div>
@@ -349,6 +378,7 @@
                     let rawDate = row[0]; 
                     const title = row[1];
                     const description = row[2];
+                    const link = row[3];
                     const imageUrl = row[4] || "https://via.placeholder.com/100"; 
         
                     // Verifica si la fecha está en formato ISO y la convierte
@@ -365,7 +395,7 @@
                     }
         
                     const truncatedDescription = description.length > 100
-                        ? `${description.substring(0, 100)}... <span class="read-more"> <br><br> <a href="pages/in-the-news.html">See more...</a> <br></span>`
+                        ? `${description.substring(0, 100)}... <span class="read-more"> <br><br> <a href="pages/in-the-news.html">See more articles...</a> <br></span>`
                         : description;
         
                     const rowDiv = document.createElement("div");
@@ -377,7 +407,7 @@
                         </div>
                         <div class="content">
                             <div class="date">${formattedDate}</div>
-                            <div class="title"><a href="pages/in-the-news.html">${title}</a></div>
+                            <div class="title"><a href=${link}>${title}</a></div>
                             <div class="description">${truncatedDescription}</div>
                         </div>
                     `;
@@ -433,7 +463,7 @@
             <!-- Right Section: Donate Button -->
             <div class="footer-section socials-donate">
                 <ul class="donate-links">
-                    <li><a href="https://givebutter.com/0nhBTh" class="btn">Donate Today</a></li>
+                    <li><a href="https://givebutter.com/0nhBTh" target="_blank" rel="noopener noreferrer" class="btn">Donate Today</a></li>
                 </ul>
             </div>
         </div>
@@ -441,9 +471,81 @@
             <h4>NEWSLETTER</h4>
             <p>Subscribe to our newsletter to keep up with the latest news on the Davis-Tennon Foundation!</p>
             <!-- <input type="email" placeholder="Enter your email" class="newsletter-input"> -->
-            <a href="http://eepurl.com/jeVNAE" target="_blank" rel="noopener noreferrer">
-                <button class="subscribe-btn">Subscribe Now</button>
-            </a>
+            <div id="mc_embed_shell">
+                <div id="mc_embed_signup">
+                  <form action="https://davis-tennonfoundation.us20.list-manage.com/subscribe/post?u=ee1896e60a2c02f5c56dffd15&amp;id=e40c54c790&amp;f_id=002cc7f1f0" 
+                        method="post" 
+                        id="mc-embedded-subscribe-form" 
+                        name="mc-embedded-subscribe-form" 
+                        class="validate" 
+                        target="_self" 
+                        novalidate>
+                    
+                    <div class="email-enter">
+                      <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required placeholder="E-mail">
+                    </div>
+              
+                    <div id="mce-responses" class="clear foot">
+                      <div class="response" id="mce-error-response" style="color: black; display: none;"></div>
+                      <div class="response" id="mce-success-response" style="color: black; display: none;"></div>
+                    </div>
+              
+                    <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                      <input type="text" name="b_ee1896e60a2c02f5c56dffd15_e40c54c790" tabindex="-1" value="">
+                    </div>
+              
+                    <div class="optionalParent">
+                      <div class="clear foot">
+                        <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="subscribe-btn" value="Subscribe Now">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              
+              <script>
+              document.getElementById('mc-embedded-subscribe-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+              
+                const emailInput = document.getElementById('mce-EMAIL');
+                const email = emailInput.value.trim();
+                const successDiv = document.getElementById('mce-success-response');
+                const errorDiv = document.getElementById('mce-error-response');
+              
+                // Clear messages
+                successDiv.style.display = 'none';
+                errorDiv.style.display = 'none';
+              
+                // Basic email format check
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                  errorDiv.innerHTML = 'Please enter a valid email address.';
+                  errorDiv.style.display = 'block';
+                  return;
+                }
+              
+                // Proceed with fetch if email format is valid
+                const form = e.target;
+                const formData = new FormData(form);
+              
+                fetch(form.action, {
+                  method: 'POST',
+                  mode: 'no-cors',
+                  body: formData
+                })
+                .then(() => {
+                  successDiv.innerHTML = 'Thank you for subscribing!';
+                  successDiv.style.display = 'block';
+                  form.reset();
+                })
+                .catch(() => {
+                  errorDiv.innerHTML = 'There was an error. Please try again later.';
+                  errorDiv.style.display = 'block';
+                });
+              });
+            </script>                      
+                
+           
             <h2>This email is only intended to send you news regarding the Davis-Tennon Foundation. You will have the option to opt-out at any time.</h2>
         </div>
     </footer>

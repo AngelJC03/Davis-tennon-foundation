@@ -35,7 +35,6 @@
         
         *********/
         html, body {
-            max-height: 1200px; /* Set the maximum height for the body */
             margin: 0;
             padding: 0;
             box-sizing: border-box; /* Ensure consistent box model */
@@ -43,12 +42,78 @@
             line-height: 1.6; /* Line height for better readability */
             background-color: rgb(245, 245, 245);
             min-height: 100vh; /* Ensure full height on smaller screens */
-            background-image: url('../images/logo-photos/background-for-page.jpg');
-            background-size: cover; /* Ensures the image covers the entire page */
-            background-position: center; /* Centers the image */
-            background-repeat: no-repeat; /* Prevents tiling */
-            background-attachment: fixed; /* Keeps the background fixed while scrolling */
         }
+
+        /*******
+
+        BACKGROUNDS FOR PAGES
+
+        *******/
+
+        .home-page {
+            background-image: url('../images/logo-photos/background-for-page.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100%;
+        }
+
+
+        .violas-and-julius-story {
+            background-image: url('../images/logo-photos/beige-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100%;
+        }
+
+        .in-the-news-page {
+            background-image: url('../images/logo-photos/yellow-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100%;
+        }
+
+        .foundation-staff-page {
+            background-image: url('../images/logo-photos/grey-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100%;
+        }
+
+        .what-we-fund-page {
+            background-image: url('../images/logo-photos/green-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100%;
+        }
+
+        .board-members-page {
+            background-image: url('../images/logo-photos/brownish-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100%;
+        }
+
+        .partners-page {
+            background-image: url('../images/logo-photos/red-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100%;
+        }
+
 
         /********
         
@@ -279,10 +344,6 @@
         
 
         @media (max-width: 1000px) {
-            .hero h1 {
-                font-size: 24px; /* Adjust font size */
-                left: 10%;
-            }
             nav {
                 display: none;
             }
@@ -318,57 +379,104 @@
         HERO SECTION CSS
 
         *********/
+
         .hero {
-            position: relative; /* Allow absolute positioning of the h1 inside this div */
-            z-index: 1;
-            background-image: url('../images/home-page-photos/hero_photo2.jpg'); /* Background image */
-            text-align: center;
-        }
-        @media (max-width: 1375px) {
-            .hero {
-                left: auto;  /* Resets left */
-                width: auto; /* Resets width */
-            }
-        }
-        
-        .hero img {
-            width: 100%; /* Make sure the image spans the full width */
-            height: 500px; /* Set a fixed height for the image */
+            width: 100%;
+          }
+          
+          .hero img {
+            width: 100%;
+            height: 650px;
             object-fit: cover;
-            display: block; /* Prevent space below image */
+            display: block;
             object-position: center 30%;
-        }
-        
-        .hero-text {
-            height: 150px;
-            align-items: center;  /* vertical centering */
-            justify-content: center; /* horizontal centering */
-            text-align: center;
-            color: white;
-            background-image: linear-gradient(rgba(200, 200, 200, 0.551), rgba(200, 200, 200, 0.551)), url("../images/logo-photos/repeated-logo.jpg");
+          }
+          
+          .hero-text {
+            display: flex;
+            height: auto;
+            background-image: linear-gradient(rgba(200, 200, 200, 0.551), rgba(200, 200, 200, 0.551)),
+              url("../images/logo-photos/repeated-logo.jpg");
             background-size: cover;
             text-shadow: 0 4px 10px rgb(0, 0, 0);
-        }
+            padding: 40px;
+          }
+          
+          .hero-left {
+            width: 50%;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            display: flex; /* Make it a flex container */
+            justify-content: center; /* Horizontally center content */
+            align-items: center;     /* Vertically center content */
+            padding-right: 20px;
+          }
+          
+          .hero-left h1 {
+            font-size: 2rem;
+            text-align: center;
+          }
+          
+          .hero-right {
+            width: 50%;
+            display: flex; /* Make it a flex container */
+            justify-content: center; /* Horizontally center content */
+            align-items: center;     /* Vertically center content */
+          }
 
-        .hero-text h1 {
-            font-size: 1.2rem;
-            padding: 20px; /* Padding for spacing */
-        }
-        
-        @media (max-width: 950px) {
-            .hero img {
-                height: 300px; /* Adjust height for smaller screens */
-            }
-            .hero-text h1 {
-                font-size: 14px; /* Adjust vertical position */
-                padding: 30px;
-            }
+          .hero-donate-btn {
+            width: 150px; /* Fixed width for the button */
+            background-color: rgb(195,41,58);
+            color: white; /* Text color */
+            padding: 10px 20px;
+            font-size: 1rem; /* Font size */
+            text-decoration: none; /* Remove underline */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
+            z-index: 3; /* Ensure the button is above the container */
+            white-space: nowrap; /* Prevents wrapping */
+            margin-top: 5px; /* Space between text and button */
+            box-shadow: 0 4px 10px rgba(2, 57, 37, 0.489);
+            border: none;
+            display: none;
+          }
 
-        }
+          .hero-text a{
+            color: white;
+          }
+
+          @media (max-width: 950px) {
+            .hero-text {
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+              padding: 30px;
+            }
+          
+            .hero-left {
+              width: 100%;
+              padding-right: 0;
+              align-items: center;
+            }
+          
+            .hero-left h1 {
+              font-size: 1.5rem;
+              padding: 0;
+            }
+          
+            .hero-right {
+              display: none; /* Hide the widget entirely */
+            }
+            .hero-donate-btn {
+                display: block;
+            }
+          }
 
         @media (max-width: 350px) {
             .hero-text h1 {
-                font-size: 12px;
+                font-size: 0.8rem;
             }
         }
         /********
@@ -656,7 +764,6 @@
         /*********
         VIOLAS-STORY-heading
         ********/
-
         #violas-story-title {
             color: rgb(0, 0, 0); /* Adjust color */
             text-align: center; /* Center the text */
