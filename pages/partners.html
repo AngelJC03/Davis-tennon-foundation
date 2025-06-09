@@ -214,10 +214,83 @@
         <div class="newsletter-container">
             <h4>NEWSLETTER</h4>
             <p>Subscribe to our newsletter to keep up with the latest news on the Davis-Tennon Foundation!</p>
-            <a href="http://eepurl.com/jeVNAE" target="_blank" rel="noopener noreferrer">
-                <button class="subscribe-btn">Subscribe Now</button>
-            </a>
-            <h2>This email is only intended to send you updates on the Davis-Tennon Foundation. You will have the option to unsubscribe at any time.</h2>
+            <!-- <input type="email" placeholder="Enter your email" class="newsletter-input"> -->
+            <div id="mc_embed_shell">
+                <div id="mc_embed_signup">
+                  <form action="https://davis-tennonfoundation.us20.list-manage.com/subscribe/post?u=ee1896e60a2c02f5c56dffd15&amp;id=e40c54c790&amp;f_id=002cc7f1f0" 
+                        method="post" 
+                        id="mc-embedded-subscribe-form" 
+                        name="mc-embedded-subscribe-form" 
+                        class="validate" 
+                        target="_self" 
+                        novalidate>
+                    
+                    <div class="email-enter">
+                      <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required placeholder="E-mail">
+                    </div>
+              
+                    <div id="mce-responses" class="clear foot">
+                      <div class="response" id="mce-error-response" style="color: black; display: none;"></div>
+                      <div class="response" id="mce-success-response" style="color: black; display: none;"></div>
+                    </div>
+              
+                    <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                      <input type="text" name="b_ee1896e60a2c02f5c56dffd15_e40c54c790" tabindex="-1" value="">
+                    </div>
+              
+                    <div class="optionalParent">
+                      <div class="clear foot">
+                        <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="subscribe-btn" value="Subscribe Now">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              
+              <script>
+              document.getElementById('mc-embedded-subscribe-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+              
+                const emailInput = document.getElementById('mce-EMAIL');
+                const email = emailInput.value.trim();
+                const successDiv = document.getElementById('mce-success-response');
+                const errorDiv = document.getElementById('mce-error-response');
+              
+                // Clear messages
+                successDiv.style.display = 'none';
+                errorDiv.style.display = 'none';
+              
+                // Basic email format check
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                  errorDiv.innerHTML = 'Please enter a valid email address.';
+                  errorDiv.style.display = 'block';
+                  return;
+                }
+              
+                // Proceed with fetch if email format is valid
+                const form = e.target;
+                const formData = new FormData(form);
+              
+                fetch(form.action, {
+                  method: 'POST',
+                  mode: 'no-cors',
+                  body: formData
+                })
+                .then(() => {
+                  successDiv.innerHTML = 'Thank you for subscribing!';
+                  successDiv.style.display = 'block';
+                  form.reset();
+                })
+                .catch(() => {
+                  errorDiv.innerHTML = 'There was an error. Please try again later.';
+                  errorDiv.style.display = 'block';
+                });
+              });
+            </script>                      
+                
+           
+            <h2>This email is only intended to send you news regarding the Davis-Tennon Foundation. You will have the option to opt-out at any time.</h2>
         </div>
     </footer>
     
