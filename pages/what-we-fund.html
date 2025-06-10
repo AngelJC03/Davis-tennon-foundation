@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href= "../images/logo-photos/Logo-emblem.png" type="image/x-icon" />
 </head>
-<body>
+<body class="what-we-fund-page">
     <section class="banner" id="home">
         <div class="banner-container">
             <div class="burger">
@@ -45,8 +45,8 @@
             <a href="../index.html">
                 <img src="../images/logo-photos/clear-background-dtf-logo.png" alt="Image" width="500" height="155">
             </a>
-            <a href="https://givebutter.com/0nhBTh" class="btn">Donate Now</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeyf2L9swDTLg0CM6kyN8VamFCxlJ4w-BgiWQihqsM--hBiWA/viewform" class="btn2">Apply For Funding</a>
+            <a href="https://givebutter.com/0nhBTh" target="_blank" rel="noopener noreferrer" class="btn">Donate Now</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeyf2L9swDTLg0CM6kyN8VamFCxlJ4w-BgiWQihqsM--hBiWA/viewform" target="_blank" rel="noopener noreferrer" class="btn2">Apply For Funding</a>
         </div>
     </section>
     
@@ -110,7 +110,7 @@
         <p style="font-family: gill-sans-light">If your organization shares our vision of building stronger, more equitable communities, we encourage you to apply for funding. Applications are reviewed on a rolling basis, and selected recipients will receive tailored support to help maximize their impact.</p>
     
         <h2 style="text-align: center;">Start Your Application:</h2>
-        <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSeyf2L9swDTLg0CM6kyN8VamFCxlJ4w-BgiWQihqsM--hBiWA/viewform" target="_blank">APPLY HERE</a></p>
+        <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSeyf2L9swDTLg0CM6kyN8VamFCxlJ4w-BgiWQihqsM--hBiWA/viewform" target="_blank" rel="noopener noreferrer">APPLY HERE</a></p>
     
         <p style="font-family: gill-sans-light">For questions or more information about our funding process, please contact us at <a href="mailto:agarcia@davis-tennonfoundation.org">agarcia@davis-tennonfoundation.org</a>.
     
@@ -209,17 +209,90 @@
             <!-- Right Section: Donate Button -->
             <div class="footer-section socials-donate">
                 <ul class="donate-links">
-                    <li><a href="https://givebutter.com/0nhBTh" class="btn">Donate Today</a></li>
+                    <li><a href="https://givebutter.com/0nhBTh" target="_blank" rel="noopener noreferrer" class="btn">Donate Today</a></li>
                 </ul>
             </div>
         </div>
         <div class="newsletter-container">
             <h4>NEWSLETTER</h4>
             <p>Subscribe to our newsletter to keep up with the latest news on the Davis-Tennon Foundation!</p>
-            <a href="http://eepurl.com/jeVNAE" target="_blank" rel="noopener noreferrer">
-                <button class="subscribe-btn">Subscribe Now</button>
-            </a>
-            <h2>This email is only intended to send you updates on the Davis-Tennon Foundation. You will have the option to unsubscribe at any time.</h2>
+            <!-- <input type="email" placeholder="Enter your email" class="newsletter-input"> -->
+            <div id="mc_embed_shell">
+                <div id="mc_embed_signup">
+                  <form action="https://davis-tennonfoundation.us20.list-manage.com/subscribe/post?u=ee1896e60a2c02f5c56dffd15&amp;id=e40c54c790&amp;f_id=002cc7f1f0" 
+                        method="post" 
+                        id="mc-embedded-subscribe-form" 
+                        name="mc-embedded-subscribe-form" 
+                        class="validate" 
+                        target="_self" 
+                        novalidate>
+                    
+                    <div class="email-enter">
+                      <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required placeholder="E-mail">
+                    </div>
+              
+                    <div id="mce-responses" class="clear foot">
+                      <div class="response" id="mce-error-response" style="color: black; display: none;"></div>
+                      <div class="response" id="mce-success-response" style="color: black; display: none;"></div>
+                    </div>
+              
+                    <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                      <input type="text" name="b_ee1896e60a2c02f5c56dffd15_e40c54c790" tabindex="-1" value="">
+                    </div>
+              
+                    <div class="optionalParent">
+                      <div class="clear foot">
+                        <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="subscribe-btn" value="Subscribe Now">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              
+              <script>
+              document.getElementById('mc-embedded-subscribe-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+              
+                const emailInput = document.getElementById('mce-EMAIL');
+                const email = emailInput.value.trim();
+                const successDiv = document.getElementById('mce-success-response');
+                const errorDiv = document.getElementById('mce-error-response');
+              
+                // Clear messages
+                successDiv.style.display = 'none';
+                errorDiv.style.display = 'none';
+              
+                // Basic email format check
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                  errorDiv.innerHTML = 'Please enter a valid email address.';
+                  errorDiv.style.display = 'block';
+                  return;
+                }
+              
+                // Proceed with fetch if email format is valid
+                const form = e.target;
+                const formData = new FormData(form);
+              
+                fetch(form.action, {
+                  method: 'POST',
+                  mode: 'no-cors',
+                  body: formData
+                })
+                .then(() => {
+                  successDiv.innerHTML = 'Thank you for subscribing!';
+                  successDiv.style.display = 'block';
+                  form.reset();
+                })
+                .catch(() => {
+                  errorDiv.innerHTML = 'There was an error. Please try again later.';
+                  errorDiv.style.display = 'block';
+                });
+              });
+            </script>                      
+                
+           
+            <h2>This email is only intended to send you news regarding the Davis-Tennon Foundation. You will have the option to opt-out at any time.</h2>
         </div>
     </footer>
     
