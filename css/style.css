@@ -978,6 +978,7 @@
             padding: 20px;
             margin: 20px auto 0;
             width: 70%;
+            justify-content: center;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
@@ -1064,6 +1065,15 @@
         @media (max-width: 450px) {
             .footer-section.logo-nav img {
                 max-width: 300px;
+            }
+            .newsletter-container h4 {
+                font-size: 20px; /* Adjust font size for smaller screens */
+            }
+            .newsletter-container p {
+                font-size: 14px; /* Adjust font size for smaller screens */
+            }
+            .newsletter-container h2 {
+                font-size: 10px; /* Adjust font size for smaller screens */
             }
         }
         
