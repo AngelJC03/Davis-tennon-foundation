@@ -779,13 +779,19 @@
         }
 
         #violas-story-caption {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        #violas-story-caption p{
+            font-size: 18px; /* Adjust font size */
             max-width: 80%;
-            margin-left: 10%;
             text-align: center;
         }
         
         #violas-story-content p {
-            font-size: 16px; /* Adjust font size */
             line-height: 1.6; /* Improve readability */
             max-width: 600px; /* Optional: Limit the width of the paragraph */
             margin-left: 50px; /* Remove default margin */

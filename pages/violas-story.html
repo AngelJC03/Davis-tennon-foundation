@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href= "../images/logo-photos/Logo-emblem.png" type="image/x-icon" />
 </head>
+
 <body class="violas-and-julius-story">
     <section class="banner" id="home">
         <div class="banner-container">
@@ -65,149 +66,34 @@
             </nav>
         </div>
     </header>
+  <div id="violas-story-title" class="fade-in">
+    <h1>Viola's Story</h1>
+  </div>
 
-    <div id="violas-story-title" class="fade-in">
-        <h1>Viola's Story</h1>
+    <div id="viola-slideshow"> 
+        <iframe id="iframe-viola" src="carousel.html" style="width:70%; border:none;" scrolling="no" title="Viola's Story Carousel"></iframe>
     </div>
 
-    <div id="violas-story-content" class="fade-in">
-        <!-- Slideshow container -->
-        <div class="slideshow-container">
-            <!-- Slides -->
-            <div class="slideshow-images">
-                <div class="mySlides">
-                    <img src="../images/viola's-story-photos/Viola-Davis.webp" alt="Placeholder Image 1">
-                </div>
-                <div class="mySlides">
-                    <img src="../images/viola's-story-photos/viola-davis-2020-featured-1.jpg" alt="Placeholder Image 2">
-                </div>
-                <div class="mySlides">
-                    <img src="../images/viola's-story-photos/grammy-photo.jpg" alt="Placeholder Image 3">
-                </div>
-                <div class="mySlides">
-                    <img src="../images/viola's-story-photos/viola-davis-fancy-dress.jpg" alt="Placeholder Image 4">
-                </div>
-            </div>
-    
-            <!-- Dots at the bottom -->
-            <div class="dots-container">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-                <span class="dot" onclick="currentSlide(4)"></span>
-            </div>
-        </div>
-    </div>
-    
-    <style>
-        .slideshow-container {
-            position: relative;
-            width: 80%;
-            margin: auto;
-            overflow: hidden; /* Ensures slides stay within the container */
-        }
-    
-        .slideshow-images {
-            display: flex; /* Arrange images horizontally */
-            transition: transform 1s ease-in-out; /* Smooth scroll effect */
-        }
-    
-        .mySlides {
-            min-width: 100%; /* Ensure each image takes up 100% of the container width */
-            height: 400px;
-        }
-    
-        .mySlides img {
-            width: 100%;
-            height: 400px;
-            object-fit: contain;
-        }
-    
-        /* Dots container */
-        .dots-container {
-            text-align: center;
-            position: absolute;
-            bottom: 9px;
-            width: 100%;
-        }
-    
-        .dot {
-            height: 20px;
-            width: 20px;
-            margin: 0 7px;
-            background-color: rgba(255, 255, 255, 0.5);
-            border: 2px solid rgb(0, 0, 0);
-            border-radius: 50%;
-            display: inline-block;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-    
-        .dot.active {
-            background-color: rgba(255, 255, 255, 1);
+    <style> 
+        #viola-slideshow {
+            display: flex;
+            justify-content: center;
+            height: 10%;
         }
 
-        @media (max-width: 980px) {
-            .mySlides img {
-                object-fit: cover;
-            }
-        }
-
-        @media (max-width: 450px) {
-            .mySlides {
-                height: 300px;
-            }
-            .mySlides img {
-                object-fit: contain;
-            }
-        }
-
-        @media (max-width: 375px) {
-            .dots-container {
-                bottom: 8%;
-            }
-        }
     </style>
-    
-    <script>
-        let slideIndex = 0;
-        let timer;
 
-        function showSlides(n) {
+    <script> 
+        window.addEventListener('message', function(event) {
+            // Optional: check event.origin if security is a concern
 
-            const slides = document.getElementsByClassName("mySlides");
-            const dots = document.getElementsByClassName("dot");
-    
-            // Remove active class from dots
-            for (let i = 0; i < dots.length; i++) {
-                dots[i].classList.remove("active");
+            if (event.data.iframeHeight) {
+            const iframe = document.getElementById('iframe-viola');
+            iframe.style.height = event.data.iframeHeight + 'px';
             }
-    
-            // Update slide index and apply transform to shift slides
-            slideIndex = n !== undefined ? n - 1 : slideIndex;
-            if (slideIndex >= slides.length) slideIndex = 0;
-    
-            // Update the transform property to scroll through images
-            const slideshowContainer = document.querySelector('.slideshow-images');
-            slideshowContainer.style.transform = `translateX(-${slideIndex * 100}%)`;
-    
-            // Activate the corresponding dot
-            dots[slideIndex].classList.add("active");
-    
-            // Reset timer for auto slide
-            clearTimeout(timer);
-            timer = setTimeout(() => showSlides(), 4000);
-        }
-    
-        function currentSlide(n) {
-            clearTimeout(timer); // Stop auto-cycling when user interacts
-            showSlides(n);
-        }
-    
-        // Initialize the slideshow
-        showSlides();
+        });
     </script>
-    
+
     
     <div id="violas-story-caption" class="fade-in">
         <p>“I grew up in Central Falls. It is the place I call home, 

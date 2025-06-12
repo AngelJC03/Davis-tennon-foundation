@@ -351,7 +351,221 @@
         }
         
     </style>
-    
+
+    <div id="what-we-fund-section">
+        <div class="what-we-fund-label fade-in">
+            What We Fund
+            <p>
+                We focus on driving meaningful change by funding initiatives that address critical needs within Rhode Island communities.
+            </p>
+        </div>
+        <table class="what-we-fund-table table-fade-in">
+            <tbody class="fade-in" style="--delay: .2s;">
+            <tr>
+                <td class="expandable">
+                    <a href="pages/what-we-fund.html">
+                        <div class="content">
+                            <img src="images/home-page-photos/empowering-women.jpg" alt="Funded Project 1">
+                            <div class="caption-bar">Empowering Women</div>
+                        </div>
+                    </a>
+                </td>
+                <td class="expandable">
+                    <a href="pages/what-we-fund.html">
+                        <div class="content">
+                            <img src="images/home-page-photos/dv-ribbon.jpg" alt="Funded Project 2">
+                            <div class="caption-bar">Domestic Violence Awareness</div>
+                        </div>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="expandable">
+                    <a href="pages/what-we-fund.html">
+                        <div class="content">
+                            <img src="images/home-page-photos/student-opportunities.jpg" alt="Funded Project 3">
+                            <div class="caption-bar">Student Opportunities</div>
+                        </div>
+                    </a>
+                </td>
+                <td class="expandable">
+                    <a href="pages/what-we-fund.html">
+                        <div class="content">
+                            <img src="images/home-page-photos/housing-stability.jpg" alt="Funded Project 4">
+                            <div class="caption-bar">Housing Stability</div>
+                        </div>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <style>
+        .what-we-fund-table {
+            border-collapse: collapse;
+            width: 60%;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            table-layout: fixed;
+            position: relative;
+            overflow: visible;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 2s ease, visibility 2s ease;
+        }
+
+        .what-we-fund-table td {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: visible;
+        }
+        .what-we-fund-table td .content {
+            position: relative; /* changed from absolute */
+            top: 0; left: 0; right: 0; bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.3s ease;
+            z-index: 1;
+        }
+
+        .what-we-fund-table td .content img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            display: block;
+        }
+
+        /* Caption bar styles */
+        .caption-bar {
+            justify-content: center;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            font-weight: 600;
+            padding: 8px 12px;
+            font-size: 16px;
+            text-align: left;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .what-we-fund-table td:hover {
+            transform: scale(1.1);
+            z-index: 10;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            background-color: #fff;
+        }
+
+        .what-we-fund-table td:hover .content {
+            transform: scale(1.05);
+        }
+
+        .what-we-fund-table td:hover .content img {
+            transform: scale(1.03);
+            box-shadow:
+                0 0 10px 4px rgba(255, 255, 255, 0.7),
+                0 0 20px 8px rgba(255, 255, 255, 0.4);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Fade-in */
+        .table-fade-in {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 2s ease, visibility 2s ease;
+        }
+
+        .what-we-fund-label {
+            margin-top: 50px;
+            margin-bottom: 60px;
+            height: 80px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 24px;
+            color: #000000;
+        }
+
+        .what-we-fund-label p {
+            font-size: 16px;
+            color: #333333;
+            margin-top: 10px;
+            width: 50%;
+        }
+
+        @media (max-width: 615px) {
+            .what-we-fund-table {
+                width: 90%;
+            }
+            .what-we-fund-table td {
+                width: 100%;
+                height: 200px; /* Adjust height for smaller screens */
+            }
+            .what-we-fund-label p {
+                font-size: 14px;
+                width: 80%; /* Make the text more readable on smaller screens */
+            }
+        }
+
+        @media (max-width: 500px) {
+            .what-we-fund-label p {
+                font-size: 14px;
+            }
+            .what-we-fund-table,
+            .what-we-fund-table tbody,
+            .what-we-fund-table tr,
+            .what-we-fund-table td {
+                display: block;
+
+            }
+
+            .what-we-fund-table tr {
+                margin-bottom: 0px; /* Add spacing between stacked items */
+            }
+
+            .what-we-fund-table td {
+                height: auto; /* Let the height adjust to content */
+                margin-bottom: 0px;
+            }
+
+            .what-we-fund-table td .content {
+                position: static;
+                transform: none;
+                width: 100%;
+                height: auto;
+                padding: 0px 0;
+            }
+
+            .what-we-fund-table td .content img {
+                width: 100%;
+                object-fit: cover;
+            }
+
+            /* Optional: disable hover effects on small screens */
+            .what-we-fund-table td:hover {
+                transform: none;
+                box-shadow: none;
+                z-index: auto;
+                background-color: transparent;
+            }
+
+            .what-we-fund-table td:hover .content,
+            .what-we-fund-table td:hover .content img {
+                transform: none;
+            }
+        }
+    </style>
 
     <div class="news fade-in" style="margin-top: 20px; --delay: .3s;">
         <h2>Recent Articles</h2>
