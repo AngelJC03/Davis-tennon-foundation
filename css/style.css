@@ -447,6 +447,9 @@
           }
 
           @media (max-width: 950px) {
+            .hero img {
+                height: 500px; /* Adjust height for smaller screens */
+            }
             .hero-text {
               flex-direction: column;
               align-items: center;
@@ -473,6 +476,12 @@
                 display: block;
             }
           }
+
+        @media (max-width: 450px) {
+            .hero img {
+                height: 350px; /* Adjust height for smaller screens */
+            }
+        }
 
         @media (max-width: 350px) {
             .hero-text h1 {
@@ -920,6 +929,10 @@
         
         .contact-info {
             text-align: left;
+        }
+
+        .contact-info a {
+            color: rgb(107, 196, 207);
         }
         
         .logo-nav .footer-logo {
