@@ -398,8 +398,11 @@
             background-image: linear-gradient(rgba(200, 200, 200, 0.551), rgba(200, 200, 200, 0.551)),
               url("../images/logo-photos/repeated-logo.jpg");
             background-size: cover;
-            text-shadow: 0 4px 10px rgb(0, 0, 0);
             padding: 40px;
+          }
+
+          .hero-text h1 {
+            text-shadow: 0 4px 10px rgb(0, 0, 0);
           }
           
           .hero-left {
@@ -442,8 +445,9 @@
             display: none;
           }
 
-          .hero-text a{
+          .hero-donate-btn p{
             color: white;
+            text-decoration: none;
           }
 
           @media (max-width: 950px) {
