@@ -417,7 +417,7 @@
           }
           
           .hero-left h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
             text-align: center;
           }
           
@@ -450,6 +450,12 @@
             text-decoration: none;
           }
 
+          @media (max-width: 1225px) {
+            .hero-left h1 {
+                font-size: 1.28rem; /* Adjust font size for smaller screens */
+            }
+          }
+
           @media (max-width: 950px) {
             .hero img {
                 height: 500px; /* Adjust height for smaller screens */
@@ -469,7 +475,7 @@
             }
           
             .hero-left h1 {
-              font-size: 1.5rem;
+              font-size: 1.25rem;
               padding: 0;
             }
           
@@ -480,6 +486,12 @@
                 display: block;
             }
           }
+
+        @media (max-width: 550px) {
+            .hero-text h1 {
+                font-size: 0.9rem;
+            }
+        }
 
         @media (max-width: 450px) {
             .hero img {
@@ -492,84 +504,6 @@
                 font-size: 0.8rem;
             }
         }
-        /********
-
-        eye-catcher CSS
-
-        *********/
-        
-        .decorative-banner {
-            position: relative;
-            height: 200px;
-            width: 100%;
-            display: flex;
-            align-items: center; /* Align content vertically centered */
-            background-image: linear-gradient(rgba(200, 200, 200, 0.551), rgba(200, 200, 200, 0.551)), url("../images/logo-photos/repeated-logo.jpg");
-            background-size: cover;
-        }
-        
-        .button-container {
-            width: 100%;
-            display: flex;
-            justify-content: space-between; /* Push h1 to left, button to right */
-            align-items: center;
-            padding: 0 40px; /* Horizontal padding */
-            color: #ffffff;
-            z-index: 2;
-            flex-direction: column;       /* Stack items vertically */
-            align-items: center;          /* Center items horizontally */
-            text-align: center;           /* Center text inside elements */
-        }
-        
-        .button-container h1 {
-            margin: 0;
-            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.013);
-            -webkit-text-stroke: 1px #c17716;
-            max-width: 60%;
-            font-size: 1.5rem;
-        }
-        
-        .donate-btn {
-            background-color: rgb(195,41,58);
-            color: white; /* Text color */
-            padding: 10px 20px;
-            font-size: 1rem; /* Font size */
-            text-decoration: none; /* Remove underline */
-            border-radius: 5px; /* Rounded corners */
-            transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
-            z-index: 3; /* Ensure the button is above the container */
-            white-space: nowrap; /* Prevents wrapping */
-            margin-top: 5px; /* Space between text and button */
-            box-shadow: 0 4px 10px rgba(2, 57, 37, 0.489);
-        }
-        
-        @media (max-width: 950px) {
-            .decorative-banner {
-                height: 120px; /* Adjust height for smaller screens */
-            }
-            .button-container h1 {
-                font-size: 18px; /* Adjust font size for smaller screens */
-            }
-            .donate-btn {
-                padding: 8px 16px; /* Adjust padding for smaller screens */
-                font-size: 0.9rem; /* Adjust font size for smaller screens */
-            }
-        }
-
-        @media (max-width: 875px) {
-            .decorative-banner {
-                height: 120px; /* Adjust height for smaller screens */
-            }
-            .button-container h1 {
-                margin-top: 5px; /* Adjust margin for smaller screens */
-                font-size: 14px; /* Adjust font size for smaller screens */
-            }
-            .donate-btn {
-                padding: 6px 12px; /* Adjust padding for smaller screens */
-                font-size: 0.9rem; /* Adjust font size for smaller screens */
-            }
-        }
-
         
         /********
 
