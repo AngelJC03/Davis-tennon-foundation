@@ -253,14 +253,25 @@
             .banner-container .btn {
                 top: 140px;
                 height: 40px;
-                right: 20%;
+                right: 200px;
             }
             .banner-container .btn2 {
                 top: 140px;
-                right: 50%;
+                left: 200px;
+                right: auto; /* Reset right if necessary */
                 height: 40px;
             }
         }
+
+        @media (max-width: 800px) {
+            .banner-container .btn {
+                right: 100px;
+            }
+            .banner-container .btn2 {
+                left: 100px;
+            }
+        }
+
         @media (max-width: 570px) {
             img[src='images/logo-photos/clear-background-dtf-logo.png'],  
             img[src='../images/logo-photos/clear-background-dtf-logo.png'] {
@@ -295,7 +306,10 @@
             }
             .burger {
                 margin-top: 50px;
-                left: 50%; /* Center the burger menu */
+                left: 50%;
+                transform: translateX(-50%); /* Center the burger menu */
+                
+
             }
         }
 
@@ -936,6 +950,8 @@
             margin: 20px auto 0;
             width: 70%;
             justify-content: center;
+            align-items: center;
+            flex-direction: column;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
@@ -964,7 +980,7 @@
         .subscribe-btn {
             background-color: rgb(105,169,68);
             color: white; /* Text color */
-            padding: 15px 30px; /* Button size */
+            padding: 15px; /* Button size */
             font-size: 16px; /* Font size */
             text-decoration: none; /* Remove underline */
             border-radius: 5px; /* Rounded corners */
@@ -983,6 +999,11 @@
             color: #8e8e8e;
             font-size: 12px;
             margin-top: 10px;
+        }
+        @media (max-width: 1250px) {
+            .contact-info {
+                font-size: 11px; /* Adjust font size for smaller screens */
+            }
         }
         
         /* Responsive Adjustments */
@@ -1011,11 +1032,34 @@
                 margin-top: 20px;
                 text-align: center;
             }
+            .logo-nav .footer-logo {
+                margin-top: -40px; /* Add margin to the top */
+            }
         }
         
         @media (max-width: 600px) {
             .footer-section.logo-nav img {
                 max-width: 400px;
+            }
+        }   
+
+        @media (max-width: 570px) {
+            .nav-links {
+                display: flex;
+                flex-direction: column; /* Stack links vertically */
+                align-items: center; /* Center the links horizontally */
+            }
+        
+            .nav-links li {
+                list-style: none; /* Remove bullet points */
+                width: auto; /* No need for full width since they are centered */
+            }
+        
+            .nav-links li a {
+                padding: 5px 0; /* Add spacing for better readability */
+            }
+            .footer-section.logo-nav img {
+                max-width: 250px;
             }
         }
         
@@ -1034,23 +1078,18 @@
             }
         }
         
-        @media (max-width: 435px) {
-            .nav-links {
-                display: flex;
-                flex-direction: column; /* Stack links vertically */
-                align-items: center; /* Center the links horizontally */
-            }
-        
-            .nav-links li {
-                list-style: none; /* Remove bullet points */
-                width: auto; /* No need for full width since they are centered */
-            }
-        
-            .nav-links li a {
-                padding: 5px 0; /* Add spacing for better readability */
-            }
+        @media (max-width: 340px) {
             .footer-section.logo-nav img {
-                max-width: 250px;
+                max-width: 280px; /* Further reduce image size for very small screens */
+            }
+            .newsletter-container h4 {
+                font-size: 18px; /* Adjust font size for smaller screens */
+            }
+            .newsletter-container p {
+                font-size: 12px; /* Adjust font size for smaller screens */
+            }
+            .newsletter-container h2 {
+                font-size: 8px; /* Adjust font size for smaller screens */
             }
         }
         
