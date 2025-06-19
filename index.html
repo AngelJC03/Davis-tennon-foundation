@@ -26,7 +26,6 @@
     <!-- Styles & Scripts -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/logo-photos/Logo-emblem.png" type="image/x-icon" />
-    <script src="js/capitalize.js"></script>
 </head>
 <body class ="home-page">
     <section class="banner">
@@ -591,11 +590,12 @@
     <script>
         async function fetchData() {
           const indexLoadingDiv = document.getElementById("loading");
+          
             try {
-                const configRes = await fetch('pages/config.json'); // Correct relative path
+                const configRes = await fetch('backend/netlify/config/config.json'); // Correct relative path
                 if (!configRes.ok) throw new Error(`HTTP error! status: ${configRes.status}`);
                 const config = await configRes.json();
-                const url = capitalize(config.frameworklink); // The API URL from config.json
+                const url = config.newsArticles[0].tableRows;
 
                 const response = await fetch(url);
                 const data = await response.json();

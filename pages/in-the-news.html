@@ -237,10 +237,10 @@
     
             try {
                 // Fetch the config.json to get the API URL
-                const configRes = await fetch('config.json');  // Adjusted to the root directory
+                const configRes = await fetch('../backend/netlify/config/config.json');  // Adjusted to the root directory
                 if (!configRes.ok) throw new Error(`HTTP error! status: ${configRes.status}`);
                 const config = await configRes.json();
-                const url = capitalize(config.frameworklink); // Get the API URL from config.json
+                const url = config.newsArticles[0].tableRows;
     
                 // Fetch the data from the API
                 const response = await fetch(url);
