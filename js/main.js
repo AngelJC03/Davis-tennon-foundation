@@ -77,17 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-/********
- * JAVASCRIPT FOR DONATION FORM
- * PROMPTING USER TO ENTER VALUE IN
- * AMOUNT FIELD
- *********/
-
-function focusAmountInput() {
-    document.getElementById('amount').value = ''; // Clears the amount input field
-    document.getElementById('amount').focus(); // Focus on the "amount" input field
-}
-
 /*******
  * JAVASCRIPT FOR BURGER MENU
 ********/
@@ -125,23 +114,15 @@ document.addEventListener("click", function(event) {
  * RESPNSIBLE FOR MODAL AND COOKIE STORAGE
  * *******/
 
-// document.addEventListener("DOMContentLoaded", function () {
-//     if (!sessionStorage.getItem("auctionModalShown")) {
-//         document.getElementById("auction-popup-modal").style.display = "block";
-//         document.getElementById("auction-modal-overlay").style.display = "block";
-//         sessionStorage.setItem("auctionModalShown", "true");
-//     }
-// });
+document.addEventListener("DOMContentLoaded", function () {
+    if (!sessionStorage.getItem("auctionModalShown")) {
+        document.getElementById("auction-popup-modal").style.display = "block";
+        document.getElementById("auction-modal-overlay").style.display = "block";
+        sessionStorage.setItem("auctionModalShown", "true");
+    }
+});
 
 function closeModal() {
     document.getElementById("auction-popup-modal").style.display = "none";
     document.getElementById("auction-modal-overlay").style.display = "none";
 }
-
-function shiftAscii(str, shiftBy = 3) {
-    return str.split("").map(char => {
-        const shiftedChar = String.fromCharCode(char.charCodeAt(0) + shiftBy);
-        return shiftedChar;
-    }).join("");
-}
-
