@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Viola's Story Carousel</title>
+<link rel="icon" href="images/logo-photos/Logo-emblem.png" type="image/x-icon" />
+</head>
+
+<body>
+    <div id="mc_embed_shell">
+        <!-- <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css"> -->
+    <style>
+        @font-face {
+            font-family: "gill-sans-bold";
+            src: url('../assets/gill-sans-2/Gill-Sans-Bold.otf') format('opentype'); /* Path to your font */
+            font-weight: normal; /* Optional: specify font weight */
+            font-style: normal;  /* Optional: specify font style */
+        }
+        html, body {
+            font-family: 'gill-sans-bold', Arial, sans-serif;
+            background-color: transparent;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .email-popup-div {
+            display: flex;
+            background-color: rgb(255, 204, 138);
+            padding: 0;
+            margin: 20px auto 0;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        #mc_embed_signup,
+        #mc_embed_signup_scroll,
+        #mc-embedded-pop-up-form {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .mc-field-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 16px;
+            width: 100%;
+        }
+
+        .mc-field-group label {
+            margin-bottom: 6px;
+            font-size: 16px;
+            font-weight: 500;
+            text-align: left;
+        }
+
+        .mc-field-group input[type="text"],
+        .mc-field-group input[type="email"] {
+            padding: 14px 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        #mc-embedded-subscribe {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+        #pop-up-image {
+            width: 100vw;
+            height: auto !important;
+            margin-bottom: 0;
+        }
+        @media (max-width: 450px) {
+            .email-popup-message p {
+                font-size: 14px;
+            }
+        }
+    </style>
+    <div class="email-popup-div">
+        <div class="email-popup-message">
+            <img id="pop-up-image" src="../images/logo-photos/clear-background-dtf-logo.png" alt="Davis-Tennon Foundation Logo">
+            <p>We’re so glad you stopped by.</p>
+            <p>Want to stay connected and receive updates about our latest news, funding opportunities, and community initiatives?</p>
+            <p>Share your name and email below—and if you’d like, leave us a comment to let us know you were here or share why our mission matters to you.</p>
+        </div>
+
+        <div id="mc_embed_signup">
+            <form action="https://davis-tennonfoundation.us20.list-manage.com/subscribe/post?u=ee1896e60a2c02f5c56dffd15&amp;id=e40c54c790&amp;f_id=00ddc4f1f0"
+                method="post" id="mc-embedded-pop-up-form" name="mc-embedded-pop-up-form"
+                class="validate" target="_self" novalidate="">
+            <div id="mc_embed_signup_scroll">
+                <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+
+                <div class="mc-field-group">
+                <label for="mce-FNAME">Name</label>
+                <input type="text" name="FNAME" class="text" id="mce-FNAME" value="">
+                </div>
+
+                <div class="mc-field-group">
+                <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+                <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="">
+                </div>
+
+                <div class="mc-field-group">
+                <label for="mce-MMERGE5">Comments or Feedback (Optional)</label>
+                <input type="text" name="MMERGE5" class="text" id="mce-MMERGE5" value="">
+                </div>
+
+                <div id="mce-responses" class="clear foot">
+                <div class="response" id="mce-error-response" style="display: none;"></div>
+                <div class="response" id="mce-success-response" style="display: none;"></div>
+                </div>
+
+                <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                <input type="text" name="b_ee1896e60a2c02f5c56dffd15_e40c54c790" tabindex="-1" value="">
+                </div>
+
+                <div class="optionalParent">
+                <div class="clear foot">
+                    <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Keep Me Posted">
+                </div>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[1]='FNAME';ftypes[1]='text';fnames[0]='EMAIL';ftypes[0]='email';fnames[5]='MMERGE5';ftypes[5]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[6]='ORG';ftypes[6]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';}(jQuery));var $mcj = jQuery.noConflict(true);</script></div>
+    <script>
+        function closeModal() {
+            // Communicate with parent to close modal
+            if (window.parent !== window) {
+                window.parent.postMessage({ type: 'close-popup' }, '*');
+            }
+        }
+
+        document.getElementById('mc-embedded-pop-up-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const emailInput = document.getElementById('mce-EMAIL');
+            const email = emailInput.value.trim();
+            const successDiv = document.getElementById('mce-success-response');
+            const errorDiv = document.getElementById('mce-error-response');
+
+            // Clear messages
+            successDiv.style.display = 'none';
+            errorDiv.style.display = 'none';
+
+            // Basic email format check
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                errorDiv.innerHTML = 'Please enter a valid email address.';
+                errorDiv.style.display = 'block';
+                return;
+            }
+
+            // Proceed with fetch if email format is valid
+            const form = e.target;
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: formData
+            })
+            .then(() => {
+                successDiv.innerHTML = 'Thank you for subscribing!';
+                successDiv.style.display = 'block';
+                sessionStorage.setItem("emailModalShown", "true");
+                setTimeout(() => {
+                    closeModal();
+                }, 3000); // Hide after 3 seconds
+                form.reset();
+            })
+            .catch(() => {
+                errorDiv.innerHTML = 'There was an error. Please try again later.';
+                errorDiv.style.display = 'block';
+            });
+        });
+
+    </script>
+</body>
+</html>

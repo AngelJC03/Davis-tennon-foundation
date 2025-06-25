@@ -115,14 +115,13 @@ document.addEventListener("click", function(event) {
  * *******/
 
 document.addEventListener("DOMContentLoaded", function () {
-    if (!sessionStorage.getItem("auctionModalShown")) {
-        document.getElementById("auction-popup-modal").style.display = "block";
-        document.getElementById("auction-modal-overlay").style.display = "block";
-        sessionStorage.setItem("auctionModalShown", "true");
+    if (!sessionStorage.getItem("emailModalShown")) {
+        document.getElementById("email-popup-modal").style.display = "block";
+        document.getElementById("email-modal-overlay").style.display = "block";
     }
 });
 
 function closeModal() {
-    document.getElementById("auction-popup-modal").style.display = "none";
-    document.getElementById("auction-modal-overlay").style.display = "none";
+    document.getElementById("email-popup-modal").style.display = "none";
+    document.getElementById("email-modal-overlay").style.display = "none";
 }

@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/logo-photos/Logo-emblem.png" type="image/x-icon" />
 </head>
+
 <body class ="home-page">
     <section class="banner">
         <div class="banner-container">
@@ -657,27 +658,18 @@
         fetchData();        
     </script>
 
-    <!-- <div class="overlay" id="auction-modal-overlay"></div>
-    <div class="auction-popup" id="auction-popup-modal">
-        <div class="auction-popup-header">
-            <span class="auction-popup-close" onclick="closeModal()">&times;</span>
+    <div class="overlay" id="email-modal-overlay">
+        <div class="email-popup" id="email-popup-modal">
+            <span class="email-popup-close" onclick="closeModal()">&times;</span>
+            <iframe id="email-popup" src="pages/pop-up.html" style="width:70%; height: 750px; border:none;" scrolling="no" title="email-popup"></iframe>
         </div>
-        <h2>Davis-Tennon Foundation Silent Auction</h2>
-        <p style="font-family: gill-sans-light">On April 29th, the Davis-Tennon Foundation will be hosting a silent auction to kick-off the foundation! 
-            If you would like to donate an item or see the current items being auctioned, visit our auction page
-            using the button below.
-        </p>
-        <div class="auction-img">
-            
-        </div>
-        <a href="#" id="btn">See More</a>
-    </div>    -->
+    </div>
 
     <!-- Footer Placeholder -->
     <footer>
         <div class="newsletter-container">
             <h4>NEWSLETTER</h4>
-            <p>Subscribe to our newsletter to keep up with the latest news on the Davis-Tennon Foundation!</p>
+            <p>Subscribe to our newsletter to keep up with our latest news, funding opportunities, and community initiatives!</p>
             <!-- <input type="email" placeholder="Enter your email" class="newsletter-input"> -->
             <div id="mc_embed_shell">
                 <div id="mc_embed_signup">
@@ -738,6 +730,14 @@
     </footer>
 
     <script>
+        window.addEventListener('message', function(event) {
+            if (event.data.type === 'close-popup') {
+                closeModal(); // this calls the function in main.js
+            }
+        });
+    </script>
+
+    <script>
         document.getElementById('mc-embedded-subscribe-form').addEventListener('submit', function(e) {
             e.preventDefault();
 
@@ -784,31 +784,3 @@
 
 </body>
 </html>
-
-
-  <!-- <section class="home-content">
-        <div class="info-box">
-            <div class="text-container">
-                <div class="text-overlay">
-                    <p>Lorem ipsum....</p>
-                </div>
-            </div>
-            <img src="images/home-page-photos/placeHolder.png" alt="Image" class="info-image">
-        </div>
-        <div class="info-box">
-            <img src="images/home-page-photos/placeHolder.png" alt="Image" class="info-image">
-            <div class="text-container">
-                <div class="text-overlay">
-                    <p>Lorem ipsum....</p>
-                </div>
-            </div>
-        </div>
-        <div class="info-box">
-            <div class="text-container">
-                <div class="text-overlay">
-                    <p>Lorem ipsum....</p>
-                </div>
-            </div>
-            <img src="images/home-page-photos/placeHolder.png" alt="Image" class="info-image">
-        </div>
-    </section> -->

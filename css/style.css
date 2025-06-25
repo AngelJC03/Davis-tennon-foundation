@@ -1287,25 +1287,27 @@
         }
 
         /************  
-        AUCTION MODAL CSS
+        email MODAL CSS
         ************/
-        .auction-popup {
+        .email-popup {
             position: fixed;
             top: 50%;
             left: 50%;
             right: 50%;
             transform: translate(-50%, -50%);
             width: 80%;
-            max-width: 500px;
+            max-width: 600px;
+            height: auto;
             background: rgb(255, 204, 138);
-            padding: 20px;
+            padding: 0;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
             z-index: 1000;
             display: none;
             text-align: center;
+            margin: 0;
         }
 
-        .auction-popup h2 {
+        .email-popup h2 {
             font-size: 24px;
             margin-top: 10px;
         }
@@ -1321,7 +1323,7 @@
             display: none;
         }
         
-        .auction-popup-close {
+        .email-popup-close {
             cursor: pointer;
             color: red;
             font-size: 24px;
