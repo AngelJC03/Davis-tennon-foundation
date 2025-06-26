@@ -219,7 +219,7 @@
     </div>
     
     <!-- Pop-up Modal -->
-    <div class="overlay" id="overlay"></div>
+    <div class="overlay fade-in" id="overlay"></div>
     <div class="popup" id="popup">
         <span class="popup-close" onclick="closePopup()">✖</span>
         <div id="popup-content"></div>
@@ -357,9 +357,9 @@
         fetchData();
     </script>    
 
-    <div class="overlay" id="auction-modal-overlay">
-        <div class="auction-popup" id="auction-popup-modal">
-            <span class="auction-popup-close" onclick="closeModal()">&times;</span>
+    <div class="overlay fade-in" id="email-modal-overlay">
+        <div class="email-popup" id="email-popup-modal">
+            <span class="email-popup-close" onclick="closeModal()">&times;</span>
             <iframe id="email-popup" src="pop-up.html" style="width:70%; height: 750px; border:none;" scrolling="no" title="email-popup"></iframe>
         </div>
     </div>
@@ -484,6 +484,14 @@
 
     
     <script src="../js/main.js"></script>
+    
+    <script>
+        window.addEventListener('message', function(event) {
+            if (event.data.type === 'close-popup') {
+                closeModal(); // this calls the function in main.js
+            }
+        });
+    </script>
 
 </body>
 </html>
