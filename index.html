@@ -442,23 +442,6 @@
             display: block;
         }
 
-        /* Caption bar styles */
-        .caption-bar {
-            justify-content: center;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            font-weight: 600;
-            padding: 8px 12px;
-            font-size: 16px;
-            text-align: left;
-            pointer-events: none;
-            user-select: none;
-        }
-
         .what-we-fund-table td:hover {
             transform: scale(1.1);
             z-index: 10;
@@ -658,7 +641,7 @@
         fetchData();        
     </script>
 
-    <div class="overlay fade-in" id="email-modal-overlay">
+    <div class="email-overlay fade-in" id="email-modal-overlay">
         <div class="email-popup" id="email-popup-modal">
             <span class="email-popup-close" onclick="closeModal()">&times;</span>
             <iframe id="email-popup" src="pages/pop-up.html" style="width:80%; height: 500px; border:none; overflow:auto;" title="email-popup"></iframe>
