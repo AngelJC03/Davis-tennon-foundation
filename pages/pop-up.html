@@ -11,9 +11,9 @@
         <div class="email-popup-div">
             <div class="email-popup-message">
                 <img id="pop-up-image" src="../images/logo-photos/clear-background-dtf-logo.png" alt="Davis-Tennon Foundation Logo">
-                <p>We’re so glad you stopped by.</p>
-                <p>Want to stay connected and receive updates about our latest news, funding opportunities, and community initiatives?</p>
-                <p>Share your name and email below—and if you’d like, leave us a comment to let us know you were here or share why our mission matters to you.</p>
+                <p>Thank you for stopping by.</p>
+                <p>Stay connected to receive updates on our latest news, funding opportunities, and community initiatives!</p>
+                <p>Share your name and email below and leave us a comment to let us know you were here or share why our mission matters to you.</p>
             </div>
 
             <div id="mc_embed_signup">
@@ -21,15 +21,14 @@
                     method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
                     class="validate" target="_self" novalidate="">
                 <div id="mc_embed_signup_scroll">
-                    <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
 
                     <div class="mc-field-group">
-                    <label for="mce-FNAME">Name</label>
+                    <label for="mce-FNAME">Name (Optional)</label>
                     <input type="text" name="FNAME" class="text" id="mce-FNAME" value="">
                     </div>
 
                     <div class="mc-field-group">
-                    <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+                    <label for="mce-EMAIL">Email Address (Required)<span class="asterisk">*</span></label>
                     <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="">
                     </div>
 
@@ -133,7 +132,7 @@
         }
         @media (max-width: 450px) {
             .email-popup-message p {
-                font-size: 14px;
+                font-size: 13px;
             }
         }
     </style>
@@ -162,7 +161,7 @@
     </script>
 
     <script>
-        function closeModal() {
+        function callcloseModal() {
             // Communicate with parent to close modal
             if (window.parent !== window) {
                 window.parent.postMessage({ type: 'close-popup' }, '*');
@@ -203,6 +202,7 @@
                 successDiv.style.display = 'block';
                 setTimeout(() => {
                     setCookie("longTermModalShown", "true", 7); // Prevents re-showing for 30 days
+                    callcloseModal(); // Close the modal
                 }, 2000); // Hide after 3 seconds
                 form.reset();
             })

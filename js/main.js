@@ -104,8 +104,10 @@ document.addEventListener("click", function(event) {
     var burger = document.querySelector(".burger"); // Burger icon (menu button)
 
     // Check if the click was outside the menu or burger icon
-    if (!burger.contains(event.target) && !menu.contains(event.target)) {
-        menu.style.display = "none"; // Hide dropdown if clicked outside
+    if (burger && menu) {
+        if (!burger.contains(event.target) && !menu.contains(event.target)) {
+            menu.style.display = "none";
+        }
     }
 });
 
@@ -113,6 +115,11 @@ document.addEventListener("click", function(event) {
 /********
  * RESPNSIBLE FOR MODAL AND COOKIE STORAGE
  * *******/
+
+function showEmailModal() {
+  document.getElementById("email-popup-modal").style.display = "block";
+  document.getElementById("email-modal-overlay").style.display = "block";
+}
 
 function setCookie(name, value, days) {
   const date = new Date();
@@ -134,7 +141,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!longTermShown) {
     if (!sessionShown) {
-      sessionStorage.setItem("sessionModalShown", "true");
+        showEmailModal();
+        sessionStorage.setItem("sessionModalShown", "true");
     }
   }
 });
