@@ -134,7 +134,6 @@ function getCookie(name) {
   if (parts.length === 2) return parts.pop().split(";").shift();
 }
 
-
 document.addEventListener("DOMContentLoaded", function () {
   const longTermShown = getCookie("longTermModalShown");
   const sessionShown = sessionStorage.getItem("sessionModalShown");

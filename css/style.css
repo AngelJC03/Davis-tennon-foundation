@@ -40,8 +40,8 @@
             box-sizing: border-box; /* Ensure consistent box model */
             font-family: "gill-sans-bold";
             line-height: 1.6; /* Line height for better readability */
-            background-color: rgb(245, 245, 245);
-            min-height: 100vh; /* Ensure full height on smaller screens */
+            background-color: rgb(255, 204, 138);
+            min-height: 100vh; /* Ensure full height on smaller screens */ 
         }
 
         /*******
@@ -1286,7 +1286,7 @@
             padding: 20px;
         }
 
-        /************  
+               /************  
         email MODAL CSS
         ************/
         .email-popup {
@@ -1326,9 +1326,21 @@
         .email-popup-close {
             cursor: pointer;
             color: red;
-            font-size: 24px;
+            font-size: 36px;
             font-weight: bold;
             position: absolute;
-            top: 30px;
-            right: 20px;
+            top: 20px;
+            right: 15px;
+        }
+        @media (max-width: 768px) {
+            .email-popup-close {
+                top: 40px;
+                right: 15px;
+            }
+        }
+        @media (max-width: 450px) {
+            .email-popup-close {
+                top: 30px;
+                right: 5px;
+            }
         }
