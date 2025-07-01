@@ -1,12 +1,12 @@
 {
     "newsArticles": [
         {
-            "tableRows": "https://dtfoundation.netlify.app/.netlify/functions/newsArticles"
+            "tableRows": "https://publickeys.netlify.app/.netlify/functions/newsArticles"
         }
     ],
     "giveButter": [
         {
-            "mainCampaign": "https://dtfoundation.netlify.app/.netlify/functions/mainGBCampaign"
+            "mainCampaign": "https://publickeys.netlify.app/.netlify/functions/mainGBCampaign"
         }
     ]
 }
