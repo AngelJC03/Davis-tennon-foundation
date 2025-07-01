@@ -4,6 +4,9 @@
             font-weight: normal; /* Optional: specify font weight */
             font-style: normal;  /* Optional: specify font style */
         }
+
+       
+
         html, body {
             font-family: 'gill-sans-bold', Arial, sans-serif;
             background-color: transparent;
@@ -13,11 +16,14 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         #mc_embed_signup,
         #mc_embed_signup_scroll,
         #mc-embedded-subscribe-form {
             width: 100%;
             box-sizing: border-box;
+            overflow: auto;
+
         }
 
         .mc-field-group {

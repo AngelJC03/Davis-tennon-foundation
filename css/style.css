@@ -1318,8 +1318,7 @@
             width: 80%;
             max-width: 600px;
             height: auto;
-            background: rgb(255, 204, 138);
-            padding: 0;
+            background: rgba(255, 204, 138, 0.8);
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
             z-index: 1000;
             display: none;
