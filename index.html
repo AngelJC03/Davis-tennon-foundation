@@ -71,12 +71,13 @@
 
     <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=iICpNmwnRgOMH7V8&p=other"></script>
 
-    <!-- <div class="campain-banner fade-in">
+    <div class="campain-banner fade-in">
         <div class="campaign-container">
           <div class="campaign-text">
-            <h1>
-              Join us in our mission to empower communities through education, leadership, and opportunity.
-            </h1>
+            <h1>The 60 for 60 Campaign</h1>
+            <p>
+              Join us in our mission by helping us reach our goal of raising $60,000 to celebrate Viola Davis's 60th birthday!
+            </p>
             <div class="progress-bar-wrapper">
               <div class="progress-bar">
                 <div class="progress-fill"></div>
@@ -85,7 +86,34 @@
           </div>
           <a href="https://givebutter.com/0nhBTh" class="campaign-btn">Donate Now</a>
         </div>
-      </div> -->
+      </div>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", async () => {
+            try {
+                const configRes = await fetch('backend/netlify/config/config.json');
+                if (!configRes.ok) throw new Error(`HTTP error! status: ${configRes.status}`);
+                const config = await configRes.json();
+                const url = config.giveButter[0].mainCampaign;
+
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`Failed to fetch campaign data: ${response.status}`);
+                const data = await response.json();
+                const currentProgress = data.data[0].raised;
+
+                const progress = document.querySelector(".progress-fill");
+                const goal = 60000;
+
+                setTimeout(() => {
+                    progress.style.width = (currentProgress / goal) * 100 + "%";
+                }, 300);
+            } catch (error) {
+                console.error("An error occurred while loading the donation progress:", error); 
+            }
+        });
+    </script>
+
+            
 
     <style>
         
@@ -110,12 +138,22 @@
             background-image: linear-gradient(rgba(200, 200, 200, 0.551), rgba(200, 200, 200, 0.551)), url("images/logo-photos/repeated-logo.jpg");
         }
 
-        .campaign-container h1 {
+        .campaign-text h1 {
             text-align: center;
             margin: 20px;
-            font-size: 1rem; /* Font size */
+            font-size: 1.4rem; /* Font size */
             text-shadow: 0 2px 4px rgb(0, 0, 0); /* Text shadow for better readability */
           }
+        
+        .campaign-text p {
+            text-align: center;
+            margin: 10px;
+            font-size: 1.0rem; /* Font size */
+            color: #ffffff; /* Text color */
+            max-width: 600px; /* Limit width for better readability */
+            margin: 20 auto; /* Center the paragraph */
+            text-shadow: 0 2px 4px rgb(0, 0, 0); /* Text shadow for better readability */
+        }
 
         .campaign-btn {
             background-color: #00d084;
@@ -133,14 +171,24 @@
         }
 
         @media (max-width: 800px) {
-            .campain-banner h1 {
-                font-size: 12px;
+            .campaign-container {
+                flex-direction: column; /* Stack elements vertically on smaller screens */
+                align-items: center; /* Center align items */
+            }
+            .campain-text h1 {
+                font-size: 1.3rem;
+            }
+            .campaign-text p {
+                font-size: 1rem; /* Adjust font size for smaller screens */
+                margin: 10px; /* Reduce margin for smaller screens */
             }
             .campaign-btn {
               font-size: 12px;
               padding: 8px 12px;
               text-align: center;
               display: inline-block;
+              margin: 0 auto; /* Center the button */
+              margin-bottom: 20px;
             }
           }
 
@@ -202,17 +250,6 @@
 
     </style>
 
-    <!-- <script>
-        window.addEventListener("DOMContentLoaded", () => {
-          const progress = document.querySelector(".progress-fill");
-          const goal = 60; // <-- just change this number to adjust goal %
-          setTimeout(() => {
-            progress.style.width = goal + "%";
-          }, 300);
-        });
-      </script>
-     -->
-
      <div class="hero fade-in" style="--delay: .1s;">
         <img src="images/home-page-photos/hero_photo2.jpg" alt="Image" />
       
@@ -245,13 +282,6 @@
             <a href="https://givebutter.com/0nhBTh" target="_blank" rel="noopener noreferrer" class="apply-donateCTA">Donate Now</a>
         </div>
     </section>
-    
-    <!-- <div class="decorative-banner fade-in">
-        <div class="button-container">
-            <h1>Contribute to the Davis-Tennon Foundation Today!</h1>
-            <a href="https://givebutter.com/0nhBTh" target="_blank" rel="noopener noreferrer" class="donate-btn">Donate Now</a>
-        </div>
-    </div> -->
 
     <style>
 
@@ -323,7 +353,6 @@
             cursor: pointer;
         }
     
-        /* Apply changes at 500px screen width */
         @media (max-width: 500px) {
             .row {
                 display: flex;
