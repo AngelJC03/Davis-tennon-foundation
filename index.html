@@ -102,10 +102,14 @@
                 const currentProgress = data.data[0].raised;
 
                 const progress = document.querySelector(".progress-fill");
+                const progressBar = document.querySelector(".progress-bar");
                 const goal = 60000;
+
+                progressBar.textContent = `Loading donation progress...`;
 
                 setTimeout(() => {
                     progress.style.width = (currentProgress / goal) * 100 + "%";
+                    progressBar.textContent = `$${currentProgress.toLocaleString()}/$60,000 raised`;
                 }, 300);
             } catch (error) {
                 console.error("An error occurred while loading the donation progress:", error); 
@@ -190,7 +194,7 @@
               margin: 0 auto; /* Center the button */
               margin-bottom: 20px;
             }
-          }
+        }
 
           .progress-bar-wrapper {
             width: 80%;
@@ -208,6 +212,9 @@
             height: 100%;
             border-radius: 10px;
             position: relative;
+            font-size: 1rem; /* Font size */
+            text-shadow: 0 2px 4px rgb(0, 0, 0); /* Text shadow for better readability */
+            line-height: 15px; /* smaller than bar height */
           
             /* Grey diagonal stripes */
             background-image: repeating-linear-gradient(
@@ -609,8 +616,6 @@
                 if (!configRes.ok) throw new Error(`HTTP error! status: ${configRes.status}`);
                 const config = await configRes.json();
                 const url = config.newsArticles[0].tableRows;
-
-                console.log(url);
 
                 const response = await fetch(url);
                 const data = await response.json();
