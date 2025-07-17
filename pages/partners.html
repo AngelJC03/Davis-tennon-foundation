@@ -75,16 +75,16 @@
     <style> 
         .page-image {
             text-align: center;
-            margin-bottom: 20px; /* Add spacing below the image */
-            color: rgb(0, 0, 0); /* Adjust color */
-            margin: 20px 0; /* Add margin around the title */
+            margin-bottom: 20px; 
+            color: rgb(0, 0, 0); 
+            margin: 20px 0; 
         }
         .photo-credit {
             text-align: left;
-            margin: 5px auto 0; /* Keeps it under the image with a small top margin */
-            width: 75%; /* Matches the image width */
-            max-width: 850px; /* Prevents it from stretching too wide */
-            font-size: 14px; /* Optional: Adjusts readability */
+            margin: 5px auto 0; 
+            width: 75%; 
+            max-width: 850px; 
+            font-size: 14px; 
         }
         .page-image img {
             max-width: 85%;
@@ -93,14 +93,20 @@
             margin: 0 auto;
             padding: 0 20px;
         }
+
+        .outer-partners-container {
+            width: 100%;
+            padding: 20px;
+            margin: 20px auto;
+        }
     
         .content-container {
             text-align: left;
             max-width: 800px;
-            margin: 20px auto;
+            margin: 0px auto;
             line-height: 1.6;
             font-family: "gill-sans-light";
-            padding: 0 20px;
+            padding: 20px;
         }
 
         .content-container a {
@@ -137,41 +143,96 @@
     
     <div class="community-partners fade-in">
         <h2 style="text-align: center; font-size: 32px;">Community Partners</h2>
-        <p style="text-align: center; font-size: 20px;">At the Davis-Tennon Foundation, we are dedicated to connecting families with the tools, organizations, and support systems they need to thrive. Below, you’ll find a curated list of resources and partner organizations that address critical needs in our community.</p>
-    </div>
+        <p style="text-align: center; font-size: 16px;">At the Davis-Tennon Foundation, we are dedicated to connecting families with the tools, organizations, and support systems they need to thrive. Below, you’ll find a curated list of resources and partner organizations that address critical needs in our community.</p>
+        <div class="partners-content-container fade-in">
 
-    <div class="partner-logos fade-in">
-        <div class="partner-logo-row-1">
-            <a href="https://ricadv.org/" target="_blank">
-                <img src="../images/partner-photos/ricadv.png" alt="RICADV Logo" class="partner-logo">
-            </a>
-            <a href="https://rifoundation.org/" target="_blank">
-                <img src="../images/partner-photos/rif.png" alt="Rhode Island Foundation Logo" class="partner-logo">
-        </div>
-        <div class="partner-logo-row-2">
-            <a href="https://pocfoundation.com/" target="_blank">
-                <img src="../images/partner-photos/poc.png" alt="Papitto Opportunity Connection Logo" class="partner-logo">
-            </a>
-            <a href="https://champlinfoundation.org/" target="_blank">
-                <img src="../images/partner-photos/champlin.svg" alt="Champlin Foundation Logo" class="partner-logo">
-            </a>
-        </div>
-        <div class="partner-logo-row-3">
-            <a href="https://sojournerri.org/" target="_blank">
-                <img src="../images/partner-photos/sorjouner.png" alt="Sojourner House Logo" class="partner-logo">
-            </a>
-            <a href="https://www.ric.edu/" target="_blank">
-                <img src="../images/partner-photos/ric.jpg" alt="Rhode Island College Logo" class="partner-logo">
-            </a>
-            <a href="https://chartergrowthfund.org/" target="_blank">
-                <img src="../images/partner-photos/csgf.png" alt="Trailblazers Initiative Logo" class="partner-logo">
-            </a>
+            <h2>Our Community Partners</h2>
+                <br/>
+                <p style="font-family: gill-sans-bold;">
+                    The Davis-Tennon Foundation is proud to collaborate with organizations that are deeply embedded in the communities they serve. Together, we are advancing meaningful change by expanding access, removing barriers, and creating pathways for opportunity.
+                </p>
+                <br/>
+                <p>
+                    In addition to our inaugural grantees, we are honored to support the work of the following Rhode Island-based partners:
+                </p>
+                <br/>
+            <ul>
+                <li>
+                    <a href="https://www.ric.edu/academics/educational-opportunity-programs/upward-bound" target="_blank">
+                        Upward Bound at Rhode Island College:
+                    </a>
+                    Supporting first-generation and income-eligible students on their path to college through academic enrichment, mentorship, and college readiness programming.
+                </li>
+
+                <li>
+                    <a href="https://www.centralfallsri.gov/library" target="_blank">
+                        Central Falls Adams Public Library:
+                    </a>
+                    A trusted hub for learning, connection, and literacy in Central Falls—offering free educational resources, technology access, and vital programming for families and residents of all ages.
+                </li>
+
+                <li>
+                    <a href="https://www.projectreadri.org/" target="_blank">
+                        Project R.E.A.D.:
+                    </a>
+                        Promoting literacy and lifelong learning through adult education and reading support programs that empower individuals to gain confidence, skills, and independence.
+                </li>
+            </ul>
+            <br/>
+
+            <p>
+                These organizations reflect the spirit and mission of the Davis-Tennon Foundation: to connect families with the resources they need and champion the local institutions already making a difference.
+            </p>
+            <br/>
+            <p style="font-family: gill-sans-bold;">
+                Together, we are helping build stronger, safer, and more supported communities throughout Central Falls and beyond.
+            </p>
+
         </div>
     </div>
 
     <style>
+        .partners-content-container {
+            max-width: 900px;
+            text-align: left;
+            margin: 20px auto;
+            padding: 20px;
+            line-height: 1.6;
+            font-family: "gill-sans-light";
+            background-color: rgb(221, 221, 221);
+            border-radius: 10px;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .partners-content-container a {
+            font-family: "gill-sans-bold";
+        }
+        
+        .partners-content-container h2 {
+            font-family: "gill-sans-bold";
+            margin-top: 20px;
+        }
+    
+        .partners-content-container ul {
+            padding-left: 20px;
+        }
+    
+        .partners-content-container ul li {
+            margin-bottom: 10px;
+        }
+    
+        .partners-content-container a {
+            color: #0073e6;
+            text-decoration: none;
+        }
+    
+        .partners-content-container a:hover {
+            text-decoration: underline;
+        }
+
         .community-partners {
-            max-width: 800px;
+            width: 95%;
+            max-width: 900px;
             margin: 20px auto;
             line-height: 1.6;
             padding: 0 20px;
@@ -211,42 +272,89 @@
         }
     </style>
     
-    <div class="content-container fade-in">
-    
-        <h2>Empowering Women and Preventing Domestic Violence</h2>
-        <ul>
-            <li><a href="https://ricadv.org/" target="_blank">Rhode Island Coalition Against Domestic Violence:</a> Comprehensive support services for survivors, including shelter, advocacy, and prevention programs.</li>
-            <li><a href="https://sojournerri.org/" target="_blank">Sojourner House:</a> Offering housing, counseling, and education to individuals impacted by domestic violence.</li>
-        </ul>
-    
-        <h2>Housing Assistance</h2>
-        <ul>
-            <li><a href="https://rifoundation.org/" target="_blank">Rhode Island Foundation:</a> Initiatives and grants supporting housing stability and community development.</li>
-            <li><a href="https://pocfoundation.com/" target="_blank">Papitto Opportunity Connection:</a> Programs focused on providing housing resources and opportunities for underserved communities.</li>
-        </ul>
-    
-        <h2>Student Enrichment and Education</h2>
-        <ul>
-            <li><a href="https://www.ric.edu/" target="_blank">Rhode Island College:</a> Resources for students and families seeking higher education pathways and enrichment programs.</li>
-            <li><a href="https://www.nld.org/rhode-island-college-workforce-development-hub" target="_blank">Central Falls Workforce Hub:</a> Workforce training and career advancement opportunities for local students and families.</li>
-        </ul>
-    
-        <h2>Financial and Grant Support</h2>
-        <ul>
-            <li><a href="https://champlinfoundation.org/" target="_blank">The Champlin Foundation:</a> Funding opportunities for nonprofit organizations working to enhance community services.</li>
-            <li><a href="https://chartergrowthfund.org/" target="_blank">Trailblazers Initiative by the Charter School Growth Fund:</a> Support for innovative educational programs.</li>
-        </ul>
-    
-        <h2>Parent Advocacy and Leadership</h2>
-        <ul>
-            <li><a href="what-we-fund.html">Parent Council Development:</a> Learn about the Davis-Tennon Foundation's initiative to train parents in advocacy and leadership to better identify and address community needs.</li>
-        </ul>
-    
+    <div class="outer-partners-container">
+        <div class="content-container fade-in">
+        
+            <h2>Empowering Women and Preventing Domestic Violence</h2>
+            <ul>
+                <li><a href="https://ricadv.org/" target="_blank">Rhode Island Coalition Against Domestic Violence:</a> Comprehensive support services for survivors, including shelter, advocacy, and prevention programs.</li>
+                <li><a href="https://sojournerri.org/" target="_blank">Sojourner House:</a> Offering housing, counseling, and education to individuals impacted by domestic violence.</li>
+            </ul>
+        
+            <h2>Housing Assistance</h2>
+            <ul>
+                <li><a href="https://rifoundation.org/" target="_blank">Rhode Island Foundation:</a> Initiatives and grants supporting housing stability and community development.</li>
+                <li><a href="https://pocfoundation.com/" target="_blank">Papitto Opportunity Connection:</a> Programs focused on providing housing resources and opportunities for underserved communities.</li>
+            </ul>
+        
+            <h2>Student Enrichment and Education</h2>
+            <ul>
+                <li><a href="https://www.ric.edu/" target="_blank">Rhode Island College:</a> Resources for students and families seeking higher education pathways and enrichment programs.</li>
+                <li><a href="https://www.nld.org/rhode-island-college-workforce-development-hub" target="_blank">Central Falls Workforce Hub:</a> Workforce training and career advancement opportunities for local students and families.</li>
+            </ul>
+        
+            <h2>Financial and Grant Support</h2>
+            <ul>
+                <li><a href="https://champlinfoundation.org/" target="_blank">The Champlin Foundation:</a> Funding opportunities for nonprofit organizations working to enhance community services.</li>
+                <li><a href="https://chartergrowthfund.org/" target="_blank">Trailblazers Initiative by the Charter School Growth Fund:</a> Support for innovative educational programs.</li>
+            </ul>
+        
+            <h2>Parent Advocacy and Leadership</h2>
+            <ul>
+                <li><a href="what-we-fund.html">Parent Council Development:</a> Learn about the Davis-Tennon Foundation's initiative to train parents in advocacy and leadership to better identify and address community needs.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="partner-logos fade-in">
+        <div class="partner-logo-row-1">
+            <a href="https://ricadv.org/" target="_blank">
+                <img src="../images/partner-photos/ricadv.png" alt="RICADV Logo" class="partner-logo">
+            </a>
+            <a href="https://rifoundation.org/" target="_blank">
+                <img src="../images/partner-photos/rif.png" alt="Rhode Island Foundation Logo" class="partner-logo">
+        </div>
+        <div class="partner-logo-row-2">
+            <a href="https://pocfoundation.com/" target="_blank">
+                <img src="../images/partner-photos/poc.png" alt="Papitto Opportunity Connection Logo" class="partner-logo">
+            </a>
+            <a href="https://champlinfoundation.org/" target="_blank">
+                <img src="../images/partner-photos/champlin.svg" alt="Champlin Foundation Logo" class="partner-logo">
+            </a>
+        </div>
+        <div class="partner-logo-row-3">
+            <a href="https://sojournerri.org/" target="_blank">
+                <img src="../images/partner-photos/sorjouner.png" alt="Sojourner House Logo" class="partner-logo">
+            </a>
+            <a href="https://www.ric.edu/" target="_blank">
+                <img src="../images/partner-photos/ric.jpg" alt="Rhode Island College Logo" class="partner-logo">
+            </a>
+            <a href="https://chartergrowthfund.org/" target="_blank">
+                <img src="../images/partner-photos/csgf.png" alt="Trailblazers Initiative Logo" class="partner-logo">
+            </a>
+        </div>
+    </div>
+
+     <div class="contact-us-partners-page fade-in">
         <h2 style="text-align: center;">Contact Us for Assistance</h2>
         <p style="text-align: center;">If you’re unsure where to start or need help connecting with the right resource, our team is here to assist. Contact us at <a href="mailto:agarcia@davis-tennonfoundation.org" class="contact-email">agarcia@davis-tennonfoundation.org</a> for guidance and referrals.</p>
-
+        <br/>
         <p style="font-family: gill-sans-bold; text-align: center;">Together, we can eliminate barriers, build connections, and create brighter futures for families across Rhode Island.</p>
     </div>
+
+    <style>
+        .contact-us-partners-page {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: rgb(144, 204, 187);
+            padding: 20px;
+            border: 20px solid transparent;
+            border-radius: 10px;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+        }
+
+    </style>
 
     <div class="email-overlay fade-in" id="email-modal-overlay">
         <div class="email-popup" id="email-popup-modal">
